@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="640.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ArlineReservationSystem.Controller">
+
+  <children>
+    <MenuBar disable="true" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+                  <MenuItem mnemonicParsing="false" text="Home" />
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+                  <MenuItem mnemonicParsing="false" text="Home" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Expand Menu Descriptions" />
+                  <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="625.0" prefWidth="630.0" style="-fx-background-color: #e0e1e3;" VBox.vgrow="ALWAYS">
+      <children>
+            <AnchorPane fx:id="menuPane" prefHeight="625.0" prefWidth="210.0" style="-fx-background-color: #532d8e;">
+               <children>
+                  <GridPane layoutX="25.0" layoutY="22.0" prefHeight="581.0" prefWidth="161.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="277.0" minWidth="10.0" prefWidth="162.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Button fx:id="expandMenu_B" mnemonicParsing="false" onAction="#gotoExpand" prefHeight="25.0" prefWidth="159.0" text="=">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font></Button>
+                        <Button fx:id="RegistrationPage_B" mnemonicParsing="false" onAction="#gotoRegistrationPage" prefHeight="25.0" prefWidth="159.0" text="Voter Registration" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font></Button>
+                        <Button fx:id="loginPage_B" mnemonicParsing="false" onAction="#gotoLoginPage" prefHeight="25.0" prefWidth="159.0" text="Voter Login" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font></Button>
+                        <Button fx:id="viewCandidates_B" mnemonicParsing="false" onAction="#gotoCandidatesPage" prefHeight="25.0" prefWidth="159.0" text="View Candidates" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font></Button>
+                        <Button fx:id="votingPage_B" mnemonicParsing="false" onAction="#gotoVotingPage" prefHeight="25.0" prefWidth="159.0" text="VOTE" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font></Button>
+                        <Button fx:id="viewResults_B" mnemonicParsing="false" onAction="#gotoResultsPage" prefHeight="25.0" prefWidth="159.0" text="Results" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font></Button>
+                        <Button fx:id="viewBestResults_B" mnemonicParsing="false" onAction="#gotoBestResults" prefHeight="25.0" prefWidth="160.0" text="Best Results" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font></Button>
+                        <Button fx:id="exit_B" mnemonicParsing="false" onAction="#exitProgram" prefHeight="25.0" prefWidth="159.0" text="Exit" GridPane.rowIndex="7">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font></Button>
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <StackPane fx:id="descriptionPane" layoutX="210.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+               <children>
+                  <AnchorPane prefHeight="625.0" prefWidth="420.0">
+                     <children>
+                        <GridPane layoutX="24.0" layoutY="21.0" prefHeight="581.0" prefWidth="380.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="434.0" minWidth="10.0" prefWidth="403.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="This button expanses the buttons to the left to reveale their full&#10;name and description.&#10;Click it again to shrink and return to HomePane." />
+                              <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Register to Vote!&#10;We will need to verify your information.&#10;Registration is easy and quick. We'll walk you through it if you &#10;ever need help." GridPane.rowIndex="1" />
+                              <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Before you can cast your vote, we must verify your identity. &#10;One person, one vote.&#10;If you are not yet registered to vote, please do so before &#10;attempting to login. " GridPane.rowIndex="2" />
+                              <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Displays the list of open positions and the candidates running &#10;for each office." GridPane.rowIndex="3" />
+                              <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="This is where you vote. You will need to log in first." GridPane.rowIndex="4" />
+                              <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Displays the results of each election system." GridPane.rowIndex="5" />
+                              <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="View the results that will maximize happiness or satisfaction with&#10;the electoral system of democracy." GridPane.rowIndex="6" />
+                              <TextArea editable="false" prefHeight="58.0" prefWidth="425.0" text="Exits the program" GridPane.rowIndex="7" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+               <children>
+                  <AnchorPane prefHeight="625.0" prefWidth="422.0">
+                     <children>
+                        <Label layoutX="99.0" layoutY="333.0" text="Facilitating" textFill="#3a2b70">
+                           <font>
+                              <Font name="Trebuchet MS Bold Italic" size="42.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="227.0" fitWidth="277.0" layoutX="102.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Downloads/6050dc456f52a577d7d8ba32_5fa1e8ff4c79e1ab20091d79_Democracy.jpeg" />
+                           </image>
+                        </ImageView>
+                        <TextArea layoutX="29.0" layoutY="431.0" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD )&#10;&#10;Noel Vazquez&#10;Scott Lovett&#10;Antonio Hendricks&#10;Juan Glinton">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font></TextArea>
+                        <Label layoutX="107.0" layoutY="383.0" text="Democracy" textFill="#3a2b70">
+                           <font>
+                              <Font name="Trebuchet MS Bold Italic" size="42.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <StackPane fx:id="newFlightPane" layoutX="211.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+               <children>
+                  <AnchorPane fx:id="RegistrationPage" prefHeight="625.0" prefWidth="420.0">
+                     <children>
+                        <Label layoutX="83.0" layoutY="14.0" text="Register to Vote" textFill="#3a2b70">
+                           <font>
+                              <Font name="Trebuchet MS Bold Italic" size="32.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="22.0" layoutY="93.0" prefHeight="509.0" prefWidth="380.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="155.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="225.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="221.0" text="Flight Number:" textAlignment="RIGHT">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></Label>
+                              <TextField fx:id="flightNum_T" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <TextField fx:id="flightDate_T" promptText="mm/dd/yy" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <TextField fx:id="departureTime_T" promptText="24:00" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <TextField fx:id="arrivalTime_T" promptText="24:00" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <TextField fx:id="departureCity_T" promptText="Where are you coming from?" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <TextField fx:id="destinationCity_T" promptText="Where are you headed?" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <Button fx:id="createFlight_B" mnemonicParsing="false" onAction="#CreateFlight" prefHeight="25.0" prefWidth="234.0" text="Create Flight" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></Button>
+                              <TextField fx:id="validate_T" alignment="CENTER" editable="false" promptText="Enjoy your flight" GridPane.rowIndex="6">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="221.0" text="Flight Date:" textAlignment="RIGHT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></Label>
+                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="221.0" text="Departure Time:" textAlignment="RIGHT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></Label>
+                              <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="221.0" text="Arrival Time:" textAlignment="RIGHT" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></Label>
+                              <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="253.0" prefHeight="25.0" prefWidth="221.0" text="Departure City:" textAlignment="RIGHT" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></Label>
+                              <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="326.0" prefHeight="25.0" prefWidth="221.0" text="Destination City:" textAlignment="RIGHT" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></Label>
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+               </children>
+            </StackPane>
+            <StackPane fx:id="newReservationPane" layoutX="211.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+               <children>
+                  <AnchorPane prefHeight="625.0" prefWidth="420.0">
+                     <children>
+                        <Label layoutX="26.0" layoutY="14.0" text="Make a New Reservation" textFill="#3a2b70">
+                           <font>
+                              <Font name="Trebuchet MS Bold Italic" size="32.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="22.0" layoutY="93.0" prefHeight="509.0" prefWidth="380.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextArea fx:id="seatMap_A" editable="false" prefHeight="120.0" prefWidth="190.0" promptText="Seat Map Displayed Here.   Unavaliable seats are marked with an X.                                                     Please use RowColumn format,     Ex. &quot;5A&quot;" text="1    A B   C D E   F G&#10;2    A B   C D E   F G&#10;3    A B   C D E   F G&#10;4    A B   C D E   F G&#10;5    A B   C D E   F G&#10;6    A B   C D E   F G&#10;7    A B   C D E   F G&#10;8    A B   C D E   F G&#10;9    A B   C D E   F G&#10;10  A B   C D E   F G" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.rowSpan="3">
+                                 <font>
+                                    <Font name="Verdana" size="16.0" />
+                                 </font>
+                              </TextArea>
+                              <TextField fx:id="firstName_T" prefHeight="25.0" prefWidth="161.0" promptText="Enter First Name">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <TextField fx:id="lastName_T" prefHeight="25.0" prefWidth="161.0" promptText="Enter Last Name" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <TextField fx:id="passID_T" prefHeight="25.0" prefWidth="161.0" promptText="Create Passenger ID" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <TextField fx:id="flightNumber_T" prefHeight="25.0" prefWidth="161.0" promptText="Enter Flight Number" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font></TextField>
+                              <Button fx:id="searchFlight_B" mnemonicParsing="false" onAction="#SearchFlight" prefHeight="25.0" prefWidth="190.0" text="Search Flight" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="desiredSeat_T" prefHeight="25.0" prefWidth="161.0" promptText="Desired Avaliable Seat &quot;5A&quot;" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="reserveSeat_B" mnemonicParsing="false" onAction="#ReserveSeat" prefHeight="25.0" prefWidth="190.0" text="Reserve Seat" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <StackPane fx:id="seatMapPane" layoutX="210.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+               <children>
+                  <AnchorPane prefHeight="625.0" prefWidth="420.0">
+                     <children>
+                        <Label layoutX="60.0" layoutY="14.0" text="Passenger Seat Map" textFill="#3a2b70">
+                           <font>
+                              <Font name="Trebuchet MS Bold Italic" size="32.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flightNumMap_T" layoutX="36.0" layoutY="110.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter Flight Number" />
+                        <Button fx:id="searchFlightMap_B" layoutX="225.0" layoutY="110.0" mnemonicParsing="false" onAction="#SearchFlightMap" prefHeight="25.0" prefWidth="161.0" text="Search Flight">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font></Button>
+                        <TextArea fx:id="SeatMap_A" editable="false" layoutX="36.0" layoutY="200.0" prefHeight="315.0" prefWidth="350.0" promptText="Seat Map Displayed Here.                                                Unavaliable seats are marked with an X.                                                        Please use RowColumn format,          Ex. &quot;5A&quot;">
+                           <font>
+                              <Font name="Verdana" size="16.0" />
+                           </font></TextArea>
+                        <TextField fx:id="areReserves_T" alignment="CENTER" editable="false" layoutX="130.0" layoutY="547.0" opacity="0.43" prefHeight="25.0" prefWidth="161.0" text="Reservations Made">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font></TextField>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <StackPane fx:id="allFlightsPane" layoutX="211.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+               <children>
+                  <AnchorPane prefHeight="625.0" prefWidth="420.0">
+                     <children>
+                        <Label layoutX="101.0" layoutY="14.0" text="List All Flights" textFill="#3a2b70">
+                           <font>
+                              <Font name="Trebuchet MS Bold Italic" size="32.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="flightNumList_T" layoutX="35.0" layoutY="110.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter Flight Number">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font></TextField>
+                        <Button fx:id="searchFlightList_B" layoutX="224.0" layoutY="110.0" mnemonicParsing="false" onAction="#SearchFlightList" prefHeight="25.0" prefWidth="161.0" text="Search Flight">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font></Button>
+                        <TextArea fx:id="flightList_A" editable="false" layoutX="5.0" layoutY="200.0" prefHeight="315.0" prefWidth="415.0" promptText="Flight# _ FDate  _ DTime  _ ATime _ DepartCity _ DestCity _ AvailableSeats _ AA1150   20Dec15  23:00   02:00    FORT WAYNE  ORLANDO         70       AA1230    5Nov15   11:30   14:00   BLACKSBURG  BOCA RATON     25    AA1140    4Jan15   07:00    11:00   SEATTEL         PHONEIX           42  ">
+                           <font>
+                              <Font name="Courier New" size="12.0" />
+                           </font></TextArea>
+                        <Button fx:id="viewAllFlight_B" layoutX="156.0" layoutY="553.0" mnemonicParsing="false" onAction="#gotoAllFlights" text="View All Flights">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font></Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+            <StackPane fx:id="allReservationsPane" layoutX="211.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+               <children>
+                  <AnchorPane prefHeight="625.0" prefWidth="420.0">
+                     <children>
+                        <Label layoutX="76.0" layoutY="14.0" text="List All Passenger" textFill="#3a2b70">
+                           <font>
+                              <Font name="Trebuchet MS Bold Italic" size="32.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="112.0" layoutY="51.0" text="Reservations" textFill="#3a2b70">
+                           <font>
+                              <Font name="Trebuchet MS Bold Italic" size="32.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="flightReservations_A" editable="false" layoutX="5.0" layoutY="200.0" prefHeight="315.0" prefWidth="415.0" promptText="ID                  Name            SeatNumber  Flight#                               1035093287   George Eric           2A         AA1230                           E8742784       Tom Ed                1C        AA1140                                103502786     Sara Shafer           4E        AA1140">
+                           <font>
+                              <Font name="Courier New" size="12.0" />
+                           </font></TextArea>
+                        <TextField fx:id="reservedFlightNum_T" layoutX="35.0" layoutY="110.0" prefHeight="25.0" prefWidth="159.0" promptText="Enter Flight Number">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font></TextField>
+                        <Button fx:id="searchReservedFlight_B" layoutX="224.0" layoutY="110.0" mnemonicParsing="false" onAction="#SearchReservedFlight" prefHeight="25.0" prefWidth="161.0" text="Search Flight">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font></Button>
+                        <Button fx:id="bookFlight_B" layoutX="120.0" layoutY="549.0" mnemonicParsing="false" onAction="#gotoNewReserve" text="Don't See Yourself? Book Flight" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
