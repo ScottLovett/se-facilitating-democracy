@@ -201,7 +201,7 @@
                                 <ImageView fitHeight="227.0" fitWidth="277.0" layoutX="102.0" layoutY="86.0"
                                            pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../Downloads/6050dc456f52a577d7d8ba32_5fa1e8ff4c79e1ab20091d79_Democracy.jpeg"/>
+                                        <Image url="Democracy_logo.jpeg"/>
                                     </image>
                                 </ImageView>
                                 <TextArea layoutX="29.0" layoutY="431.0" prefHeight="149.0" prefWidth="373.0"
