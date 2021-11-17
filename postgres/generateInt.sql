@@ -1,0 +1,1 @@
+SELECT floor(random() * 10 + 1)::int;
