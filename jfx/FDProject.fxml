@@ -5,10 +5,13 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
@@ -24,7 +27,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="640.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ArlineReservationSystem.Controller">
+<VBox prefHeight="640.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FacilitatingDemocracy.Controller">
 
   <children>
     <MenuBar disable="true" VBox.vgrow="NEVER">
@@ -70,7 +73,7 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="625.0" prefWidth="630.0" style="-fx-background-color: #e0e1e3;" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="625.0" prefWidth="640.0" style="-fx-background-color: #e0e1e3;" VBox.vgrow="ALWAYS">
       <children>
             <AnchorPane fx:id="menuPane" prefHeight="625.0" prefWidth="210.0" style="-fx-background-color: #3a2b70;">
                <children>
@@ -120,7 +123,7 @@
                   </GridPane>
                </children>
             </AnchorPane>
-            <StackPane fx:id="descriptionPane" layoutX="210.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+            <StackPane fx:id="descriptionPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
                <children>
                   <AnchorPane prefHeight="625.0" prefWidth="420.0">
                      <children>
@@ -159,7 +162,7 @@
                      <children>
                         <ImageView fitHeight="293.0" fitWidth="277.0" layoutX="77.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@FL%20Poly/Classes/21-FA/Software%20Engineering/se-facilitating-democracy/jfx/Democracy_logo.jpeg" />
+                              <Image url="@Democracy_logo.jpeg" />
                            </image>
                         </ImageView>
                         <Label layoutX="99.0" layoutY="322.0" text="Facilitating" textFill="#3a2b70">
@@ -180,7 +183,7 @@
                   </AnchorPane>
                </children>
             </StackPane>
-            <StackPane fx:id="registerPane" layoutX="211.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+            <StackPane fx:id="registerPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
                <children>
                   <AnchorPane fx:id="RegistrationPage" prefHeight="625.0" prefWidth="420.0">
                      <children>
@@ -266,7 +269,7 @@
                      </children></AnchorPane>
                </children>
             </StackPane>
-            <StackPane fx:id="loginPane" layoutX="211.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+            <StackPane fx:id="loginPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
                <children>
                   <AnchorPane prefHeight="625.0" prefWidth="420.0">
                      <children>
@@ -277,7 +280,7 @@
                         </Label>
                         <ImageView fx:id="voterID_P" fitHeight="227.0" fitWidth="277.0" layoutX="73.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@FL%20Poly/Classes/21-FA/Software%20Engineering/se-facilitating-democracy/jfx/Voter_ID.png" />
+                              <Image url="@Voter_ID.png" />
                            </image>
                         </ImageView>
                         <GridPane layoutX="22.0" layoutY="323.0" prefHeight="279.0" prefWidth="380.0">
@@ -414,7 +417,7 @@
                   </AnchorPane>
                </children>
             </StackPane>
-            <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+            <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
                <children>
                   <AnchorPane prefHeight="625.0" prefWidth="420.0">
                      <children>
@@ -423,24 +426,148 @@
                               <Font name="Trebuchet MS Bold Italic" size="32.0" />
                            </font>
                         </Label>
+                        <Accordion layoutX="14.0" layoutY="133.0" prefHeight="452.0" prefWidth="402.0">
+                           <panes>
+                              <TitledPane fx:id="position1_A" animated="false" text="Position 1">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Voter_ID.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Voter_ID.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                          <TextArea layoutX="200.0" layoutY="173.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane fx:id="position2_A" animated="false" text="Position 2">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Voter_ID.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Voter_ID.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                          <TextArea layoutX="200.0" layoutY="173.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane fx:id="position3_A" animated="false" text="Position 3">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Voter_ID.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Voter_ID.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                          <TextArea layoutX="200.0" layoutY="173.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane fx:id="position4_A" animated="false" text="Position 4">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Voter_ID.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Voter_ID.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                          <TextArea layoutX="200.0" layoutY="173.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                           </panes>
+                        </Accordion>
+                        <TextField fx:id="electionDescription_T" layoutX="121.0" layoutY="79.0" prefHeight="26.0" prefWidth="178.0" text="Fall 2021 SGA Special Elections" />
+                        <Button layoutX="210.0" layoutY="586.0" mnemonicParsing="false" text="Admin" />
+                        <PasswordField layoutX="263.0" layoutY="586.0" text="Password Field " />
                      </children>
                   </AnchorPane>
                </children>
             </StackPane>
-            <StackPane fx:id="VotePane" layoutX="211.0" prefHeight="625.0" prefWidth="420.0" visible="false">
+            <StackPane fx:id="VotePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
                <children>
                   <AnchorPane prefHeight="625.0" prefWidth="420.0">
                      <children>
-                        <Label layoutX="151.0" layoutY="14.0" text="VOTE" textFill="#3a2b70">
+                        <Label layoutX="160.0" layoutY="14.0" text="VOTE" textFill="#3a2b70">
                            <font>
                               <Font name="Trebuchet MS Bold Italic" size="32.0" />
                            </font>
                         </Label>
+                        <TextField fx:id="electionDescription_T1" layoutX="114.0" layoutY="52.0" prefHeight="26.0" prefWidth="178.0" text="Fall 2021 SGA Special Elections" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="128.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@vote-count-ballot.gif" />
+                           </image>
+                        </ImageView>
+                        <TextArea layoutX="278.0" layoutY="153.0" prefHeight="64.0" prefWidth="128.0" text="Part 1&#10;First Past The Post&#10;Election System" />
+                        <GridPane layoutX="29.0" layoutY="244.0" prefHeight="306.0" prefWidth="374.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ChoiceBox prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" />
+                              <ChoiceBox prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ChoiceBox prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ChoiceBox prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="Position 4" GridPane.rowIndex="3" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="Position 2" GridPane.rowIndex="1" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="Position 1" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="Position 1" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="Position 3" GridPane.rowIndex="2" />
+                              <Button fx:id="castBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="167.0" text="Cast Single Vote" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ListView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                        <ListView prefHeight="200.0" prefWidth="200.0" />
+                        <ListView layoutX="28.0" layoutY="457.0" prefHeight="200.0" prefWidth="200.0" />
+                        <ListView layoutX="28.0" layoutY="457.0" prefHeight="200.0" prefWidth="200.0" />
+                        <ListView layoutY="482.0" prefHeight="200.0" prefWidth="200.0" />
                      </children>
                   </AnchorPane>
                </children>
             </StackPane>
-            <StackPane fx:id="ResultsPane" layoutX="211.0" prefHeight="625.0" prefWidth="420.0">
+            <StackPane fx:id="ResultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
                <children>
                   <AnchorPane prefHeight="625.0" prefWidth="420.0">
                      <children>
