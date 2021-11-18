@@ -1,4 +1,4 @@
-package FacilitatingDemocracy;
+package jfx;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class dbAccess {
     private final String url = "jdbc:postgresql://localhost/democracy";
     private final String user = "postgres";
-    private final String password = "<password>";
+    private final String password = "postgres";
 
 // attempt to connect with postgres server
 
