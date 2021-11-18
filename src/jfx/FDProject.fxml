@@ -6,11 +6,11 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
@@ -94,23 +94,23 @@
                            <font>
                               <Font name="Verdana" size="14.0" />
                            </font></Button>
-                        <Button fx:id="RegistrationPage_B" mnemonicParsing="false" onAction="#gotoRegistrationPage" prefHeight="25.0" prefWidth="159.0" text="Voter Registration" GridPane.rowIndex="1">
+                        <Button fx:id="registrationPane_B" mnemonicParsing="false" onAction="#gotoRegistration" prefHeight="25.0" prefWidth="159.0" text="Voter Registration" GridPane.rowIndex="1">
                            <font>
                               <Font name="Verdana" size="14.0" />
                            </font></Button>
-                        <Button fx:id="loginPage_B" mnemonicParsing="false" onAction="#gotoLoginPage" prefHeight="25.0" prefWidth="159.0" text="Voter Login" GridPane.rowIndex="2">
+                        <Button fx:id="loginPane_B" mnemonicParsing="false" onAction="#gotoLogin" prefHeight="25.0" prefWidth="159.0" text="Voter Login" GridPane.rowIndex="2">
                            <font>
                               <Font name="Verdana" size="14.0" />
                            </font></Button>
-                        <Button fx:id="viewCandidates_B" mnemonicParsing="false" onAction="#gotoCandidatesPage" prefHeight="25.0" prefWidth="159.0" text="View Candidates" GridPane.rowIndex="3">
+                        <Button fx:id="candidatesPane_B" mnemonicParsing="false" onAction="#gotoCandidates" prefHeight="25.0" prefWidth="159.0" text="View Candidates" GridPane.rowIndex="3">
                            <font>
                               <Font name="Verdana" size="14.0" />
                            </font></Button>
-                        <Button fx:id="votingPage_B" mnemonicParsing="false" onAction="#gotoVotingPage" prefHeight="25.0" prefWidth="159.0" text="VOTE" GridPane.rowIndex="4">
+                        <Button fx:id="votingPage_B" mnemonicParsing="false" onAction="#gotoVoting" prefHeight="25.0" prefWidth="159.0" text="VOTE" GridPane.rowIndex="4">
                            <font>
                               <Font name="Verdana" size="14.0" />
                            </font></Button>
-                        <Button fx:id="viewResults_B" mnemonicParsing="false" onAction="#gotoResultsPage" prefHeight="25.0" prefWidth="159.0" text="Results" GridPane.rowIndex="5">
+                        <Button fx:id="resultsPane_B" mnemonicParsing="false" onAction="#gotoResults" prefHeight="25.0" prefWidth="159.0" text="Results" GridPane.rowIndex="5">
                            <font>
                               <Font name="Verdana" size="14.0" />
                            </font></Button>
@@ -182,9 +182,9 @@
                   </AnchorPane>
                </children>
             </StackPane>
-            <StackPane fx:id="registerPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+            <StackPane fx:id="registrationPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
                <children>
-                  <AnchorPane fx:id="RegistrationPage" prefHeight="625.0" prefWidth="420.0">
+                  <AnchorPane prefHeight="625.0" prefWidth="420.0">
                      <children>
                         <Label layoutX="83.0" layoutY="14.0" text="Register to Vote" textFill="#3a2b70">
                            <font>
@@ -282,7 +282,7 @@
                               <Image url="@Voter_ID.png" />
                            </image>
                         </ImageView>
-                        <GridPane layoutX="22.0" layoutY="323.0" prefHeight="279.0" prefWidth="380.0">
+                        <GridPane fx:id="loginGrid1" layoutX="22.0" layoutY="323.0" prefHeight="279.0" prefWidth="380.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="155.0" />
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="225.0" />
@@ -319,7 +319,7 @@
                                     <Font name="Verdana" size="12.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="login_B" mnemonicParsing="false" onAction="#Register" prefHeight="25.0" prefWidth="234.0" text="Login to Vote" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Button fx:id="login_B" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="234.0" text="Login to Vote" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Verdana" size="12.0" />
                                  </font>
@@ -329,14 +329,14 @@
                                     <Font name="Verdana" size="12.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="forgotPassword_B" mnemonicParsing="false" onAction="#Register" prefHeight="25.0" prefWidth="234.0" text="Forgot Password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <Button fx:id="forgotPassword_B" mnemonicParsing="false" onAction="#ForgotPassword" prefHeight="25.0" prefWidth="234.0" text="Forgot Password" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Verdana" size="12.0" />
                                  </font>
                               </Button>
                            </children>
                         </GridPane>
-                        <GridPane layoutX="22.0" layoutY="189.0" prefHeight="406.0" prefWidth="380.0" visible="false">
+                        <GridPane fx:id="loginGrid2" layoutX="22.0" layoutY="189.0" prefHeight="406.0" prefWidth="380.0" visible="false">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="10.0" prefWidth="155.0" />
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="225.0" />
@@ -375,7 +375,7 @@
                                     <Font name="Verdana" size="12.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="recoverPassword_B1" mnemonicParsing="false" onAction="#RecoverPassword" prefHeight="25.0" prefWidth="234.0" text="Recover Login" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Button fx:id="recoverPassword_B" mnemonicParsing="false" onAction="#RecoverPassword" prefHeight="25.0" prefWidth="234.0" text="Recover Login" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font name="Verdana" size="12.0" />
                                  </font>
@@ -405,7 +405,7 @@
                                     <Font name="Verdana" size="12.0" />
                                  </font>
                               </TextField>
-                              <Button fx:id="login_B1" mnemonicParsing="false" onAction="#gotoLoginPage" prefHeight="25.0" prefWidth="234.0" text="Back to Login" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                              <Button fx:id="login_B2" mnemonicParsing="false" onAction="#gotoLogin" prefHeight="25.0" prefWidth="234.0" text="Back to Login" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                  <font>
                                     <Font name="Verdana" size="12.0" />
                                  </font>
@@ -425,9 +425,15 @@
                               <Font name="Trebuchet MS Bold Italic" size="32.0" />
                            </font>
                         </Label>
-                        <Accordion layoutX="14.0" layoutY="133.0" prefHeight="452.0" prefWidth="402.0">
+                        <TextField fx:id="electionDescription_T" layoutX="133.0" layoutY="52.0" prefHeight="26.0" prefWidth="155.0" text="Fall 2021 Special Elections" />
+                        <ImageView fitHeight="114.0" fitWidth="110.0" layoutX="156.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@podium.png" />
+                           </image>
+                        </ImageView>
+                        <Accordion layoutX="14.0" layoutY="217.0" prefHeight="372.0" prefWidth="402.0">
                            <panes>
-                              <TitledPane fx:id="position1_A" animated="false" text="Position 1">
+                              <TitledPane fx:id="candidate1_A" animated="false" prefWidth="402.0" text="Candidate 1">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -436,18 +442,13 @@
                                                 <Image url="@Voter_ID.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@Voter_ID.png" />
-                                             </image>
-                                          </ImageView>
-                                          <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                          <TextArea layoutX="200.0" layoutY="173.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                          <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="202.0" text="Candidate Description" />
+                                          <TextArea layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
                                        </children>
                                     </AnchorPane>
                                  </content>
                               </TitledPane>
-                              <TitledPane fx:id="position2_A" animated="false" text="Position 2">
+                              <TitledPane fx:id="candidate2_A" animated="false" text="Candidate 2">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -456,18 +457,13 @@
                                                 <Image url="@Voter_ID.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@Voter_ID.png" />
-                                             </image>
-                                          </ImageView>
                                           <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                          <TextArea layoutX="200.0" layoutY="173.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                          <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
                                        </children>
                                     </AnchorPane>
                                  </content>
                               </TitledPane>
-                              <TitledPane fx:id="position3_A" animated="false" text="Position 3">
+                              <TitledPane fx:id="candidate3_A" animated="false" text="Candidate 3">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -476,18 +472,13 @@
                                                 <Image url="@Voter_ID.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@Voter_ID.png" />
-                                             </image>
-                                          </ImageView>
                                           <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                          <TextArea layoutX="200.0" layoutY="173.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                          <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
                                        </children>
                                     </AnchorPane>
                                  </content>
                               </TitledPane>
-                              <TitledPane fx:id="position4_A" animated="false" text="Position 4">
+                              <TitledPane fx:id="candidate4_A" animated="false" text="Candidate 4">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -496,72 +487,146 @@
                                                 <Image url="@Voter_ID.png" />
                                              </image>
                                           </ImageView>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+                                          <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                          <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane fx:id="candidate5_A" animated="false" text="Candidate 5">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@Voter_ID.png" />
                                              </image>
                                           </ImageView>
                                           <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                          <TextArea layoutX="200.0" layoutY="173.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                          <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane fx:id="candidate6_A" animated="false" text="Candidate 6">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@Voter_ID.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
+                                          <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
                                        </children>
                                     </AnchorPane>
                                  </content>
                               </TitledPane>
                            </panes>
                         </Accordion>
-                        <TextField fx:id="electionDescription_T" layoutX="121.0" layoutY="79.0" prefHeight="26.0" prefWidth="178.0" text="Fall 2021 SGA Special Elections" />
-                        <Button layoutX="210.0" layoutY="586.0" mnemonicParsing="false" text="Admin" />
-                        <PasswordField layoutX="263.0" layoutY="586.0" text="Password Field " />
                      </children>
                   </AnchorPane>
                </children>
             </StackPane>
-            <StackPane fx:id="VotePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+            <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
                <children>
                   <AnchorPane prefHeight="625.0" prefWidth="420.0">
                      <children>
-                        <Label layoutX="160.0" layoutY="14.0" text="VOTE" textFill="#3a2b70">
+                        <Label layoutX="172.0" layoutY="14.0" text="VOTE" textFill="#3a2b70">
                            <font>
                               <Font name="Trebuchet MS Bold Italic" size="32.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="electionDescription_T1" layoutX="114.0" layoutY="52.0" prefHeight="26.0" prefWidth="178.0" text="Fall 2021 SGA Special Elections" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="128.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                        <TextField fx:id="electionDescription_T1" editable="false" layoutX="137.0" layoutY="52.0" prefHeight="26.0" prefWidth="155.0" text="Fall 2021 Special Elections" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="140.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@vote-count-ballot.gif" />
                            </image>
                         </ImageView>
-                        <TextArea layoutX="278.0" layoutY="153.0" prefHeight="64.0" prefWidth="128.0" text="Part 1&#10;First Past The Post&#10;Election System" />
-                        <GridPane layoutX="29.0" layoutY="244.0" prefHeight="306.0" prefWidth="374.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <GridPane fx:id="ballot1_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0" visible="false">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.99996337890624" minWidth="10.0" prefWidth="183.20001220703125" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.59996337890624" minWidth="10.0" prefWidth="191.99998779296874" />
+                           </columnConstraints>
+                           <rowConstraints>
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
-                              <ChoiceBox prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" />
-                              <ChoiceBox prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <ChoiceBox prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <ChoiceBox prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label prefHeight="18.0" prefWidth="164.0" text="Position 4" GridPane.rowIndex="3" />
-                              <Label prefHeight="18.0" prefWidth="164.0" text="Position 2" GridPane.rowIndex="1" />
-                              <Label prefHeight="18.0" prefWidth="164.0" text="Position 1" />
-                              <Label prefHeight="18.0" prefWidth="164.0" text="Position 1" />
-                              <Label prefHeight="18.0" prefWidth="164.0" text="Position 3" GridPane.rowIndex="2" />
-                              <Button fx:id="castBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="167.0" text="Cast Single Vote" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label prefHeight="18.0" prefWidth="186.0" text="Voting System 1" />
+                              <Label prefHeight="18.0" prefWidth="186.0" text="First Past the Post" GridPane.columnIndex="1" />
+                              <Label prefHeight="18.0" prefWidth="182.0" text="Choose only a single candidate." GridPane.rowIndex="1" />
+                              <Label text="Don't throw away your vote!" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="This person represents me:" GridPane.rowIndex="3" />
+                              <ChoiceBox fx:id="oneOfOne_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Button fx:id="fptpBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Single Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <ComboBox prefWidth="150.0" promptText="Can 1" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="ballot2_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0" visible="false">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.8" minWidth="10.0" prefWidth="183.999951171875" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.5999755859375" minWidth="10.0" prefWidth="191.20004882812503" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="186.0" text="Voting System 2" />
+                              <Label prefHeight="18.0" prefWidth="186.0" text="Single Transferrable Vote" GridPane.columnIndex="1" />
+                              <Label prefHeight="18.0" prefWidth="182.0" text="Choose your top 2 candidates!" GridPane.rowIndex="1" />
+                              <Label text="Top Pick and Safety Vote!" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="Most represents me:" GridPane.rowIndex="2" />
+                              <ChoiceBox fx:id="oneOfTwo_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="If not the above, I'll settle for:" GridPane.rowIndex="3" />
+                              <ChoiceBox fx:id="twoOfTwo_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ComboBox prefWidth="150.0" promptText="Can 1" GridPane.rowIndex="5" />
+                              <Button fx:id="stvBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Single Transferrable Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                        <GridPane fx:id="ballot3_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.79998779296875" minWidth="10.0" prefWidth="182.4000244140625" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.19998779296873" minWidth="10.0" prefWidth="191.99997558593748" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="186.0" text="Voting System 3" />
+                              <Label prefHeight="18.0" prefWidth="186.0" text="Ranked Choice Voting" GridPane.columnIndex="1" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="Top Pick:" GridPane.rowIndex="1" />
+                              <ChoiceBox fx:id="oneOfFour_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="2nd Choice:" GridPane.rowIndex="2" />
+                              <ChoiceBox fx:id="twoOfFour_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="3rd Choice:" GridPane.rowIndex="3" />
+                              <ChoiceBox fx:id="threeOfFour_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label prefHeight="18.0" prefWidth="164.0" text="4th Choice:" GridPane.rowIndex="4" />
+                              <ChoiceBox fx:id="fourOfFour_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ComboBox prefWidth="150.0" promptText="Can 1" GridPane.rowIndex="5" />
+                              <Button fx:id="rcBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Ranked Choice Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                            </children>
                         </GridPane>
                      </children>
                   </AnchorPane>
                </children>
             </StackPane>
-            <StackPane fx:id="ResultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+            <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
                <children>
                   <AnchorPane prefHeight="625.0" prefWidth="420.0">
                      <children>
