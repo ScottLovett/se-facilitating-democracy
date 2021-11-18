@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class App {
+public class dbAccess {
     private final String url = "jdbc:postgresql://localhost/democracy";
     private final String user = "postgres";
     private final String password = "<password>";
@@ -24,7 +24,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        App app = new App();
+        dbAccess app = new dbAccess();
         app.connect();
     }
 }
