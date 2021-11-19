@@ -150,7 +150,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="422.0">
                <children>
@@ -452,8 +452,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="202.0" text="Candidate Description" />
-                                    <TextArea layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can1Description_T" layoutX="200.0" prefHeight="150.0" prefWidth="202.0" text="Candidate Description" />
+                                    <TextArea fx:id="can1policies_T" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -539,7 +539,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -554,7 +554,7 @@
                         <Image url="@../vote-count-ballot.gif" />
                      </image>
                   </ImageView>
-                  <GridPane fx:id="ballot1_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0" visible="false">
+                  <GridPane fx:id="fptpBallot_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.99996337890624" minWidth="10.0" prefWidth="183.20001220703125" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.59996337890624" minWidth="10.0" prefWidth="191.99998779296874" />
@@ -578,7 +578,7 @@
                         <ComboBox prefWidth="150.0" promptText="Can 1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
-                  <GridPane fx:id="ballot2_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0" visible="false">
+                  <GridPane fx:id="stvBallot_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0" visible="false">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.8" minWidth="10.0" prefWidth="183.999951171875" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.5999755859375" minWidth="10.0" prefWidth="191.20004882812503" />
@@ -604,7 +604,7 @@
                         <Button fx:id="stvBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Single Transferrable Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
-                  <GridPane fx:id="ballot3_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0">
+                  <GridPane fx:id="rcBallot_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0" visible="false">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.79998779296875" minWidth="10.0" prefWidth="182.4000244140625" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.19998779296873" minWidth="10.0" prefWidth="191.99997558593748" />
