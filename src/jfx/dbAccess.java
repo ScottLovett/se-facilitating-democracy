@@ -1,8 +1,6 @@
 package jfx;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class dbAccess {
     private final String url = "jdbc:postgresql://localhost/democracy";
@@ -19,12 +17,32 @@ public class dbAccess {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
         return conn;
+    }
+
+    public void getUsers() {
+
+        String SQL = "SELECT Name, studentnum FROM users";
+
+        try (Connection conn = connect();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(SQL)) {
+            // display actor information
+            displayUsers(rs);
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    private void displayUsers(ResultSet rs) throws SQLException {
+        while (rs.next()) {
+            System.out.println(rs.getString("name") + "\t"
+                    + rs.getString("studentnum"));
+        }
     }
 
     public static void main(String[] args) {
         dbAccess app = new dbAccess();
-        app.connect();
+        app.getUsers();
     }
 }
