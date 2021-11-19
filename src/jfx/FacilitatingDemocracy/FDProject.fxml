@@ -169,7 +169,7 @@
                         <Font name="Trebuchet MS Bold Italic" size="42.0" />
                      </font>
                   </Label>
-                  <TextArea layoutX="29.0" layoutY="431.0" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD )&#10;&#10;Noel Vazquez&#10;Scott Lovett&#10;Antonio Hendricks&#10;Juan Glinton">
+                  <TextArea layoutX="29.0" layoutY="431.0" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD )&#10;&#10;Antonio Hendricks&#10;Scott Lovett&#10;Noel Vazquez&#10;Juan Glinton">
                      <font>
                         <Font name="Verdana" size="12.0" />
                      </font>
