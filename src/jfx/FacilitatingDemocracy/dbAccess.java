@@ -1,4 +1,4 @@
-package jfx;
+package jfx.FacilitatingDemocracy;
 
 import java.sql.*;
 
@@ -27,7 +27,7 @@ public class dbAccess {
         try (Connection conn = connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(SQL)) {
-            // display actor information
+            // display user information
             displayUsers(rs);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
