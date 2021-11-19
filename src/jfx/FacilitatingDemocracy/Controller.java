@@ -1,25 +1,20 @@
-/**
+/*
  * Sample Skeleton for 'FDProject.fxml' Controller Class
  */
 
 package FacilitatingDemocracy;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class Controller {
 
@@ -306,7 +301,7 @@ public class Controller {
             registrationPane.setVisible(false);
             loginPane.setVisible(false);
             candidatesPane.setVisible(false);
-            votingPane.setVisible(false);
+            votePane.setVisible(false);
             resultsPane.setVisible(false);
             homePane.setVisible(true);
         } else {
@@ -315,7 +310,7 @@ public class Controller {
             registrationPane.setVisible(false);
             loginPane.setVisible(false);
             candidatesPane.setVisible(false);
-            votingPane.setVisible(false);
+            votePane.setVisible(false);
             resultsPane.setVisible(false);
             descriptionPane.setVisible(true);
         }
@@ -330,7 +325,7 @@ public class Controller {
             homePane.setVisible(false);
             loginPane.setVisible(false);
             candidatesPane.setVisible(false);
-            votingPane.setVisible(false);
+            votePane.setVisible(false);
             resultsPane.setVisible(false);
             registrationPane.setVisible(true);
         } else {
@@ -339,7 +334,7 @@ public class Controller {
             homePane.setVisible(false);
             loginPane.setVisible(false);
             candidatesPane.setVisible(false);
-            votingPane.setVisible(false);
+            votePane.setVisible(false);
             resultsPane.setVisible(false);
             registrationPane.setVisible(true);
         }
@@ -354,7 +349,7 @@ public class Controller {
             homePane.setVisible(false);
             registrationPane.setVisible(false);
             candidatesPane.setVisible(false);
-            votingPane.setVisible(false);
+            votePane.setVisible(false);
             resultsPane.setVisible(false);
             loginPane.setVisible(true);
         } else {
@@ -363,7 +358,7 @@ public class Controller {
             homePane.setVisible(false);
             registrationPane.setVisible(false);
             candidatesPane.setVisible(false);
-            votingPane.setVisible(false);
+            votePane.setVisible(false);
             resultsPane.setVisible(false);
             loginPane.setVisible(true);
         }
@@ -378,7 +373,7 @@ public class Controller {
             homePane.setVisible(false);
             registrationPane.setVisible(false);
             loginPane.setVisible(false);
-            votingPane.setVisible(false);
+            votePane.setVisible(false);
             resultsPane.setVisible(false);
             candidatesPane.setVisible(true);
         } else {
@@ -387,7 +382,7 @@ public class Controller {
             homePane.setVisible(false);
             registrationPane.setVisible(false);
             loginPane.setVisible(false);
-            votingPane.setVisible(false);
+            votePane.setVisible(false);
             resultsPane.setVisible(false);
             candidatesPane.setVisible(true);
         }
@@ -404,7 +399,7 @@ public class Controller {
             loginPane.setVisible(false);
             candidatesPane.setVisible(false);
             resultsPane.setVisible(false);
-            votingPane.setVisible(true);
+            votePane.setVisible(true);
         } else {
             clear();
             descriptionPane.setVisible(false);
@@ -413,7 +408,7 @@ public class Controller {
             loginPane.setVisible(false);
             candidatesPane.setVisible(false);
             resultsPane.setVisible(false);
-            votingPane.setVisible(true);
+            votePane.setVisible(true);
         }
     }
 
@@ -427,7 +422,7 @@ public class Controller {
             registrationPane.setVisible(false);
             loginPane.setVisible(false);
             candidatesPane.setVisible(false);
-            votingPane.setVisible(false);
+            votePane.setVisible(false);
             resultsPane.setVisible(true);
         } else {
             clear();
@@ -436,7 +431,7 @@ public class Controller {
             registrationPane.setVisible(false);
             loginPane.setVisible(false);
             candidatesPane.setVisible(false);
-            votingPane.setVisible(false);
+            votePane.setVisible(false);
             resultsPane.setVisible(true);
         }
     }
@@ -446,6 +441,12 @@ public class Controller {
     void exitProgram(ActionEvent event) {
         // Exits the program
         System.exit(0);
+    }
+
+    void clear() {
+        // Clears all inputs
+        // New FLight
+
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
