@@ -22,7 +22,7 @@ public class dbAccess {
 
     public void getUsers() {
 
-        String SQL = "SELECT Name, studentnum FROM users";
+        String SQL = "SELECT name, studentnum FROM users";
 
         try (Connection conn = connect();
              Statement stmt = conn.createStatement();
@@ -40,6 +40,25 @@ public class dbAccess {
                     + rs.getString("studentnum"));
         }
     }
+
+    public int getFirstVote(int candidatenum) {
+        String SQL = "SELECT count(*) FROM votes " + "WHERE vote1 = ?";
+        int count = 0;
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+
+            pstmt.setInt(1, candidatenum);
+            ResultSet rs = pstmt.executeQuery();
+            count = rs.getInt(1);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return count;
+    }
+
 
     public static void main(String[] args) {
         dbAccess app = new dbAccess();
