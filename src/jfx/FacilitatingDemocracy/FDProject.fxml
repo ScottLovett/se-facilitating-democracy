@@ -11,7 +11,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -148,7 +147,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="422.0">
                <children>
@@ -167,7 +166,7 @@
                         <Font name="Trebuchet MS Bold Italic" size="42.0" />
                      </font>
                   </Label>
-                  <TextArea editable="false" layoutX="29.0" layoutY="431.0" mouseTransparent="true" pickOnBounds="false" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD )&#10;&#10;Antonio Hendricks&#10;Scott Lovett&#10;Noel Vazquez&#10;Juan Glinton">
+                  <TextArea editable="false" layoutX="29.0" layoutY="431.0" mouseTransparent="true" pickOnBounds="false" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD)&#10;&#10;Antonio Hendricks&#10;Scott Lovett&#10;Noel Vazquez&#10;Juan Glinton">
                      <font>
                         <Font name="Verdana" size="12.0" />
                      </font>
@@ -176,7 +175,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="registrationPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="registrationPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -667,34 +666,14 @@
                         <Font name="Trebuchet MS Bold Italic" size="32.0" />
                      </font>
                   </Label>
-                  <Label layoutX="17.0" layoutY="187.0" prefHeight="18.0" prefWidth="354.0" text="To Maximize Voter Satisfaction, see Ranked Choice Voting">
+                  <Label layoutX="33.0" layoutY="90.0" prefHeight="18.0" prefWidth="354.0" text="To Maximize Voter Satisfaction, see Ranked Choice Voting">
                      <font>
                         <Font name="Verdana" size="12.0" />
                      </font>
                   </Label>
-                  <RadioButton fx:id="fptp_B" layoutX="38.0" layoutY="131.0" mnemonicParsing="false" onAction="#FirstPastPost" prefHeight="28.0" prefWidth="155.0" text="First Past The Post">
-                     <font>
-                        <Font name="Verdana" size="12.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton fx:id="rcv_B" layoutX="130.0" layoutY="159.0" mnemonicParsing="false" onAction="#RankedChoice" prefHeight="28.0" prefWidth="159.0" text="Ranked Choice Voting">
-                     <font>
-                        <Font name="Verdana" size="12.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton fx:id="stv_B" layoutX="194.0" layoutY="131.0" mnemonicParsing="false" onAction="#SingleTransferrable" prefHeight="28.0" prefWidth="177.0" text="Single Transferrable Vote">
-                     <font>
-                        <Font name="Verdana" size="12.0" />
-                     </font>
-                  </RadioButton>
-                  <TextArea fx:id="threeResultsPanes" editable="false" layoutX="9.0" layoutY="215.0" prefHeight="372.0" prefWidth="402.0" promptText="Flight# _ FDate  _ DTime  _ ATime _ DepartCity _ DestCity _ AvailableSeats _ AA1150   20Dec15  23:00   02:00    FORT WAYNE  ORLANDO         70       AA1230    5Nov15   11:30   14:00   BLACKSBURG  BOCA RATON     25    AA1140    4Jan15   07:00    11:00   SEATTEL         PHONEIX           42  " text="3 Panes Here&#10;One for each election system">
-                     <font>
-                        <Font name="Courier New" size="12.0" />
-                     </font>
-                  </TextArea>
-                  <Accordion layoutX="9.0" layoutY="250.0" prefHeight="333.0" prefWidth="402.0">
+                  <Accordion layoutX="9.0" layoutY="132.0" prefHeight="452.0" prefWidth="402.0">
                      <panes>
-                        <TitledPane fx:id="fptp_A" animated="false" text="First Past The Post">
+                        <TitledPane fx:id="fptp_A" animated="false" prefHeight="346.0" prefWidth="402.0" text="First Past The Post">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -706,6 +685,7 @@
                                           <NumberAxis side="LEFT" />
                                        </yAxis>
                                     </BarChart>
+                                    <TextArea fx:id="fptpDescription_T" layoutX="-1.0" layoutY="263.0" prefHeight="110.0" prefWidth="402.0" text="Describe Data" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -722,6 +702,7 @@
                                           <NumberAxis side="LEFT" />
                                        </yAxis>
                                     </BarChart>
+                                    <TextArea fx:id="stvDescription_T" layoutX="-1.0" layoutY="264.0" prefHeight="110.0" prefWidth="402.0" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -738,6 +719,7 @@
                                           <NumberAxis side="LEFT" />
                                        </yAxis>
                                     </BarChart>
+                                    <TextArea fx:id="rcDescription_T" layoutY="264.0" prefHeight="110.0" prefWidth="402.0" />
                                  </children>
                               </AnchorPane>
                            </content>

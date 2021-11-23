@@ -422,6 +422,12 @@ public class Controller {
     // Menu Option 5
     @FXML
     void gotoVoting(ActionEvent event) { // Only allow access if voter has logged in
+//        if (loggedin == true) {
+//            break;
+//        } else {
+//            gotoLogin();
+//            return;
+//        }
         if (registrationPane.isVisible()) {
             clearInputs();
             descriptionPane.setVisible(false);
@@ -455,6 +461,7 @@ public class Controller {
             candidatesPane.setVisible(false);
             votePane.setVisible(false);
             resultsPane.setVisible(true);
+            rcv_A.setExpanded(true);
         } else {
             clearInputs();
             descriptionPane.setVisible(false);
@@ -464,6 +471,7 @@ public class Controller {
             candidatesPane.setVisible(false);
             votePane.setVisible(false);
             resultsPane.setVisible(true);
+            rcv_A.setExpanded(true);
         }
     }
     
