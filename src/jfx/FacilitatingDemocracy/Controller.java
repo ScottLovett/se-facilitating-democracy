@@ -274,23 +274,25 @@ public class Controller {
 
     @FXML
     void Register(ActionEvent event) { // sends user info to BackEnd
-
+        register_B.setText("Registered!");
+        validate_T.setText("Ready to Vote!");
+        name_T.setMouseTransparent(true);
     }
 
     @FXML
     void Vote(ActionEvent event) { // Sends Voting ballots to BackEnd
         if (fptpBallot_G.isVisible()) {
-            clear();
+            clearInputs();
             fptpBallot_G.setVisible(false);
             stvBallot_G.setVisible(true);
         }
         else if (stvBallot_G.isVisible()) {
-            clear();
+            clearInputs();
             stvBallot_G.setVisible(false);
             rcBallot_G.setVisible(true);
         }
         else if (rcBallot_G.isVisible()) {
-            clear();
+            clearInputs();
             rcBallot_G.setVisible(false);
             endBallot_G.setVisible(true);
         }
@@ -322,7 +324,7 @@ public class Controller {
     @FXML
     void gotoExpand(ActionEvent event) {
         if (descriptionPane.isVisible()) {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             registrationPane.setVisible(false);
             loginPane.setVisible(false);
@@ -331,7 +333,7 @@ public class Controller {
             resultsPane.setVisible(false);
             homePane.setVisible(true);
         } else {
-            clear();
+            clearInputs();
             homePane.setVisible(false);
             registrationPane.setVisible(false);
             loginPane.setVisible(false);
@@ -346,7 +348,7 @@ public class Controller {
     @FXML
     void gotoRegistration(ActionEvent event) {
         if (registrationPane.isVisible()) {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
             loginPane.setVisible(false);
@@ -354,8 +356,10 @@ public class Controller {
             votePane.setVisible(false);
             resultsPane.setVisible(false);
             registrationPane.setVisible(true);
+            register_B.setText("Register");
+            validate_T.clear();
         } else {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
             loginPane.setVisible(false);
@@ -363,6 +367,7 @@ public class Controller {
             votePane.setVisible(false);
             resultsPane.setVisible(false);
             registrationPane.setVisible(true);
+            register_B.setText("Register");
         }
     }
 
@@ -370,7 +375,7 @@ public class Controller {
     @FXML
     void gotoLogin(ActionEvent event) {
         if (registrationPane.isVisible()) {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
             registrationPane.setVisible(false);
@@ -379,7 +384,7 @@ public class Controller {
             resultsPane.setVisible(false);
             loginPane.setVisible(true);
         } else {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
             registrationPane.setVisible(false);
@@ -394,7 +399,7 @@ public class Controller {
     @FXML
     void gotoCandidates(ActionEvent event) {
         if (registrationPane.isVisible()) {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
             registrationPane.setVisible(false);
@@ -403,7 +408,7 @@ public class Controller {
             resultsPane.setVisible(false);
             candidatesPane.setVisible(true);
         } else {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
             registrationPane.setVisible(false);
@@ -418,7 +423,7 @@ public class Controller {
     @FXML
     void gotoVoting(ActionEvent event) { // Only allow access if voter has logged in
         if (registrationPane.isVisible()) {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
             registrationPane.setVisible(false);
@@ -427,7 +432,7 @@ public class Controller {
             resultsPane.setVisible(false);
             votePane.setVisible(true);
         } else {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
             registrationPane.setVisible(false);
@@ -442,7 +447,7 @@ public class Controller {
     @FXML
     void gotoResults(ActionEvent event) {
         if (registrationPane.isVisible()) {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
             registrationPane.setVisible(false);
@@ -451,7 +456,7 @@ public class Controller {
             votePane.setVisible(false);
             resultsPane.setVisible(true);
         } else {
-            clear();
+            clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
             registrationPane.setVisible(false);
@@ -469,8 +474,20 @@ public class Controller {
         System.exit(0);
     }
 
-    void clear() {
+    void clearInputs() {
         // Clears all inputs
+        name_T.clear();
+        name_T.setMouseTransparent(false);
+        bDay_T.clear();
+        bDay_T.setMouseTransparent(false);
+        id_T.clear();
+        id_T.setMouseTransparent(false);
+        address_T.clear();
+        address_T.setMouseTransparent(false);
+        newUsername_T.clear();
+        newUsername_T.setMouseTransparent(false);
+        personalPassword_T.clear();
+        personalPassword_T.setMouseTransparent(false);
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete

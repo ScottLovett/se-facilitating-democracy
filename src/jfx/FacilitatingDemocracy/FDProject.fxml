@@ -148,7 +148,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="422.0">
                <children>
@@ -176,7 +176,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="registrationPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="registrationPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -260,7 +260,7 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="validate_T" alignment="CENTER" editable="false" promptText="Registered!" text="Register Here" GridPane.rowIndex="6">
+                        <TextField fx:id="validate_T" alignment="CENTER" editable="false" promptText="Register Here -&gt;" GridPane.rowIndex="6">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
