@@ -53,6 +53,23 @@ public class dbAccess {
         return count;
     }
 
+    public int getFirstPastThePost(int candidatenum) {
+        String SQL = "SELECT count(*) FROM votes " + "WHERE fptpvote = ?";
+        int count = 0;
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+
+            pstmt.setInt(1, candidatenum);
+            ResultSet rs = pstmt.executeQuery();
+            count = rs.getInt(1);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return count;
+    }
+
     public int getFirstElimination(int elim, int candidatenum) {
         String SQL = "SELECT count(*) FROM votes " + "WHERE vote1 = ? " + "AND vote2 = ?";
         int count = 0;
