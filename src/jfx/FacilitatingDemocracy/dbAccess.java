@@ -54,7 +54,7 @@ public class dbAccess {
     }
 
     public int getFirstElimination(int elim, int candidatenum) {
-        String SQL = "SELECT count(*) FROM votes " + "WHERE vote1 = elim1 " + "AND vote2 = candidatenum";
+        String SQL = "SELECT count(*) FROM votes " + "WHERE vote1 = ? " + "AND vote2 = ?";
         int count = 0;
 
         try (Connection conn = connect();
@@ -69,6 +69,72 @@ public class dbAccess {
             System.out.println(ex.getMessage());
         }
         return count;
+    }
+
+    public long insertUser(String name, int studentnum) { // inserts user nto database, returns primary key #
+        String SQL = "INSERT INTO users (name,studentnum) "
+                + "VALUES(?,?)";
+
+        long id = 0;
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL,
+                     Statement.RETURN_GENERATED_KEYS)) {
+
+            pstmt.setString(1,name);
+            pstmt.setInt(2,studentnum);
+
+            int affectedRows = pstmt.executeUpdate();
+            // check the affected rows
+            if (affectedRows > 0) {
+                // get the ID back
+                try (ResultSet rs = pstmt.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        id = rs.getLong(1);
+                    }
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return id;
+    }
+
+    public long insertVote(int vote1, int vote2, int vote3, int vote4, int vote5, int studentnum) { // inserts vote nto database, returns primary key #, student num should be same as user
+        String SQL = "INSERT INTO votes (vote1,vote2,vote3,vote4,vote5,userid) "
+                + "VALUES(?,?,?,?,?,?)";
+
+        long id = 0;
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL,
+                     Statement.RETURN_GENERATED_KEYS)) {
+
+            pstmt.setInt(1,vote1);
+            pstmt.setInt(2,vote2);
+            pstmt.setInt(3,vote3);
+            pstmt.setInt(4,vote4);
+            pstmt.setInt(5,vote5);
+            pstmt.setInt(6,studentnum);
+
+            int affectedRows = pstmt.executeUpdate();
+            // check the affected rows
+            if (affectedRows > 0) {
+                // get the ID back
+                try (ResultSet rs = pstmt.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        id = rs.getLong(1);
+                    }
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return id;
     }
 
 
