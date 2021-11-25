@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import FacilitatingDemocracy.dbAccess;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -257,6 +258,9 @@ public class Controller {
 
 //////////////////////////////////////////////////////////////////////////////////////
 
+    private String username;
+    private String password;
+
     @FXML
     void Login(ActionEvent event) { // allows access to voting pane
 
@@ -274,6 +278,10 @@ public class Controller {
 
     @FXML
     void Register(ActionEvent event) { // sends user info to BackEnd
+
+        dbAccess reg = new dbAccess();
+        reg.insertUser(name_T.getText(), Integer.parseInt(id_T.getText()));
+
         register_B.setText("Registered!");
         validate_T.setText("Ready to Vote!");
         name_T.setMouseTransparent(true);
@@ -295,6 +303,9 @@ public class Controller {
             clearInputs();
             rcBallot_G.setVisible(false);
             endBallot_G.setVisible(true);
+
+            dbAccess vote = new dbAccess();
+
         }
     }
 

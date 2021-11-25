@@ -1,4 +1,4 @@
-package jfx.FacilitatingDemocracy;
+package FacilitatingDemocracy;
 
 import java.sql.*;
 
@@ -24,12 +24,12 @@ public class dbAccess {
 
         String SQL = "SELECT count(*) FROM votes";
         int count = 0;
-        
+
         try (Connection conn = connect();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(SQL)) {
-             rs.next();
-             count = rs.getInt(1);
+            rs.next();
+            count = rs.getInt(1);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
@@ -98,8 +98,8 @@ public class dbAccess {
              PreparedStatement pstmt = conn.prepareStatement(SQL,
                      Statement.RETURN_GENERATED_KEYS)) {
 
-            pstmt.setString(1,name);
-            pstmt.setInt(2,studentnum);
+            pstmt.setString(1, name);
+            pstmt.setInt(2, studentnum);
 
             int affectedRows = pstmt.executeUpdate();
             // check the affected rows
@@ -129,12 +129,12 @@ public class dbAccess {
              PreparedStatement pstmt = conn.prepareStatement(SQL,
                      Statement.RETURN_GENERATED_KEYS)) {
 
-            pstmt.setInt(1,vote1);
-            pstmt.setInt(2,vote2);
-            pstmt.setInt(3,vote3);
-            pstmt.setInt(4,vote4);
-            pstmt.setInt(5,vote5);
-            pstmt.setInt(6,studentnum);
+            pstmt.setInt(1, vote1);
+            pstmt.setInt(2, vote2);
+            pstmt.setInt(3, vote3);
+            pstmt.setInt(4, vote4);
+            pstmt.setInt(5, vote5);
+            pstmt.setInt(6, studentnum);
 
             int affectedRows = pstmt.executeUpdate();
             // check the affected rows
@@ -152,11 +152,5 @@ public class dbAccess {
             System.out.println(ex.getMessage());
         }
         return id;
-    }
-
-
-    public static void main(String[] args) {
-        dbAccess app = new dbAccess();
-        System.out.println(app.getTotalVotes());
     }
 }
