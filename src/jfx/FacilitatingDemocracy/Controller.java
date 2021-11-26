@@ -304,7 +304,7 @@ public class Controller {
     }
 
     @FXML
-    void SingleTransferrable(ActionEvent event) { // View Results using Accordian
+    void SingleTransferable(ActionEvent event) { // View Results using Accordian
 
     }
 

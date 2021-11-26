@@ -147,7 +147,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="422.0">
                <children>
@@ -590,7 +590,7 @@
                      </rowConstraints>
                      <children>
                         <Label prefHeight="18.0" prefWidth="186.0" text="Voting System 2" />
-                        <Label prefHeight="18.0" prefWidth="186.0" text="Single Transferrable Vote" GridPane.columnIndex="1" />
+                        <Label prefHeight="18.0" prefWidth="186.0" text="Single Transferable Vote" GridPane.columnIndex="1" />
                         <Label prefHeight="18.0" prefWidth="182.0" text="Choose your top 2 candidates!" GridPane.rowIndex="1" />
                         <Label text="Top Pick and Safety Vote!" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label prefHeight="18.0" prefWidth="164.0" text="Most represents me:" GridPane.rowIndex="2" />
@@ -598,7 +598,7 @@
                         <Label prefHeight="18.0" prefWidth="164.0" text="If not the above, I'll settle for:" GridPane.rowIndex="3" />
                         <ChoiceBox fx:id="twoOfTwo_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <ComboBox prefWidth="150.0" promptText="Can 1" GridPane.rowIndex="5" />
-                        <Button fx:id="stvBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Single Transferrable Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Button fx:id="stvBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Single Transferable Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <GridPane fx:id="rcBallot_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0" visible="false">
@@ -652,7 +652,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -690,7 +690,7 @@
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane fx:id="stv_A" animated="false" text="Single Transferrable Vote">
+                        <TitledPane fx:id="stv_A" animated="false" text="Single Transferable Vote">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
