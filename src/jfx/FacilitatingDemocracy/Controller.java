@@ -16,6 +16,7 @@ import FacilitatingDemocracy.dbAccess;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.stream.IntStream;
 
 public class Controller {
 
@@ -258,6 +259,7 @@ public class Controller {
 
 //////////////////////////////////////////////////////////////////////////////////////
 
+
     private String username;
     private String password;
 
@@ -284,7 +286,16 @@ public class Controller {
 
         register_B.setText("Registered!");
         validate_T.setText("Ready to Vote!");
+
+        register_B.setText("Registered!");
+        validate_T.setText("Ready to Vote!");
         name_T.setMouseTransparent(true);
+        bDay_T.setMouseTransparent(true);
+        id_T.setMouseTransparent(true);
+        address_T.setMouseTransparent(true);
+        newUsername_T.setMouseTransparent(true);
+        personalPassword_T.setMouseTransparent(true);
+
     }
 
     @FXML
@@ -311,17 +322,54 @@ public class Controller {
 
     @FXML
     void FirstPastPost(ActionEvent event) { // View Results using Accordian
+        int[] cantotals = {0,0,0,0,0};
 
+        dbAccess fptp = new dbAccess();
+
+        for (int i=0; i<5; i++){ // pulls totals for fptp from db to array
+            cantotals[i] = fptp.getFirstPastThePost(i);
+        }
+            // set up bar chart
     }
 
     @FXML
     void SingleTransferrable(ActionEvent event) { // View Results using Accordian
+        int[] cantotals = {0,0,0,0,0};
+        int firstloser = 0;
+        
+        dbAccess stv = new dbAccess();
 
+        for (int i=1; i<6; i++){ // pulls first round from db to array
+            cantotals[i] = stv.getFirstVote(i);
+        }
+        firstloser = min(cantotals);
+        firstloser = findIndex(cantotals,firstloser) + 1;
+
+        for (int i=1; i<6; i++){ // pulls second round from db to array
+            cantotals[i] = stv.getFirstElimination(firstloser,i);
+        }
+
+        // set up bar chart
     }
 
     @FXML
     void RankedChoice(ActionEvent event) { // View Results using Accordian
+        int[] cantotals = {0,0,0,0,0};
+        int firstloser = 0;
 
+        dbAccess stv = new dbAccess();
+
+        for (int i=1; i<6; i++){ // pulls first round from db to array
+            cantotals[i] = stv.getFirstVote(i);
+        }
+        firstloser = min(cantotals);
+        firstloser = findIndex(cantotals,firstloser) + 1;
+
+        for (int i=1; i<6; i++){ // pulls second round from db to array
+            cantotals[i] = stv.getFirstElimination(firstloser,i);
+        }
+
+        //set up bar chart
     }
 
     @FXML
@@ -583,4 +631,24 @@ public class Controller {
 
     }
 
+    // utility functions
+    public static int findIndex(int arr[], int t)
+    {
+        int len = arr.length;
+        return IntStream.range(0, len)
+                .filter(i -> t == arr[i])
+                .findFirst() // first occurrence
+                .orElse(-1); // No element found
+    }
+
+    public int min(int [] array) {
+        int min = array[0];
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        return min;
+    }
 }
