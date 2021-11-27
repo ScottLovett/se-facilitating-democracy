@@ -335,18 +335,18 @@ public class Controller {
     @FXML
     void SingleTransferrable(ActionEvent event) { // View Results using Accordian
         int[] cantotals = {0,0,0,0,0};
-        int firstloser = 0;
-        
+        int[] eliminate = {0,0,0,0,0}; // with 5 candidates, only 4 passes needed + min counter
+
         dbAccess stv = new dbAccess();
 
         for (int i=1; i<6; i++){ // pulls first round from db to array
             cantotals[i] = stv.getFirstVote(i);
         }
-        firstloser = min(cantotals);
-        firstloser = findIndex(cantotals,firstloser) + 1;
+        eliminate[0] = min(cantotals); // current minimum
+        eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate of current minimum
 
         for (int i=1; i<6; i++){ // pulls second round from db to array
-            cantotals[i] = stv.getFirstElimination(firstloser,i);
+            cantotals[i] = stv.getFirstElimination(eliminate[1],i);
         }
 
         // set up bar chart
@@ -355,18 +355,18 @@ public class Controller {
     @FXML
     void RankedChoice(ActionEvent event) { // View Results using Accordian
         int[] cantotals = {0,0,0,0,0};
-        int firstloser = 0;
+        int[] eliminate = {0,0,0,0,0}; // with 5 candidates, only 4 passes needed + min counter
 
-        dbAccess stv = new dbAccess();
+        dbAccess rc = new dbAccess();
 
         for (int i=1; i<6; i++){ // pulls first round from db to array
-            cantotals[i] = stv.getFirstVote(i);
+            cantotals[i] = rc.getFirstVote(i);
         }
-        firstloser = min(cantotals);
-        firstloser = findIndex(cantotals,firstloser) + 1;
+        eliminate[0] = min(cantotals); // current minimum
+        eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate of current minimum
 
         for (int i=1; i<6; i++){ // pulls second round from db to array
-            cantotals[i] = stv.getFirstElimination(firstloser,i);
+            cantotals[i] = rc.getFirstElimination(eliminate[1],i);
         }
 
         //set up bar chart
@@ -651,4 +651,12 @@ public class Controller {
         }
         return min;
     }
+
+    // test driver
+    public static void main(String[] args)
+    {
+        Controller test = new Controller();
+
+    }
+
 }
