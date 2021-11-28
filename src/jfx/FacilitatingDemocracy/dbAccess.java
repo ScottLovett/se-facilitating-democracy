@@ -3,15 +3,16 @@ package FacilitatingDemocracy;
 import java.sql.*;
 
 public class dbAccess {
-    private final String url = "jdbc:postgresql://localhost/democracy";
-    private final String user = "postgres";
-    private final String password = "postgres";
 
 // attempt to connect with postgres server
 
     public Connection connect() {
         Connection conn = null;
         try {
+            String url = "jdbc:postgresql://localhost/democracy";
+            String user = "postgres";
+            String password = "postgres";
+
             conn = DriverManager.getConnection(url, user, password);
             System.out.println("Connected to the PostgreSQL server successfully.");
         } catch (SQLException e) {
@@ -79,6 +80,30 @@ public class dbAccess {
 
             pstmt.setInt(1, elim);
             pstmt.setInt(2, candidatenum);
+            ResultSet rs = pstmt.executeQuery();
+            count = rs.getInt(2);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return count;
+    }
+
+    public int getSecondElimination(int elim, int elim2, int candidatenum) {
+        String SQL = "SELECT count(*) FROM votes " + "WHERE (vote1 = ? AND vote2 = ?) " +"OR (vote1 = ? AND vote2 = ?)" + "AND ( vote2 OR vote3 = ?)";
+        int count = 0;
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+
+            pstmt.setInt(1, elim);
+            pstmt.setInt(2, elim2);
+
+            pstmt.setInt(4, elim);
+            pstmt.setInt(3, elim2);
+
+            pstmt.setInt(5, candidatenum);
+
             ResultSet rs = pstmt.executeQuery();
             count = rs.getInt(2);
 
