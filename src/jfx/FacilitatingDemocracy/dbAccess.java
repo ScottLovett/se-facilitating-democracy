@@ -90,7 +90,7 @@ public class dbAccess {
     }
 
     public int getSecondElimination(int elim, int elim2, int candidatenum) {
-        String SQL = "SELECT count(*) FROM votes " + "WHERE (vote1 = ? AND vote2 = ?) " +"OR (vote1 = ? AND vote2 = ?)" + "AND ( vote2 OR vote3 = ?)";
+        String SQL = "SELECT count(*) FROM votes " + "WHERE ((vote1 = ? AND vote2 = ?) " +"OR (vote1 = ? AND vote2 = ?))" + "AND ( vote2 OR vote3 = ?)";
         int count = 0;
 
         try (Connection conn = connect();
