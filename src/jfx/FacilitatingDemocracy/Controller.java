@@ -363,11 +363,21 @@ public class Controller {
             cantotals[i] = rc.getFirstVote(i);
         }
         eliminate[0] = min(cantotals); // current minimum
-        eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate of current minimum
+        eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 1
 
         for (int i=1; i<6; i++){ // pulls second round from db to array
             cantotals[i] = rc.getFirstElimination(eliminate[1],i);
         }
+
+        eliminate[0] = min(cantotals); // recalculate minimum
+        eliminate[2] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 2
+
+        for (int i=1; i<6; i++){ // pulls second round from db to array
+            cantotals[i] = rc.getSecondElimination(eliminate[1],eliminate[2],i);
+        }
+
+        eliminate[0] = min(cantotals); // recalculate minimum
+        eliminate[3] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 3
 
         //set up bar chart
     }
