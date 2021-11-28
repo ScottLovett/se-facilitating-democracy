@@ -524,8 +524,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can6Description_T" editable="false" layoutX="199.0" layoutY="-2.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
-                                    <TextArea fx:id="can6Policies_T" editable="false" layoutX="-1.0" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can6Description_T" layoutX="199.0" layoutY="-2.0" prefHeight="150.0" prefWidth="202.0" promptText="Write-In Candidate Description  Include Name" />
+                                    <TextArea fx:id="can6Policies_T" layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" promptText="Write-In Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
