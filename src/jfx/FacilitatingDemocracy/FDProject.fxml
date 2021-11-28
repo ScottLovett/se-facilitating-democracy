@@ -259,7 +259,7 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="validate_T" alignment="CENTER" editable="false" promptText="Register Here -&gt;" GridPane.rowIndex="6">
+                        <TextField fx:id="validate_T" alignment="CENTER" editable="false" mouseTransparent="true" promptText="Register Here -&gt;" GridPane.rowIndex="6">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -321,7 +321,7 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="login_T" alignment="CENTER" editable="false" mouseTransparent="true" promptText="Login Complete" text="Login Here" GridPane.rowIndex="2">
+                        <TextField fx:id="login_T" alignment="CENTER" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Login Complete" text="Login Here" GridPane.rowIndex="2">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -331,7 +331,7 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Button>
-                        <TextField fx:id="validateLogin_T" alignment="CENTER" editable="false" mouseTransparent="true" text="Invalid Login" GridPane.rowIndex="3">
+                        <TextField fx:id="validateLogin_T" alignment="CENTER" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Invalid Login" text="Go View Candidates!" GridPane.rowIndex="3">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -377,7 +377,7 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="validateLogin_T1" alignment="CENTER" editable="false" mouseTransparent="true" promptText="Recovered!" text="Recover Login" GridPane.rowIndex="2">
+                        <TextField fx:id="validateLogin_T1" alignment="CENTER" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Recovered!" text="Recover Login" GridPane.rowIndex="2">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -392,7 +392,7 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="username_T1" editable="false" mouseTransparent="true" promptText="Independent / Bull Moose" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <TextField fx:id="username_T1" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Your Username Will Appear Here" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -402,12 +402,12 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="loginPassword_T1" editable="false" mouseTransparent="true" promptText="Do Not Share Password" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <TextField fx:id="loginPassword_T1" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Do Not Share Password" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="login_T1" alignment="CENTER" editable="false" promptText="Login Complete" text="Login Here" GridPane.rowIndex="5">
+                        <TextField fx:id="login_T1" alignment="CENTER" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Login Complete" text="Login Here" GridPane.rowIndex="5">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -449,8 +449,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can1Description_T" layoutX="200.0" prefHeight="150.0" prefWidth="202.0" text="Candidate Description" />
-                                    <TextArea fx:id="can1policies_T" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can1Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
+                                    <TextArea fx:id="can1Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -464,8 +464,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can2Description_T" editable="false" layoutX="199.0" layoutY="-2.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
+                                    <TextArea fx:id="can2Policies_T" editable="false" layoutX="-1.0" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -479,8 +479,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can3Description_T" editable="false" layoutX="200.0" layoutY="-2.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
+                                    <TextArea fx:id="can3Policies_T" editable="false" layoutX="-1.0" layoutY="148.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -494,8 +494,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can4Description_T" editable="false" layoutX="199.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
+                                    <TextArea fx:id="can4Policies_T" editable="false" layoutX="-2.0" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -509,8 +509,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can5Description_T" editable="false" layoutX="200.0" layoutY="-2.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
+                                    <TextArea fx:id="can5Policies_T" editable="false" layoutX="-1.0" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -524,8 +524,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can6Description_T" editable="false" layoutX="199.0" layoutY="-2.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
+                                    <TextArea fx:id="can6Policies_T" editable="false" layoutX="-1.0" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -685,7 +685,7 @@
                                           <NumberAxis side="LEFT" />
                                        </yAxis>
                                     </BarChart>
-                                    <TextArea fx:id="fptpDescription_T" layoutX="-1.0" layoutY="263.0" prefHeight="110.0" prefWidth="402.0" text="Describe Data" />
+                                    <TextArea fx:id="fptpDescription_T" editable="false" layoutX="-1.0" layoutY="263.0" mouseTransparent="true" prefHeight="110.0" prefWidth="402.0" promptText="Describe Data" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -702,7 +702,7 @@
                                           <NumberAxis side="LEFT" />
                                        </yAxis>
                                     </BarChart>
-                                    <TextArea fx:id="stvDescription_T" layoutX="-1.0" layoutY="264.0" prefHeight="110.0" prefWidth="402.0" />
+                                    <TextArea fx:id="stvDescription_T" editable="false" layoutX="-1.0" layoutY="264.0" mouseTransparent="true" prefHeight="110.0" prefWidth="402.0" promptText="Describe Data" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -719,7 +719,7 @@
                                           <NumberAxis side="LEFT" />
                                        </yAxis>
                                     </BarChart>
-                                    <TextArea fx:id="rcDescription_T" layoutY="264.0" prefHeight="110.0" prefWidth="402.0" />
+                                    <TextArea fx:id="rcDescription_T" editable="false" layoutY="264.0" mouseTransparent="true" prefHeight="110.0" prefWidth="402.0" promptText="Decribe Data" />
                                  </children>
                               </AnchorPane>
                            </content>

@@ -39,8 +39,8 @@ public class Controller {
     @FXML // fx:id="can1Description_T"
     private TextArea can1Description_T; // Value injected by FXMLLoader
 
-    @FXML // fx:id="can1policies_T"
-    private TextArea can1policies_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can1Policies_T"
+    private TextArea can1Policies_T; // Value injected by FXMLLoader
 
     @FXML // fx:id="candidate1_A"
     private TitledPane candidate1_A; // Value injected by FXMLLoader
@@ -98,9 +98,6 @@ public class Controller {
 
     @FXML // fx:id="fptp_A"
     private TitledPane fptp_A; // Value injected by FXMLLoader
-
-    @FXML // fx:id="fptp_B"
-    private RadioButton fptp_B; // Value injected by FXMLLoader
 
     @FXML // fx:id="fptp_G"
     private BarChart<?, ?> fptp_G; // Value injected by FXMLLoader
@@ -177,9 +174,6 @@ public class Controller {
     @FXML // fx:id="rcv_A"
     private TitledPane rcv_A; // Value injected by FXMLLoader
 
-    @FXML // fx:id="rcv_B"
-    private RadioButton rcv_B; // Value injected by FXMLLoader
-
     @FXML // fx:id="rcv_G"
     private BarChart<?, ?> rcv_G; // Value injected by FXMLLoader
 
@@ -213,17 +207,11 @@ public class Controller {
     @FXML // fx:id="stv_A"
     private TitledPane stv_A; // Value injected by FXMLLoader
 
-    @FXML // fx:id="stv_B"
-    private RadioButton stv_B; // Value injected by FXMLLoader
-
     @FXML // fx:id="stv_G"
     private BarChart<?, ?> stv_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="threeOfFour_D"
     private ChoiceBox<?> threeOfFour_D; // Value injected by FXMLLoader
-
-    @FXML // fx:id="threeResultsPanes"
-    private TextArea threeResultsPanes; // Value injected by FXMLLoader
 
     @FXML // fx:id="twoOfFour_D"
     private ChoiceBox<?> twoOfFour_D; // Value injected by FXMLLoader
@@ -546,13 +534,24 @@ public class Controller {
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
+    // Note: This list is in alphabetical order
     void initialize() {
         assert address_T != null : "fx:id=\"address_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert bDayRecovery_L != null : "fx:id=\"bDayRecovery_L\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert bDayRecovery_T != null : "fx:id=\"bDayRecovery_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert bDay_T != null : "fx:id=\"bDay_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert can1Description_T != null : "fx:id=\"can1Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert can1policies_T != null : "fx:id=\"can1policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+//        assert can2Description_T != null : "fx:id=\"can1Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+//        assert can3Description_T != null : "fx:id=\"can1Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+//        assert can4Description_T != null : "fx:id=\"can1Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+//        assert can5Description_T != null : "fx:id=\"can1Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+//        assert can6Description_T != null : "fx:id=\"can1Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can1Policies_T != null : "fx:id=\"can1policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+//        assert can2Policies_T != null : "fx:id=\"can1policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+//        assert can3Policies_T != null : "fx:id=\"can1policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+//        assert can4Policies_T != null : "fx:id=\"can1policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+//        assert can5Policies_T != null : "fx:id=\"can1policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+//        assert can6Policies_T != null : "fx:id=\"can1policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert candidate1_A != null : "fx:id=\"candidate1_A\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert candidate2_A != null : "fx:id=\"candidate2_A\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert candidate3_A != null : "fx:id=\"candidate3_A\" was not injected: check your FXML file 'FDProject.fxml'.";
@@ -572,7 +571,6 @@ public class Controller {
         assert fptpBallot_B != null : "fx:id=\"fptpBallot_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert fptpBallot_G != null : "fx:id=\"fptpBallot_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert fptp_A != null : "fx:id=\"fptp_A\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert fptp_B != null : "fx:id=\"fptp_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert fptp_G != null : "fx:id=\"fptp_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert homePane != null : "fx:id=\"homePane\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert idRecovery_L != null : "fx:id=\"idRecovery_L\" was not injected: check your FXML file 'FDProject.fxml'.";
@@ -598,7 +596,6 @@ public class Controller {
         assert rcBallot_B != null : "fx:id=\"rcBallot_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcBallot_G != null : "fx:id=\"rcBallot_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcv_A != null : "fx:id=\"rcv_A\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert rcv_B != null : "fx:id=\"rcv_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcv_G != null : "fx:id=\"rcv_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert recoverPassword_B != null : "fx:id=\"recoverPassword_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert register_B != null : "fx:id=\"register_B\" was not injected: check your FXML file 'FDProject.fxml'.";
@@ -610,10 +607,8 @@ public class Controller {
         assert stvBallot_B != null : "fx:id=\"stvBallot_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert stvBallot_G != null : "fx:id=\"stvBallot_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert stv_A != null : "fx:id=\"stv_A\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert stv_B != null : "fx:id=\"stv_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert stv_G != null : "fx:id=\"stv_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert threeOfFour_D != null : "fx:id=\"threeOfFour_D\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert threeResultsPanes != null : "fx:id=\"threeResultsPanes\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert twoOfFour_D != null : "fx:id=\"twoOfFour_D\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert twoOfTwo_D != null : "fx:id=\"twoOfTwo_D\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert username_T != null : "fx:id=\"username_T\" was not injected: check your FXML file 'FDProject.fxml'.";
