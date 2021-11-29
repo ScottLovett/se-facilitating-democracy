@@ -207,9 +207,9 @@ public class dbAccess {
         return id;
     }
 
-    public long insertVote(int vote1, int vote2, int vote3, int vote4, int vote5, int studentnum) { // inserts vote nto database, returns primary key #, student num should be same as user
-        String SQL = "INSERT INTO votes (vote1,vote2,vote3,vote4,vote5,userid) "
-                + "VALUES(?,?,?,?,?,?)";
+    public long insertVote(int vote1, int vote2, int vote3, int vote4, int vote5, int votefptp, int studentnum) { // inserts vote nto database, returns primary key #, student num should be same as user
+        String SQL = "INSERT INTO votes (vote1,vote2,vote3,vote4,vote5,fptpvote,userid) "
+                + "VALUES(?,?,?,?,?,?,?)";
 
         long id = 0;
 
@@ -222,7 +222,8 @@ public class dbAccess {
             pstmt.setInt(3, vote3);
             pstmt.setInt(4, vote4);
             pstmt.setInt(5, vote5);
-            pstmt.setInt(6, studentnum);
+            pstmt.setInt(6, votefptp);
+            pstmt.setInt(7, studentnum);
 
             int affectedRows = pstmt.executeUpdate();
             // check the affected rows

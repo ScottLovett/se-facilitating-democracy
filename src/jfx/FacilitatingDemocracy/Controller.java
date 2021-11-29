@@ -109,7 +109,7 @@ public class Controller {
     @FXML // fx:id="fptp_B"
     private RadioButton fptp_B; // Value injected by FXMLLoader
 
-    @FXML // fx:id="fptp_G"
+
     private BarChart<String, Number> fptp_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="homePane"
@@ -191,8 +191,8 @@ public class Controller {
     @FXML // fx:id="rcv_B"
     private RadioButton rcv_B; // Value injected by FXMLLoader
 
-    @FXML // fx:id="rcv_G"
-    private BarChart<String,Integer> rcv_G; // Value injected by FXMLLoader
+
+    private BarChart<String, Number> rcv_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="recoverPassword_B"
     private Button recoverPassword_B; // Value injected by FXMLLoader
@@ -227,8 +227,8 @@ public class Controller {
     @FXML // fx:id="stv_B"
     private RadioButton stv_B; // Value injected by FXMLLoader
 
-    @FXML // fx:id="stv_G"
-    private BarChart<String,Integer> stv_G; // Value injected by FXMLLoader
+
+    private BarChart<String, Number> stv_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="threeOfFour_D"
     private ChoiceBox<String> threeOfFour_D; // Value injected by FXMLLoader
@@ -310,7 +310,7 @@ public class Controller {
     void Register(ActionEvent event) { // sends user info to BackEnd
 
         dbAccess reg = new dbAccess();
-        reg.insertUser(name_T.getText(), )Integer.parseInt(id_T.getText());
+        reg.insertUser(name_T.getText(),Integer.parseInt(id_T.getText()));
         currentLoginID = Integer.parseInt(id_T.getText());
 
         register_B.setText("Registered!");
@@ -371,7 +371,7 @@ public class Controller {
             endBallot_G.setVisible(true);
 
             dbAccess vote = new dbAccess();
-            vote.insertVote(vote1,vote2,vote3,vote4,vote5,currentLoginID);
+            vote.insertVote(vote1,vote2,vote3,vote4,vote5,votefptp,currentLoginID);
 
         }
     }
@@ -413,6 +413,7 @@ public class Controller {
         series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
 
         fptp_G.getData().addAll(series1);
+
     }
 
     @FXML
@@ -473,6 +474,28 @@ public class Controller {
         cantotals[eliminate[3] - 1] = 0;
 
         // set up bar chart
+
+        CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("Candidates");
+        xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
+                "Can1", "Can2", "Can3", "Can4", "Can5")));
+
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Votes");
+
+        stv_G = new BarChart<String,Number>(xAxis,yAxis);
+        stv_G.setTitle("Single Transferable Vote");
+
+        XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+        series1.setName("Single Transferable Vote");
+
+        series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
+        series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
+        series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
+        series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
+        series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+
+        stv_G.getData().addAll(series1);
     }
 
     @FXML
@@ -520,6 +543,28 @@ public class Controller {
         cantotals[eliminate[2] - 1] = 0;
 
         //set up bar chart
+
+        CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("Candidates");
+        xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
+                "Can1", "Can2", "Can3", "Can4", "Can5")));
+
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Votes");
+
+        rcv_G = new BarChart<String,Number>(xAxis,yAxis);
+        rcv_G.setTitle("Single Transferable Vote");
+
+        XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+        series1.setName("Single Transferable Vote");
+
+        series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
+        series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
+        series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
+        series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
+        series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+
+        rcv_G.getData().addAll(series1);
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
