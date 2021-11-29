@@ -176,7 +176,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="registrationPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="registrationPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -537,7 +537,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -649,6 +649,7 @@
                         </Button>
                      </children>
                   </GridPane>
+                  <Label fx:id="testLabel" layoutX="10.0" layoutY="10.0" text="Testing Drop Down" />
                </children>
             </AnchorPane>
          </children>

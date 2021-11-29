@@ -4,6 +4,8 @@
 
 package FacilitatingDemocracy;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
@@ -12,7 +14,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import FacilitatingDemocracy.dbAccess;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -90,7 +91,7 @@ public class Controller {
     private Button forgotPassword_B; // Value injected by FXMLLoader
 
     @FXML // fx:id="fourOfFour_D"
-    private ChoiceBox<?> fourOfFour_D; // Value injected by FXMLLoader
+    private ChoiceBox<String> fourOfFour_D; // Value injected by FXMLLoader
 
     @FXML // fx:id="fptpBallot_B"
     private Button fptpBallot_B; // Value injected by FXMLLoader
@@ -159,13 +160,17 @@ public class Controller {
     private TextField newUsername_T; // Value injected by FXMLLoader
 
     @FXML // fx:id="oneOfFour_D"
-    private ChoiceBox<?> oneOfFour_D; // Value injected by FXMLLoader
+    private ChoiceBox<String> oneOfFour_D; // Value injected by FXMLLoader
 
     @FXML // fx:id="oneOfOne_D"
-    private ChoiceBox<?> oneOfOne_D; // Value injected by FXMLLoader
+    private ChoiceBox<String> oneOfOne_D; // Value injected by FXMLLoader
+
+    ObservableList<String> oneOfOne_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
+    ObservableList<String> oneOfTwo_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
+    ObservableList<String> oneOfFour_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
 
     @FXML // fx:id="oneOfTwo_D"
-    private ChoiceBox<?> oneOfTwo_D; // Value injected by FXMLLoader
+    private ChoiceBox<String> oneOfTwo_D; // Value injected by FXMLLoader
 
     @FXML // fx:id="personalPassword_T"
     private TextField personalPassword_T; // Value injected by FXMLLoader
@@ -222,16 +227,16 @@ public class Controller {
     private BarChart<?, ?> stv_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="threeOfFour_D"
-    private ChoiceBox<?> threeOfFour_D; // Value injected by FXMLLoader
+    private ChoiceBox<String> threeOfFour_D; // Value injected by FXMLLoader
 
     @FXML // fx:id="threeResultsPanes"
     private TextArea threeResultsPanes; // Value injected by FXMLLoader
 
     @FXML // fx:id="twoOfFour_D"
-    private ChoiceBox<?> twoOfFour_D; // Value injected by FXMLLoader
+    private ChoiceBox<String> twoOfFour_D; // Value injected by FXMLLoader
 
     @FXML // fx:id="twoOfTwo_D"
-    private ChoiceBox<?> twoOfTwo_D; // Value injected by FXMLLoader
+    private ChoiceBox<String> twoOfTwo_D; // Value injected by FXMLLoader
 
     @FXML // fx:id="username_T"
     private TextField username_T; // Value injected by FXMLLoader
@@ -256,6 +261,9 @@ public class Controller {
 
     @FXML // fx:id="votingPage_B"
     private Button votingPage_B; // Value injected by FXMLLoader
+
+    @FXML
+    private Label testLabel;
 
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -301,16 +309,35 @@ public class Controller {
     @FXML
     void Vote(ActionEvent event) { // Sends Voting ballots to BackEnd
         if (fptpBallot_G.isVisible()) {
+            String fptpChoice = (String) oneOfOne_D.getValue();
+            // send fptpChoice to backend
+            if (fptpChoice == "Can1"){
+                testLabel.setText("Worked");
+            }
             clearInputs();
             fptpBallot_G.setVisible(false);
             stvBallot_G.setVisible(true);
         }
         else if (stvBallot_G.isVisible()) {
+            String stvChoice1 = (String) oneOfTwo_D.getValue();
+            String stvChoice2 = (String) twoOfTwo_D.getValue();
+            // send stvChoices to backend
+            if (stvChoice1 == "Can1" && stvChoice2 == "Can2"){
+                testLabel.setText("Worked Twice");
+            }
             clearInputs();
             stvBallot_G.setVisible(false);
             rcBallot_G.setVisible(true);
         }
         else if (rcBallot_G.isVisible()) {
+            String rcChoice1 = (String) oneOfFour_D.getValue();
+            String rcChoice2 = (String) twoOfFour_D.getValue();
+            String rcChoice3 = (String) threeOfFour_D.getValue();
+            String rcChoice4 = (String) fourOfFour_D.getValue();
+            // send stvChoices to backend
+            if (rcChoice1 == "Can1" && rcChoice2 == "Can2" && rcChoice3 == "Can3" && rcChoice4 == "Can4"){
+                testLabel.setText("All Worked");
+            }
             clearInputs();
             rcBallot_G.setVisible(false);
             endBallot_G.setVisible(true);
@@ -607,6 +634,20 @@ public class Controller {
         assert newUsername_T != null : "fx:id=\"newUsername_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert oneOfFour_D != null : "fx:id=\"oneOfFour_D\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert oneOfOne_D != null : "fx:id=\"oneOfOne_D\" was not injected: check your FXML file 'FDProject.fxml'.";
+        oneOfOne_D.setValue("Choose One Below");
+        oneOfOne_D.setItems(oneOfOne_DList);
+        oneOfTwo_D.setValue("Choose One Below");
+        oneOfTwo_D.setItems(oneOfTwo_DList);
+        twoOfTwo_D.setValue("Choose One Below");
+        twoOfTwo_D.setItems(oneOfTwo_DList);
+        oneOfFour_D.setValue("Choose One Below");
+        oneOfFour_D.setItems(oneOfFour_DList);
+        twoOfFour_D.setValue("Choose One Below");
+        twoOfFour_D.setItems(oneOfFour_DList);
+        threeOfFour_D.setValue("Choose One Below");
+        threeOfFour_D.setItems(oneOfFour_DList);
+        fourOfFour_D.setValue("Choose One Below");
+        fourOfFour_D.setItems(oneOfFour_DList);
         assert oneOfTwo_D != null : "fx:id=\"oneOfTwo_D\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert personalPassword_T != null : "fx:id=\"personalPassword_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcBallot_B != null : "fx:id=\"rcBallot_B\" was not injected: check your FXML file 'FDProject.fxml'.";
