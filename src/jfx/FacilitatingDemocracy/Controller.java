@@ -326,13 +326,13 @@ public class Controller {
         int vote3=0;
         int vote4=0;
         int vote5=0;
+        int votefptp =0;
 
         if (fptpBallot_G.isVisible()) {
             String fptpChoice = (String) oneOfOne_D.getValue();
             // send fptpChoice to backend
-            if (fptpChoice == "Can1"){
-                testLabel.setText("Worked");
-            }
+            votefptp = nameToId(fptpChoice);
+
             clearInputs();
             fptpBallot_G.setVisible(false);
             stvBallot_G.setVisible(true);
@@ -785,10 +785,27 @@ public class Controller {
         return min;
     }
 
+    public int nameToId(String str){
+        int cannum = 0;
+        switch (str){
+            case "Can1":
+                cannum = 1;
+            case "Can2":
+                cannum = 2;
+            case "Can3":
+                cannum = 3;
+            case "Can4":
+                cannum = 4;
+            case "Can5":
+                cannum = 5;
+        }
+        return cannum;
+    }
+
     // test driver
     public static void main(String[] args)
     {
-        Controller test = new Controller();
+       
 
     }
 
