@@ -90,19 +90,67 @@ public class dbAccess {
     }
 
     public int getSecondElimination(int elim, int elim2, int candidatenum) {
-        String SQL = "SELECT count(*) FROM votes " + "WHERE (vote1 = ? AND vote2 = ?) " +"OR (vote1 = ? AND vote2 = ?)" + "AND ( vote2 OR vote3 = ?)";
+        String SQL = "SELECT count(*) FROM votes " + "WHERE ((vote1 = ? AND vote2 = ?) " +"OR (vote1 = ? AND vote2 = ?))" + "AND ( vote2 OR vote3 = ?)";
         int count = 0;
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(SQL)) {
 
             pstmt.setInt(1, elim);
-            pstmt.setInt(2, elim2);
+            pstmt.setInt(2, elim2); //permutation 1,2
 
-            pstmt.setInt(4, elim);
+            pstmt.setInt(4, elim); // permutation 2,1
             pstmt.setInt(3, elim2);
 
             pstmt.setInt(5, candidatenum);
+
+            ResultSet rs = pstmt.executeQuery();
+            count = rs.getInt(2);
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return count;
+    }
+
+    public int getThirdElimination(int elim, int elim2, int elim3, int candidatenum) {
+        int count =0;
+
+        String SQL = "SELECT count(*) FROM votes " + "WHERE ((vote1 = ? AND vote2 = ? AND vote3 = ?) " + //1,2,3
+                                                     "OR (vote1 = ? AND vote2 = ? AND vote3 = ?)" + //1,3,2
+                                                     "OR (vote1 = ? AND vote2 = ? AND vote3 = ?)" +//2,1,3
+                                                     "OR (vote1 = ? AND vote2 = ? AND vote3 = ?)" +//2,3,1
+                                                     "OR (vote1 = ? AND vote2 = ? AND vote3 = ?)" +//3,1,2
+                                                     "OR (vote1 = ? AND vote2 = ? AND vote3 = ?))" + //3,2,1
+                                                     "AND ( vote2 OR vote3 OR vote4 = ?)";
+
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+
+            pstmt.setInt(1, elim);
+            pstmt.setInt(2, elim2); //permutation 1,2,3
+            pstmt.setInt(3, elim3);
+
+            pstmt.setInt(4, elim); // permutation 1,3,2
+            pstmt.setInt(6, elim2);
+            pstmt.setInt(5, elim3);
+
+            pstmt.setInt(8, elim); // permutation 2,1,3
+            pstmt.setInt(7, elim2);
+            pstmt.setInt(9, elim3);
+
+            pstmt.setInt(12, elim); // permutation 2,3,1
+            pstmt.setInt(10, elim2);
+            pstmt.setInt(11, elim3);
+
+
+                                                // permutation 3,1,2
+
+
+                                                // permutation 3,2,1
+
+
+            pstmt.setInt(19, candidatenum);
 
             ResultSet rs = pstmt.executeQuery();
             count = rs.getInt(2);
