@@ -422,7 +422,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -437,7 +437,7 @@
                         <Image url="@../podium.png" />
                      </image>
                   </ImageView>
-                  <Accordion layoutX="14.0" layoutY="217.0" prefHeight="372.0" prefWidth="402.0">
+                  <Accordion layoutX="14.0" layoutY="217.0" prefHeight="372.0" prefWidth="402.0" visible="false">
                      <panes>
                         <TitledPane fx:id="candidate1_A" prefWidth="402.0" text="Candidate 1">
                            <content>
@@ -649,7 +649,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -670,7 +670,7 @@
                   </Label>
                   <Accordion layoutX="9.0" layoutY="132.0" prefHeight="452.0" prefWidth="402.0">
                      <panes>
-                        <TitledPane fx:id="fptp_A" animated="false" prefHeight="346.0" prefWidth="402.0" text="First Past The Post">
+                        <TitledPane fx:id="fptp_A" animated="false" onContextMenuRequested="#FirstPastPost" prefHeight="346.0" prefWidth="402.0" text="First Past The Post">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -687,7 +687,7 @@
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane fx:id="stv_A" animated="false" text="Single Transferable Vote">
+                        <TitledPane fx:id="stv_A" animated="false" onContextMenuRequested="#SingleTransferable" text="Single Transferable Vote">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -704,7 +704,7 @@
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane fx:id="rcv_A" animated="false" text="Ranked Choice Voting">
+                        <TitledPane fx:id="rcv_A" animated="false" onContextMenuRequested="#RankedChoice" text="Ranked Choice Voting">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
