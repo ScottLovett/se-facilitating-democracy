@@ -502,7 +502,7 @@ public class Controller {
     // Menu Option 3
     @FXML
     void gotoLogin(ActionEvent event) {
-        if (registrationPane.isVisible()) {
+        if (loginPane.isVisible()) {
             clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
@@ -526,7 +526,7 @@ public class Controller {
     // Menu Option 4
     @FXML
     void gotoCandidates(ActionEvent event) {
-        if (registrationPane.isVisible()) {
+        if (candidatesPane.isVisible()) {
             clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
@@ -550,7 +550,7 @@ public class Controller {
     // Menu Option 5
     @FXML
     void gotoVoting(ActionEvent event) { // Only allow access if voter has logged in
-        if (registrationPane.isVisible()) {
+        if (votePane.isVisible()) {
             clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
@@ -569,12 +569,16 @@ public class Controller {
             resultsPane.setVisible(false);
             votePane.setVisible(true);
         }
+        fptpBallot_G.setVisible(true);
+        stvBallot_G.setVisible(false);
+        rcBallot_G.setVisible(false);
+        endBallot_G.setVisible(false);
     }
 
     // Menu Option 6
     @FXML
     void gotoResults(ActionEvent event) {
-        if (registrationPane.isVisible()) {
+        if (resultsPane.isVisible()) {
             clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);

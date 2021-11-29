@@ -649,7 +649,7 @@
                         </Button>
                      </children>
                   </GridPane>
-                  <Label fx:id="testLabel" layoutX="10.0" layoutY="10.0" text="Testing Drop Down" />
+                  <Label fx:id="testLabel" layoutX="74.0" layoutY="219.0" text="Do not choose the same candidate for multiple ranks" />
                </children>
             </AnchorPane>
          </children>
