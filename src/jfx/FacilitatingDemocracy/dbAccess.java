@@ -46,11 +46,13 @@ public class dbAccess {
 
             pstmt.setInt(1, candidatenum);
             ResultSet rs = pstmt.executeQuery();
+            rs.next();
             count = rs.getInt(1);
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        System.out.println(count);
         return count;
     }
 
@@ -63,11 +65,13 @@ public class dbAccess {
 
             pstmt.setInt(1, candidatenum);
             ResultSet rs = pstmt.executeQuery();
+            rs.next();
             count = rs.getInt(1);
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        System.out.println(count);
         return count;
     }
 
@@ -81,11 +85,13 @@ public class dbAccess {
             pstmt.setInt(1, elim);
             pstmt.setInt(2, candidatenum);
             ResultSet rs = pstmt.executeQuery();
-            count = rs.getInt(2);
+            rs.next();
+            count = rs.getInt(1);
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        System.out.println(count);
         return count;
     }
 
@@ -105,11 +111,13 @@ public class dbAccess {
             pstmt.setInt(5, candidatenum);
 
             ResultSet rs = pstmt.executeQuery();
-            count = rs.getInt(2);
+            rs.next();
+            count = rs.getInt(1);
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        System.out.println(count);
         return count;
     }
 
@@ -153,11 +161,13 @@ public class dbAccess {
             pstmt.setInt(19, candidatenum);
 
             ResultSet rs = pstmt.executeQuery();
-            count = rs.getInt(2);
+            rs.next();
+            count = rs.getInt(1);
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        System.out.println(count);
         return count;
     }
 
@@ -189,6 +199,7 @@ public class dbAccess {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        System.out.println(id);
         return id;
     }
 
@@ -224,6 +235,7 @@ public class dbAccess {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        System.out.println(id);
         return id;
     }
 }
