@@ -9,13 +9,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.stream.IntStream;
@@ -107,7 +110,7 @@ public class Controller {
     private RadioButton fptp_B; // Value injected by FXMLLoader
 
     @FXML // fx:id="fptp_G"
-    private BarChart<?, ?> fptp_G; // Value injected by FXMLLoader
+    private BarChart<String, Number> fptp_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="homePane"
     private StackPane homePane; // Value injected by FXMLLoader
@@ -189,7 +192,7 @@ public class Controller {
     private RadioButton rcv_B; // Value injected by FXMLLoader
 
     @FXML // fx:id="rcv_G"
-    private BarChart<?, ?> rcv_G; // Value injected by FXMLLoader
+    private BarChart<String,Integer> rcv_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="recoverPassword_B"
     private Button recoverPassword_B; // Value injected by FXMLLoader
@@ -225,7 +228,7 @@ public class Controller {
     private RadioButton stv_B; // Value injected by FXMLLoader
 
     @FXML // fx:id="stv_G"
-    private BarChart<?, ?> stv_G; // Value injected by FXMLLoader
+    private BarChart<String,Integer> stv_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="threeOfFour_D"
     private ChoiceBox<String> threeOfFour_D; // Value injected by FXMLLoader
@@ -320,6 +323,12 @@ public class Controller {
 
     @FXML
     void Vote(ActionEvent event) { // Sends Voting ballots to BackEnd
+        int vote1=0;
+        int vote2=0;
+        int vote3=0;
+        int vote4=0;
+        int vote5=0;
+
         if (fptpBallot_G.isVisible()) {
             String fptpChoice = (String) oneOfOne_D.getValue();
             // send fptpChoice to backend
@@ -371,9 +380,29 @@ public class Controller {
         dbAccess fptp = new dbAccess();
 
         for (int i=0; i<5; i++){ // pulls totals for fptp from db to array
-            cantotals[i] = fptp.getFirstPastThePost(i);
+            cantotals[i] = fptp.getFirstPastThePost(i+1);
         }
             // set up bar chart
+
+        CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
+                "Can1", "Can2", "Can3", "Can4", "Can5")));
+
+        NumberAxis yaxis = new NumberAxis();
+
+        fptp_G = new BarChart<String,Number>(xAxis,yaxis);
+
+        XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+        series1.setName("First Past The Post");
+
+        series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
+        series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
+        series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
+        series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
+        series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+
+        fptp_G.getData().addAll(series1);
+
     }
 
     @FXML
