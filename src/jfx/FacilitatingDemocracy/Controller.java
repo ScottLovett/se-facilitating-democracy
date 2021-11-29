@@ -103,9 +103,6 @@ public class Controller {
     @FXML // fx:id="fptpBallot_G"
     private GridPane fptpBallot_G; // Value injected by FXMLLoader
 
-    @FXML // fx:id="fptp_A"
-    private TitledPane fptp_A; // Value injected by FXMLLoader
-
     @FXML // fx:id="fptp_B"
     private RadioButton fptp_B; // Value injected by FXMLLoader
 
@@ -185,12 +182,8 @@ public class Controller {
     @FXML // fx:id="rcBallot_G"
     private GridPane rcBallot_G; // Value injected by FXMLLoader
 
-    @FXML // fx:id="rcv_A"
-    private TitledPane rcv_A; // Value injected by FXMLLoader
-
     @FXML // fx:id="rcv_B"
     private RadioButton rcv_B; // Value injected by FXMLLoader
-
 
     private BarChart<String, Number> rcv_G; // Value injected by FXMLLoader
 
@@ -221,12 +214,8 @@ public class Controller {
     @FXML // fx:id="stvBallot_G"
     private GridPane stvBallot_G; // Value injected by FXMLLoader
 
-    @FXML // fx:id="stv_A"
-    private TitledPane stv_A; // Value injected by FXMLLoader
-
     @FXML // fx:id="stv_B"
     private RadioButton stv_B; // Value injected by FXMLLoader
-
 
     private BarChart<String, Number> stv_G; // Value injected by FXMLLoader
 
@@ -381,7 +370,7 @@ public class Controller {
         fptp_B.setSelected(true);
         stv_B.setSelected(false);
         rcv_B.setSelected(false);
-        fptp_A.setExpanded(true);
+        fptp_G.setVisible(true);
 
         int[] cantotals = {0,0,0,0,0};
 
@@ -421,7 +410,7 @@ public class Controller {
         fptp_B.setSelected(false);
         stv_B.setSelected(true);
         rcv_B.setSelected(false);
-        stv_A.setExpanded(true);
+        stv_G.setVisible(true);
 
         int[] cantotals = {0,0,0,0,0};
         int[] firstelim = {0,0,0,0,0};
@@ -503,7 +492,7 @@ public class Controller {
         fptp_B.setSelected(false);
         stv_B.setSelected(false);
         rcv_B.setSelected(true);
-        rcv_A.setExpanded(true);
+        rcv_G.setVisible(true);
 
         int[] cantotals = {0,0,0,0,0};
         int[] firstelim = {0,0,0,0,0};
@@ -776,7 +765,6 @@ public class Controller {
         assert fourOfFour_D != null : "fx:id=\"fourOfFour_D\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert fptpBallot_B != null : "fx:id=\"fptpBallot_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert fptpBallot_G != null : "fx:id=\"fptpBallot_G\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert fptp_A != null : "fx:id=\"fptp_A\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert fptp_B != null : "fx:id=\"fptp_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert fptp_G != null : "fx:id=\"fptp_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert homePane != null : "fx:id=\"homePane\" was not injected: check your FXML file 'FDProject.fxml'.";
@@ -816,7 +804,6 @@ public class Controller {
         assert personalPassword_T != null : "fx:id=\"personalPassword_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcBallot_B != null : "fx:id=\"rcBallot_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcBallot_G != null : "fx:id=\"rcBallot_G\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert rcv_A != null : "fx:id=\"rcv_A\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcv_B != null : "fx:id=\"rcv_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcv_G != null : "fx:id=\"rcv_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert recoverPassword_B != null : "fx:id=\"recoverPassword_B\" was not injected: check your FXML file 'FDProject.fxml'.";
@@ -828,7 +815,6 @@ public class Controller {
         assert resultsPane_B1 != null : "fx:id=\"resultsPane_B1\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert stvBallot_B != null : "fx:id=\"stvBallot_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert stvBallot_G != null : "fx:id=\"stvBallot_G\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert stv_A != null : "fx:id=\"stv_A\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert stv_B != null : "fx:id=\"stv_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert stv_G != null : "fx:id=\"stv_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert threeOfFour_D != null : "fx:id=\"threeOfFour_D\" was not injected: check your FXML file 'FDProject.fxml'.";

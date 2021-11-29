@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -299,48 +296,59 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="326.0" prefHeight="25.0" prefWidth="221.0" text="Username" textAlignment="RIGHT">
+                        <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="326.0" prefHeight="25.0" prefWidth="221.0" text="Username" textAlignment="RIGHT" GridPane.rowIndex="1">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="username_T" promptText="Independent / Bull Moose" GridPane.columnIndex="1">
+                        <TextField fx:id="username_T" promptText="Independent / Bull Moose" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="253.0" prefHeight="25.0" prefWidth="221.0" text="Personal Password" textAlignment="RIGHT" GridPane.rowIndex="1">
+                        <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="253.0" prefHeight="25.0" prefWidth="221.0" text="Personal Password" textAlignment="RIGHT" GridPane.rowIndex="2">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="loginPassword_T" promptText="Do Not Share Password" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextField fx:id="loginPassword_T" promptText="Do Not Share Password" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="login_T" alignment="CENTER" editable="false" promptText="Login Complete" text="Login Here" GridPane.rowIndex="2">
+                        <TextField fx:id="login_T" alignment="CENTER" editable="false" promptText="Login Complete" text="Login Here" GridPane.rowIndex="3">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <Button fx:id="login_B" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="234.0" text="Login to Vote" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Button fx:id="login_B" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="234.0" text="Login to Vote" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Button>
-                        <TextField fx:id="validateLogin_T" alignment="CENTER" editable="false" promptText="Registered!" text="Invalid Login" GridPane.rowIndex="3">
+                        <TextField fx:id="validateLogin_T" alignment="CENTER" editable="false" promptText="Registered!" text="Invalid Login" GridPane.rowIndex="4">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <Button fx:id="forgotPassword_B" mnemonicParsing="false" onAction="#ForgotPassword" prefHeight="25.0" prefWidth="234.0" text="Forgot Password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Button fx:id="forgotPassword_B" mnemonicParsing="false" onAction="#ForgotPassword" prefHeight="25.0" prefWidth="234.0" text="Forgot Password" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Button>
+                        <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="221.0" text="Your ID #" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="loginID_T" promptText="Student Number" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </TextField>
                      </children>
                   </GridPane>
                   <GridPane fx:id="loginGrid2" layoutX="22.0" layoutY="189.0" prefHeight="406.0" prefWidth="380.0" visible="false">
@@ -536,7 +544,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -650,9 +658,9 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
-            <AnchorPane prefHeight="625.0" prefWidth="420.0">
+            <AnchorPane fx:id="resultsAnchor" prefHeight="625.0" prefWidth="420.0">
                <children>
                   <Label layoutX="90.0" layoutY="14.0" text="View Election" textFill="#3a2b70">
                      <font>
@@ -684,63 +692,11 @@
                         <Font name="Verdana" size="12.0" />
                      </font>
                   </RadioButton>
-                  <TextArea fx:id="threeResultsPanes" editable="false" layoutX="9.0" layoutY="215.0" prefHeight="372.0" prefWidth="402.0" promptText="Flight# _ FDate  _ DTime  _ ATime _ DepartCity _ DestCity _ AvailableSeats _ AA1150   20Dec15  23:00   02:00    FORT WAYNE  ORLANDO         70       AA1230    5Nov15   11:30   14:00   BLACKSBURG  BOCA RATON     25    AA1140    4Jan15   07:00    11:00   SEATTEL         PHONEIX           42  " text="3 Panes Here&#10;One for each election system">
+                  <TextArea fx:id="threeResultsPanes" editable="false" layoutX="9.0" layoutY="527.0" prefHeight="60.0" prefWidth="402.0" text="3 Panes Here&#10;One for each election system">
                      <font>
                         <Font name="Courier New" size="12.0" />
                      </font>
                   </TextArea>
-                  <Accordion layoutX="9.0" layoutY="250.0" prefHeight="333.0" prefWidth="402.0">
-                     <panes>
-                        <TitledPane fx:id="fptp_A" animated="false" text="First Past The Post">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <BarChart fx:id="fptp_G" prefHeight="255.0" prefWidth="402.0">
-                                       <xAxis>
-                                          <CategoryAxis side="BOTTOM" />
-                                       </xAxis>
-                                       <yAxis>
-                                          <NumberAxis side="LEFT" />
-                                       </yAxis>
-                                    </BarChart>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </TitledPane>
-                        <TitledPane fx:id="stv_A" animated="false" text="Single Transferrable Vote">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <BarChart fx:id="stv_G" prefHeight="256.0" prefWidth="402.0">
-                                       <xAxis>
-                                          <CategoryAxis side="BOTTOM" />
-                                       </xAxis>
-                                       <yAxis>
-                                          <NumberAxis side="LEFT" />
-                                       </yAxis>
-                                    </BarChart>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </TitledPane>
-                        <TitledPane fx:id="rcv_A" animated="false" text="Ranked Choice Voting">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <BarChart fx:id="rcv_G" prefHeight="255.0" prefWidth="402.0">
-                                       <xAxis>
-                                          <CategoryAxis side="BOTTOM" />
-                                       </xAxis>
-                                       <yAxis>
-                                          <NumberAxis side="LEFT" />
-                                       </yAxis>
-                                    </BarChart>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </TitledPane>
-                     </panes>
-                  </Accordion>
                </children>
             </AnchorPane>
          </children>
