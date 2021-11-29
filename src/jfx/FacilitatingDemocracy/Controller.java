@@ -385,12 +385,15 @@ public class Controller {
             // set up bar chart
 
         CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("Candidates");
         xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
                 "Can1", "Can2", "Can3", "Can4", "Can5")));
 
-        NumberAxis yaxis = new NumberAxis();
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Votes");
 
-        fptp_G = new BarChart<String,Number>(xAxis,yaxis);
+        fptp_G = new BarChart<String,Number>(xAxis,yAxis);
+        fptp_G.setTitle("First Past The Post");
 
         XYChart.Series<String, Number> series1 = new XYChart.Series<>();
         series1.setName("First Past The Post");
@@ -402,7 +405,6 @@ public class Controller {
         series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
 
         fptp_G.getData().addAll(series1);
-
     }
 
     @FXML
