@@ -276,7 +276,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="loginPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="loginPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -654,7 +654,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -745,6 +745,7 @@
                         </TitledPane>
                      </panes>
                   </Accordion>
+                  <Label fx:id="testLabel1" layoutX="36.0" layoutY="100.0" text="For testing accordian actions" />
                </children>
             </AnchorPane>
          </children>
