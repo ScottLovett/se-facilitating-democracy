@@ -12,7 +12,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-import FacilitatingDemocracy.dbAccess;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -344,16 +343,30 @@ public class Controller {
         for (int i=0; i<5; i++){ // pulls first round from db to array
             cantotals[i] = stv.getFirstVote(i+1);
         }
-        eliminate[0] = min(cantotals); // current minimum
+        eliminate[0] = minIgnoreZero(cantotals); // current minimum
         eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate of current minimum
 
         for (int i=0; i<5; i++){ // pulls second round from db to array
             firstelim[i] = stv.getFirstElimination(eliminate[1],i+1);
         }
 
+        for (int i=0; i<5; i++) {
+            cantotals[i] += firstelim[i];   // adds transferred votes
+        }
+        cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+
+        eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
+        eliminate[2] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 2
+
         for (int i=0; i<5; i++){ // pulls second round from db to array
             secondelim[i] = stv.getSecondElimination(eliminate[1],eliminate[2],i+1);
         }
+
+        for (int i=0; i<5; i++) {
+            cantotals[i] += secondelim[i];   // adds transferred votes
+        }
+        cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+        cantotals[eliminate[2] - 1] = 0;
 
         // set up bar chart
     }
@@ -371,7 +384,7 @@ public class Controller {
             cantotals[i] = rc.getFirstVote(i);
         }
 
-        eliminate[0] = min(cantotals); // current minimum
+        eliminate[0] = minIgnoreZero(cantotals); // current minimum
         eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 1
 
         for (int i=0; i<5; i++){ // pulls first elim from db to array
@@ -384,7 +397,7 @@ public class Controller {
         cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidate to 0
 
 
-        eliminate[0] = min(cantotals); // recalculate minimum
+        eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
         eliminate[2] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 2
 
         for (int i=0; i<5; i++){ // pulls second round from db to array
@@ -394,7 +407,8 @@ public class Controller {
         for (int i=0; i<5; i++) {
             cantotals[i] += secondelim[i];   // adds transferred votes
         }
-        cantotals[eliminate[2] - 1] = 0;  // sets eliminated candidate to 0
+        cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+        cantotals[eliminate[2] - 1] = 0;
 
         //set up bar chart
     }
@@ -668,11 +682,11 @@ public class Controller {
                 .orElse(-1); // No element found
     }
 
-    public int min(int [] array) {
+    public int minIgnoreZero(int [] array) { // IGNORES ZERO,
         int min = array[0];
 
         for (int i = 0; i < array.length; i++) {
-            if (array[i] < min) {
+            if (array[i] < min && array[i] > 0) { // standard min ignoring zero
                 min = array[i];
             }
         }
