@@ -268,6 +268,8 @@ public class Controller {
 
     @FXML
     private Label testLabel;
+    @FXML
+    private Label testLabel1;
 
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -368,6 +370,11 @@ public class Controller {
 
     @FXML
     void FirstPastPost(ActionEvent event) { // View Results using Accordian
+        fptp_B.setSelected(true);
+        stv_B.setSelected(false);
+        rcv_B.setSelected(false);
+        fptp_A.setExpanded(true);
+
         int[] cantotals = {0,0,0,0,0};
 
         dbAccess fptp = new dbAccess();
@@ -400,6 +407,11 @@ public class Controller {
 
     @FXML
     void SingleTransferrable(ActionEvent event) { // View Results using Accordian
+        fptp_B.setSelected(false);
+        stv_B.setSelected(true);
+        rcv_B.setSelected(false);
+        stv_A.setExpanded(true);
+
         int[] cantotals = {0,0,0,0,0};
         int[] firstelim = {0,0,0,0,0};
         int[] secondelim = {0,0,0,0,0};
@@ -440,6 +452,11 @@ public class Controller {
 
     @FXML
     void RankedChoice(ActionEvent event) { // View Results using Accordian
+        fptp_B.setSelected(false);
+        stv_B.setSelected(false);
+        rcv_B.setSelected(true);
+        rcv_A.setExpanded(true);
+
         int[] cantotals = {0,0,0,0,0};
         int[] firstelim = {0,0,0,0,0};
         int[] secondelim = {0,0,0,0,0};
