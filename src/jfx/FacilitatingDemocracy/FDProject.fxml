@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -537,7 +536,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -573,7 +572,6 @@
                         <Label prefHeight="18.0" prefWidth="164.0" text="This person represents me:" GridPane.rowIndex="3" />
                         <ChoiceBox fx:id="oneOfOne_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Button fx:id="fptpBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Single Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <ComboBox prefWidth="150.0" promptText="Can 1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <GridPane fx:id="stvBallot_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0" visible="false">
@@ -598,7 +596,6 @@
                         <ChoiceBox fx:id="oneOfTwo_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label prefHeight="18.0" prefWidth="164.0" text="If not the above, I'll settle for:" GridPane.rowIndex="3" />
                         <ChoiceBox fx:id="twoOfTwo_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <ComboBox prefWidth="150.0" promptText="Can 1" GridPane.rowIndex="5" />
                         <Button fx:id="stvBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Single Transferrable Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
@@ -626,7 +623,6 @@
                         <ChoiceBox fx:id="threeOfFour_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label prefHeight="18.0" prefWidth="164.0" text="4th Choice:" GridPane.rowIndex="4" />
                         <ChoiceBox fx:id="fourOfFour_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <ComboBox prefWidth="150.0" promptText="Can 1" GridPane.rowIndex="5" />
                         <Button fx:id="rcBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Ranked Choice Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
@@ -654,7 +650,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -745,7 +741,6 @@
                         </TitledPane>
                      </panes>
                   </Accordion>
-                  <Label fx:id="testLabel1" layoutX="36.0" layoutY="100.0" text="For testing accordian actions" />
                </children>
             </AnchorPane>
          </children>

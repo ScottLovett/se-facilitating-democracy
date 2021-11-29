@@ -499,11 +499,6 @@ public class Controller {
         //set up bar chart
     }
 
-    @FXML
-    void ViewResults(ActionEvent event) { // View Results using 3 StackPanes
-
-    }
-
 //////////////////////////////////////////////////////////////////////////////////////
 
     // Menu Option 1
