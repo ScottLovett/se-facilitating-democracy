@@ -275,6 +275,7 @@ public class Controller {
 
     private String username;
     private String password;
+    private int currentLoginID;
 
     @FXML
     void Login(ActionEvent event) { // allows access to voting pane
@@ -309,7 +310,8 @@ public class Controller {
     void Register(ActionEvent event) { // sends user info to BackEnd
 
         dbAccess reg = new dbAccess();
-        reg.insertUser(name_T.getText(), Integer.parseInt(id_T.getText()));
+        reg.insertUser(name_T.getText(), )Integer.parseInt(id_T.getText());
+        currentLoginID = Integer.parseInt(id_T.getText());
 
         register_B.setText("Registered!");
         validate_T.setText("Ready to Vote!");
@@ -342,10 +344,12 @@ public class Controller {
         else if (stvBallot_G.isVisible()) {
             String stvChoice1 = (String) oneOfTwo_D.getValue();
             String stvChoice2 = (String) twoOfTwo_D.getValue();
+
             // send stvChoices to backend
-            if (stvChoice1 == "Can1" && stvChoice2 == "Can2"){
-                testLabel.setText("Worked Twice");
-            }
+            vote1=nameToId(stvChoice1);
+            vote5=nameToId(stvChoice2);
+
+
             clearInputs();
             stvBallot_G.setVisible(false);
             rcBallot_G.setVisible(true);
@@ -355,15 +359,19 @@ public class Controller {
             String rcChoice2 = (String) twoOfFour_D.getValue();
             String rcChoice3 = (String) threeOfFour_D.getValue();
             String rcChoice4 = (String) fourOfFour_D.getValue();
-            // send stvChoices to backend
-            if (rcChoice1 == "Can1" && rcChoice2 == "Can2" && rcChoice3 == "Can3" && rcChoice4 == "Can4"){
-                testLabel.setText("All Worked");
-            }
+
+            // send rcChoices to backend
+            vote1=nameToId(rcChoice1);
+            vote2=nameToId(rcChoice2);
+            vote3=nameToId(rcChoice3);
+            vote4=nameToId(rcChoice4);
+
             clearInputs();
             rcBallot_G.setVisible(false);
             endBallot_G.setVisible(true);
 
             dbAccess vote = new dbAccess();
+            vote.insertVote(vote1,vote2,vote3,vote4,vote5,currentLoginID);
 
         }
     }
@@ -417,6 +425,7 @@ public class Controller {
         int[] cantotals = {0,0,0,0,0};
         int[] firstelim = {0,0,0,0,0};
         int[] secondelim = {0,0,0,0,0};
+        int[] thirdelim = {0,0,0,0,0};
         int[] eliminate = {0,0,0,0}; // with 5 candidates, only 3 passes needed + min counter for one seat
 
         dbAccess stv = new dbAccess();
@@ -448,6 +457,20 @@ public class Controller {
         }
         cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
         cantotals[eliminate[2] - 1] = 0;
+
+        eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
+        eliminate[3] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 3
+
+        for (int i=0; i<5; i++){ // pulls third round from db to array
+            thirdelim[i] = stv.getSecondElimination(eliminate[1],eliminate[2],i+1);
+        }
+
+        for (int i=0; i<5; i++) {
+            cantotals[i] += thirdelim[i];   // adds transferred votes
+        }
+        cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+        cantotals[eliminate[2] - 1] = 0;
+        cantotals[eliminate[3] - 1] = 0;
 
         // set up bar chart
     }

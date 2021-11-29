@@ -152,10 +152,14 @@ public class dbAccess {
             pstmt.setInt(11, elim3);
 
 
-                                                // permutation 3,1,2
+            pstmt.setInt(14, elim); // permutation 3,1,2
+            pstmt.setInt(15, elim2);
+            pstmt.setInt(13, elim3);
 
 
-                                                // permutation 3,2,1
+            pstmt.setInt(18, elim); // permutation 3,2,1
+            pstmt.setInt(17, elim2);
+            pstmt.setInt(16, elim3);
 
 
             pstmt.setInt(19, candidatenum);
