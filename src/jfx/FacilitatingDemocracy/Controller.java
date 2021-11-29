@@ -16,6 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.stream.IntStream;
 
@@ -267,23 +268,36 @@ public class Controller {
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-
     private String username;
     private String password;
 
     @FXML
     void Login(ActionEvent event) { // allows access to voting pane
-
+        if (!Objects.equals(username_T.getText(), "TalkingDog") || !Objects.equals(loginPassword_T.getText(), "TwinSisters")){
+            validateLogin_T.setVisible(true);
+            login_B.setText("Login to Vote");
+            login_T.setText("Login Incomplete");
+        } else {
+            login_B.setText("Login Complete!");
+            login_T.setText("Now able to vote!");
+            validateLogin_T.setVisible(false);
+        }
     }
 
     @FXML
     void ForgotPassword(ActionEvent event) { // hide loginGrid1, show loginGrid2
-
+        loginGrid1.setVisible(false);
+        voterID_P.setVisible(false);
+        loginGrid2.setVisible(true);
     }
 
     @FXML
     void RecoverPassword(ActionEvent event) { // presents voter their login info
-
+        if (Objects.equals(bDayRecovery_T.getText(), "09/17/2005") && Objects.equals(idRecovery_T.getText(), "2005")){
+            username_T1.setText("TalkingDog");
+            loginPassword_T1.setText("TwinSisters");
+            validateLogin_T1.setText("Recovered!");
+        }
     }
 
     @FXML
@@ -294,16 +308,12 @@ public class Controller {
 
         register_B.setText("Registered!");
         validate_T.setText("Ready to Vote!");
-
-        register_B.setText("Registered!");
-        validate_T.setText("Ready to Vote!");
         name_T.setMouseTransparent(true);
         bDay_T.setMouseTransparent(true);
         id_T.setMouseTransparent(true);
         address_T.setMouseTransparent(true);
         newUsername_T.setMouseTransparent(true);
         personalPassword_T.setMouseTransparent(true);
-
     }
 
     @FXML
@@ -521,6 +531,10 @@ public class Controller {
             resultsPane.setVisible(false);
             loginPane.setVisible(true);
         }
+        loginGrid1.setVisible(true);
+        voterID_P.setVisible(true);
+        loginGrid2.setVisible(false);
+        validateLogin_T.setVisible(false);
     }
     
     // Menu Option 4
@@ -545,6 +559,7 @@ public class Controller {
             resultsPane.setVisible(false);
             candidatesPane.setVisible(true);
         }
+
     }
 
     // Menu Option 5
@@ -620,6 +635,8 @@ public class Controller {
         newUsername_T.setMouseTransparent(false);
         personalPassword_T.clear();
         personalPassword_T.setMouseTransparent(false);
+        username_T.clear();
+        loginPassword_T.clear();
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
