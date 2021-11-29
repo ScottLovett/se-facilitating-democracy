@@ -422,7 +422,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -439,17 +439,17 @@
                   </ImageView>
                   <Accordion layoutX="14.0" layoutY="217.0" prefHeight="372.0" prefWidth="402.0">
                      <panes>
-                        <TitledPane fx:id="candidate1_A" animated="false" prefWidth="402.0" text="Candidate 1">
+                        <TitledPane fx:id="candidate1_A" prefWidth="402.0" text="Candidate 1">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="134.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can1Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
-                                    <TextArea fx:id="can1Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can1Description_T" editable="false" layoutX="184.0" mouseTransparent="true" prefHeight="135.0" prefWidth="218.0" promptText="Candidate Description" />
+                                    <TextArea fx:id="can1Policies_T" editable="false" layoutY="134.0" mouseTransparent="true" prefHeight="87.0" prefWidth="402.0" promptText="Candidate Policies and Purpose" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -514,7 +514,7 @@
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane fx:id="candidate6_A" animated="false" text="Candidate 6">
+                        <TitledPane fx:id="candidate6_A" animated="false" text="Write-In Candidate">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -535,7 +535,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="votePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>

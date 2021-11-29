@@ -490,6 +490,7 @@ public class Controller {
             resultsPane.setVisible(false);
             candidatesPane.setVisible(true);
         }
+        candidate1_A.setExpanded(true);
     }
 
     // Menu Option 5
