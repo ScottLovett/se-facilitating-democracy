@@ -697,6 +697,31 @@
                         <Font name="Courier New" size="12.0" />
                      </font>
                   </TextArea>
+                  <ImageView fx:id="fptp_C1" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fptp_C1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="stv_C1" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../stv_C1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="rc_C1" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../rc_C1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="fptp_C2" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../fptp_C2.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="rc_C2" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../rc_C2.jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>

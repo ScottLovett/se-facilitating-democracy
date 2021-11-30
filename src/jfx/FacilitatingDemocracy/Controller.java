@@ -237,6 +237,9 @@ public class Controller {
     @FXML // fx:id="username_T1"
     private TextField username_T1; // Value injected by FXMLLoader
 
+    @FXML // fx:id="loginID_T"
+    private TextField loginID_T; // Value injected by FXMLLoader
+
     @FXML // fx:id="validateLogin_T"
     private TextField validateLogin_T; // Value injected by FXMLLoader
 
@@ -255,6 +258,17 @@ public class Controller {
     @FXML // fx:id="votingPage_B"
     private Button votingPage_B; // Value injected by FXMLLoader
 
+    @FXML // fx:id="fptp_C1"
+    private ImageView fptp_C1; // Value injected by FXMLLoader
+    @FXML // fx:id="fptp_C2"
+    private ImageView fptp_C2; // Value injected by FXMLLoader
+    @FXML // fx:id="stv_C1"
+    private ImageView stv_C1; // Value injected by FXMLLoader
+    @FXML // fx:id="rc_C1"
+    private ImageView rc_C1; // Value injected by FXMLLoader
+    @FXML // fx:id="rc_C1"
+    private ImageView rc_C2; // Value injected by FXMLLoader
+
     @FXML
     private Label testLabel;
     @FXML
@@ -267,7 +281,7 @@ public class Controller {
     private int currentLoginID;
 
     @FXML
-    void Login(ActionEvent event) { // allows access to voting pane
+    void Login(ActionEvent event) { // allows access to vote pane
         if (!Objects.equals(username_T.getText(), "TalkingDog") || !Objects.equals(loginPassword_T.getText(), "TwinSisters")){
             validateLogin_T.setVisible(true);
             login_B.setText("Login to Vote");
@@ -370,7 +384,10 @@ public class Controller {
         fptp_B.setSelected(true);
         stv_B.setSelected(false);
         rcv_B.setSelected(false);
-        fptp_G.setVisible(true);
+        //fptp_G.setVisible(true);
+        // Comment out line above if using hardcoded image results below, and vice versa
+        fptp_C1.setVisible(true); fptp_C2.setVisible(false);
+        stv_C1.setVisible(false); rc_C1.setVisible(false); rc_C2.setVisible(false);
 
         int[] cantotals = {0,0,0,0,0};
 
@@ -410,7 +427,10 @@ public class Controller {
         fptp_B.setSelected(false);
         stv_B.setSelected(true);
         rcv_B.setSelected(false);
-        stv_G.setVisible(true);
+        //stv_G.setVisible(true);
+        // Comment out line above if using hardcoded image results below, and vice versa
+        fptp_C1.setVisible(false); fptp_C2.setVisible(false);
+        stv_C1.setVisible(true); rc_C1.setVisible(false); rc_C2.setVisible(false);
 
         int[] cantotals = {0,0,0,0,0};
         int[] firstelim = {0,0,0,0,0};
@@ -492,7 +512,10 @@ public class Controller {
         fptp_B.setSelected(false);
         stv_B.setSelected(false);
         rcv_B.setSelected(true);
-        rcv_G.setVisible(true);
+        //rcv_G.setVisible(true);
+        // Comment out line above if using hardcoded image results below, and vice versa
+        fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);
+        rc_C1.setVisible(true); rc_C2.setVisible(false);
 
         int[] cantotals = {0,0,0,0,0};
         int[] firstelim = {0,0,0,0,0};
@@ -659,7 +682,7 @@ public class Controller {
             resultsPane.setVisible(false);
             candidatesPane.setVisible(true);
         }
-
+        candidate1_A.setExpanded(true);
     }
 
     // Menu Option 5
@@ -712,6 +735,8 @@ public class Controller {
             votePane.setVisible(false);
             resultsPane.setVisible(true);
         }
+        fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);
+        rc_C1.setVisible(true); rc_C2.setVisible(false);
     }
     
     // Menu Option 7
@@ -737,6 +762,7 @@ public class Controller {
         personalPassword_T.setMouseTransparent(false);
         username_T.clear();
         loginPassword_T.clear();
+        loginID_T.clear();
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
