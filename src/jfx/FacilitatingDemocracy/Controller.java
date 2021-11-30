@@ -45,9 +45,29 @@ public class Controller {
 
     @FXML // fx:id="can1Description_T"
     private TextArea can1Description_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can2Description_T"
+    private TextArea can2Description_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can3Description_T"
+    private TextArea can3Description_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can4Description_T"
+    private TextArea can4Description_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can5Description_T"
+    private TextArea can5Description_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can6Description_T"
+    private TextArea can6Description_T; // Value injected by FXMLLoader
 
-    @FXML // fx:id="can1policies_T"
-    private TextArea can1policies_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can1Policies_T"
+    private TextArea can1Policies_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can2Policies_T"
+    private TextArea can2Policies_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can3Policies_T"
+    private TextArea can3Policies_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can4Policies_T"
+    private TextArea can4Policies_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can5Policies_T"
+    private TextArea can5Policies_T; // Value injected by FXMLLoader
+    @FXML // fx:id="can6Policies_T"
+    private TextArea can6Policies_T; // Value injected by FXMLLoader
 
     @FXML // fx:id="candidate1_A"
     private TitledPane candidate1_A; // Value injected by FXMLLoader
@@ -290,6 +310,8 @@ public class Controller {
             login_B.setText("Login Complete!");
             login_T.setText("Now able to vote!");
             validateLogin_T.setVisible(false);
+            username_T.setMouseTransparent(true);
+            loginPassword_T.setMouseTransparent(true);
         }
     }
 
@@ -298,6 +320,8 @@ public class Controller {
         loginGrid1.setVisible(false);
         voterID_P.setVisible(false);
         loginGrid2.setVisible(true);
+        bDayRecovery_T.clear();
+        validateLogin_T1.setText("Recover login");
     }
 
     @FXML
@@ -306,6 +330,12 @@ public class Controller {
             username_T1.setText("TalkingDog");
             loginPassword_T1.setText("TwinSisters");
             validateLogin_T1.setText("Recovered!");
+            bDayRecovery_T.setMouseTransparent(true);
+            idRecovery_T.setMouseTransparent(true);
+        } else {
+            validateLogin_T1.setText("Recovered!");
+            username_T1.setText("You Are");
+            loginPassword_T1.setText("Unique!");
         }
     }
 
@@ -629,6 +659,7 @@ public class Controller {
             resultsPane.setVisible(false);
             registrationPane.setVisible(true);
             register_B.setText("Register");
+            validate_T.clear();
         }
     }
 
@@ -644,6 +675,8 @@ public class Controller {
             votePane.setVisible(false);
             resultsPane.setVisible(false);
             loginPane.setVisible(true);
+
+
         } else {
             clearInputs();
             descriptionPane.setVisible(false);
@@ -658,6 +691,8 @@ public class Controller {
         voterID_P.setVisible(true);
         loginGrid2.setVisible(false);
         validateLogin_T.setVisible(false);
+        login_B.setText("Login to Vote");
+        login_T.setText("Login Here");
     }
     
     // Menu Option 4
@@ -688,6 +723,10 @@ public class Controller {
     // Menu Option 5
     @FXML
     void gotoVoting(ActionEvent event) { // Only allow access if voter has logged in
+        if (login_B.getText() != "Login Complete!" && login_T.getText() != "Now able to vote!" ) {
+            //gotoLogin();
+            return;
+        }
         if (votePane.isVisible()) {
             clearInputs();
             descriptionPane.setVisible(false);
@@ -761,8 +800,16 @@ public class Controller {
         personalPassword_T.clear();
         personalPassword_T.setMouseTransparent(false);
         username_T.clear();
+        username_T.setMouseTransparent(false);
         loginPassword_T.clear();
+        loginPassword_T.setMouseTransparent(false);
+        bDayRecovery_T.clear();
+        bDayRecovery_T.setMouseTransparent(false);
+        idRecovery_T.clear();
+        idRecovery_T.setMouseTransparent(false);
         loginID_T.clear();
+        username_T1.clear();
+        loginPassword_T1.clear();
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
@@ -772,7 +819,17 @@ public class Controller {
         assert bDayRecovery_T != null : "fx:id=\"bDayRecovery_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert bDay_T != null : "fx:id=\"bDay_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert can1Description_T != null : "fx:id=\"can1Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert can1policies_T != null : "fx:id=\"can1policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can2Description_T != null : "fx:id=\"can2Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can3Description_T != null : "fx:id=\"can3Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can4Description_T != null : "fx:id=\"can4Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can5Description_T != null : "fx:id=\"can5Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can6Description_T != null : "fx:id=\"can6Description_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can1Policies_T != null : "fx:id=\"can1policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can2Policies_T != null : "fx:id=\"can2policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can3Policies_T != null : "fx:id=\"can3policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can4Policies_T != null : "fx:id=\"can4policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can5Policies_T != null : "fx:id=\"can5policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert can6Policies_T != null : "fx:id=\"can6policies_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert candidate1_A != null : "fx:id=\"candidate1_A\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert candidate2_A != null : "fx:id=\"candidate2_A\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert candidate3_A != null : "fx:id=\"candidate3_A\" was not injected: check your FXML file 'FDProject.fxml'.";
