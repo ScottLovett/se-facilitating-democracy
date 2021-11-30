@@ -21,22 +21,6 @@ public class dbAccess {
         return conn;
     }
 
-    public int getTotalVotes() {
-
-        String SQL = "SELECT count(*) FROM votes";
-        int count = 0;
-
-        try (Connection conn = connect();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(SQL)) {
-            rs.next();
-            count = rs.getInt(1);
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return count;
-    }
-
     public int getFirstVote(int candidatenum) {
         String SQL = "SELECT count(*) FROM votes " + "WHERE vote1 = ?";
         int count = 0;
