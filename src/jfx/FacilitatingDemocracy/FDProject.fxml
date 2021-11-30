@@ -123,17 +123,17 @@
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints maxHeight="90.40000610351562" minHeight="10.0" prefHeight="79.19999389648437" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="105.60000610351564" minHeight="10.0" prefHeight="95.19998779296877" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="118.19998779296873" minHeight="10.0" prefHeight="99.40000610351561" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="122.4" minHeight="10.0" prefHeight="90.39996337890625" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="125.5999755859375" minHeight="10.0" prefHeight="78.40001220703124" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="117.60004272460935" minHeight="10.0" prefHeight="87.19998779296878" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="103.99997558593748" minHeight="10.0" prefHeight="51.1999572753906" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="105.60000610351564" minHeight="10.0" prefHeight="95.19998168945311" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="118.19998779296873" minHeight="10.0" prefHeight="92.80001831054688" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="122.4" minHeight="10.0" prefHeight="81.59998779296876" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="125.5999755859375" minHeight="10.0" prefHeight="77.60000000000002" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.60004272460935" minHeight="10.0" prefHeight="95.20000000000005" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="103.99997558593748" minHeight="10.0" prefHeight="62.399951171875045" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
                         <TextArea editable="false" prefHeight="57.0" prefWidth="381.0" text="This button expanses the buttons to the left to reveale their full&#10;name and description.&#10;Click it again to shrink and return to HomePane." />
                         <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Register to Vote!&#10;We will need to verify your information.&#10;Registration is easy and quick. We'll walk you through it if you &#10;ever need help." GridPane.rowIndex="1" />
-                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Before you can cast your vote, we must verify your identity. &#10;One person, one vote.&#10;If you are not yet registered to vote, please do so before &#10;attempting to login. " GridPane.rowIndex="2" />
+                        <TextArea editable="false" prefHeight="74.0" prefWidth="381.0" text="Before you can cast your vote, we must verify your identity. &#10;One person, one vote.&#10;If you are not yet registered to vote, please do so before &#10;attempting to login. " GridPane.rowIndex="2" />
                         <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Displays the list of open positions and the candidates running &#10;for each office." GridPane.rowIndex="3" />
                         <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="This is where you vote! You must login in order to vote." GridPane.rowIndex="4" />
                         <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Displays the results of each election system.&#10;View the results that will maximize happiness or satisfaction with&#10;the electoral system of democracy." GridPane.rowIndex="5" />
@@ -144,7 +144,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="422.0">
                <children>
@@ -457,8 +457,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can1Description_T" layoutX="200.0" prefHeight="150.0" prefWidth="202.0" text="Candidate Description" />
-                                    <TextArea fx:id="can1policies_T" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can1Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
+                                    <TextArea fx:id="can1Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -472,8 +472,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can2Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
+                                    <TextArea fx:id="can2Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -487,8 +487,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can3Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
+                                    <TextArea fx:id="can3Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -502,8 +502,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can4Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
+                                    <TextArea fx:id="can4Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -517,13 +517,13 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can5Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
+                                    <TextArea fx:id="can5Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane fx:id="candidate6_A" animated="false" text="Candidate 6">
+                        <TitledPane fx:id="candidate6_A" animated="false" text="Write-In Candidate">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -532,8 +532,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" text="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" text="Candidate Policies and Relation" />
+                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" promptText="Candidate Description" />
+                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -658,7 +658,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane fx:id="resultsAnchor" prefHeight="625.0" prefWidth="420.0">
                <children>

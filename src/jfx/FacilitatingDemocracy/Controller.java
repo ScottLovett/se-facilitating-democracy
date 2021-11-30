@@ -301,6 +301,22 @@ public class Controller {
     private int currentLoginID;
 
     @FXML
+    void Register(ActionEvent event) { // sends user info to BackEnd
+        register_B.setText("Registered!");
+        validate_T.setText("Ready to Vote!");
+        name_T.setMouseTransparent(true);
+        bDay_T.setMouseTransparent(true);
+        id_T.setMouseTransparent(true);
+        address_T.setMouseTransparent(true);
+        newUsername_T.setMouseTransparent(true);
+        personalPassword_T.setMouseTransparent(true);
+
+        dbAccess reg = new dbAccess();
+        reg.insertUser(name_T.getText(),Integer.parseInt(id_T.getText()));
+        currentLoginID = Integer.parseInt(id_T.getText());
+    }
+
+    @FXML
     void Login(ActionEvent event) { // allows access to vote pane
         if (!Objects.equals(username_T.getText(), "TalkingDog") || !Objects.equals(loginPassword_T.getText(), "TwinSisters")){
             validateLogin_T.setVisible(true);
@@ -310,6 +326,7 @@ public class Controller {
             login_B.setText("Login Complete!");
             login_T.setText("Now able to vote!");
             validateLogin_T.setVisible(false);
+            loginID_T.setMouseTransparent(true);
             username_T.setMouseTransparent(true);
             loginPassword_T.setMouseTransparent(true);
         }
@@ -332,28 +349,16 @@ public class Controller {
             validateLogin_T1.setText("Recovered!");
             bDayRecovery_T.setMouseTransparent(true);
             idRecovery_T.setMouseTransparent(true);
-        } else {
+        } else if (true){   // if valid id in database
             validateLogin_T1.setText("Recovered!");
             username_T1.setText("You Are");
             loginPassword_T1.setText("Unique!");
+            bDayRecovery_T.setMouseTransparent(true);
+            idRecovery_T.setMouseTransparent(true);
+        } else {
+            username_T1.setText("Go To");
+            loginPassword_T1.setText("Registration!");
         }
-    }
-
-    @FXML
-    void Register(ActionEvent event) { // sends user info to BackEnd
-
-        dbAccess reg = new dbAccess();
-        reg.insertUser(name_T.getText(),Integer.parseInt(id_T.getText()));
-        currentLoginID = Integer.parseInt(id_T.getText());
-
-        register_B.setText("Registered!");
-        validate_T.setText("Ready to Vote!");
-        name_T.setMouseTransparent(true);
-        bDay_T.setMouseTransparent(true);
-        id_T.setMouseTransparent(true);
-        address_T.setMouseTransparent(true);
-        newUsername_T.setMouseTransparent(true);
-        personalPassword_T.setMouseTransparent(true);
     }
 
     @FXML
@@ -776,6 +781,11 @@ public class Controller {
         }
         fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);
         rc_C1.setVisible(true); rc_C2.setVisible(false);
+
+        if (endBallot_G.isVisible()){
+            login_B.setText("Login to Vote");
+            login_T.setText("Login Here");
+        }
     }
     
     // Menu Option 7

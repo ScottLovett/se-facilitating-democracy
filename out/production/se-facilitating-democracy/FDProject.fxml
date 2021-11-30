@@ -268,7 +268,7 @@
                      </children></AnchorPane>
                </children>
             </StackPane>
-            <StackPane fx:id="loginPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+            <StackPane fx:id="loginPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
                <children>
                   <AnchorPane prefHeight="625.0" prefWidth="420.0">
                      <children>
@@ -416,7 +416,7 @@
                   </AnchorPane>
                </children>
             </StackPane>
-            <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+            <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
                <children>
                   <AnchorPane prefHeight="625.0" prefWidth="420.0">
                      <children>
