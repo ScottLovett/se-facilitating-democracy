@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -144,7 +147,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="422.0">
                <children>
@@ -658,7 +661,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane fx:id="resultsAnchor" prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -692,12 +695,12 @@
                         <Font name="Verdana" size="12.0" />
                      </font>
                   </RadioButton>
-                  <TextArea fx:id="threeResultsPanes" editable="false" layoutX="9.0" layoutY="527.0" prefHeight="60.0" prefWidth="402.0" text="3 Panes Here&#10;One for each election system">
+                  <TextArea fx:id="threeResultsPanes" editable="false" layoutX="17.0" layoutY="525.0" prefHeight="62.0" prefWidth="394.0" text="3 Panes Here&#10;One for each election system">
                      <font>
                         <Font name="Courier New" size="12.0" />
                      </font>
                   </TextArea>
-                  <ImageView fx:id="fptp_C1" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="fptp_C1" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
                      <image>
                         <Image url="@../fptp_C1.jpg" />
                      </image>
@@ -722,6 +725,30 @@
                         <Image url="@../rc_C2.jpg" />
                      </image>
                   </ImageView>
+                  <BarChart fx:id="fptp_G" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Election Results by a Winner Takes All System" visible="false">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="stv_G" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Results By The Alternative Vote System" visible="false">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="rcv_G" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Results by a Ranked Choice System">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
                </children>
             </AnchorPane>
          </children>

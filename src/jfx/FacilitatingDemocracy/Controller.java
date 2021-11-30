@@ -127,6 +127,7 @@ public class Controller {
     private RadioButton fptp_B; // Value injected by FXMLLoader
 
 
+    @FXML
     private BarChart<String, Number> fptp_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="homePane"
@@ -205,6 +206,7 @@ public class Controller {
     @FXML // fx:id="rcv_B"
     private RadioButton rcv_B; // Value injected by FXMLLoader
 
+    @FXML
     private BarChart<String, Number> rcv_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="recoverPassword_B"
@@ -237,6 +239,7 @@ public class Controller {
     @FXML // fx:id="stv_B"
     private RadioButton stv_B; // Value injected by FXMLLoader
 
+    @FXML
     private BarChart<String, Number> stv_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="threeOfFour_D"
