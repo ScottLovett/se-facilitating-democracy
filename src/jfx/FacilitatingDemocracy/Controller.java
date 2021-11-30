@@ -419,10 +419,9 @@ public class Controller {
         fptp_B.setSelected(true);
         stv_B.setSelected(false);
         rcv_B.setSelected(false);
-        //fptp_G.setVisible(true);
+
         // Comment out line above if using hardcoded image results below, and vice versa
-        fptp_C1.setVisible(true); fptp_C2.setVisible(false);
-        stv_C1.setVisible(false); rc_C1.setVisible(false); rc_C2.setVisible(false);
+        //fptp_C1.setVisible(true); fptp_C2.setVisible(false); stv_C1.setVisible(false); rc_C1.setVisible(false); rc_C2.setVisible(false);
 
         int[] cantotals = {0,0,0,0,0};
 
@@ -455,6 +454,7 @@ public class Controller {
 
         fptp_G.getData().addAll(series1);
 
+        fptp_G.setVisible(true);
     }
 
     @FXML
@@ -462,10 +462,9 @@ public class Controller {
         fptp_B.setSelected(false);
         stv_B.setSelected(true);
         rcv_B.setSelected(false);
-        //stv_G.setVisible(true);
+
         // Comment out line above if using hardcoded image results below, and vice versa
-        fptp_C1.setVisible(false); fptp_C2.setVisible(false);
-        stv_C1.setVisible(true); rc_C1.setVisible(false); rc_C2.setVisible(false);
+        //fptp_C1.setVisible(false); fptp_C2.setVisible(false);stv_C1.setVisible(true); rc_C1.setVisible(false); rc_C2.setVisible(false);
 
         int[] cantotals = {0,0,0,0,0};
         int[] firstelim = {0,0,0,0,0};
@@ -540,6 +539,11 @@ public class Controller {
         series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
 
         stv_G.getData().addAll(series1);
+
+
+        //add graph to ui
+        stv_G.setVisible(true);
+
     }
 
     @FXML
@@ -547,10 +551,9 @@ public class Controller {
         fptp_B.setSelected(false);
         stv_B.setSelected(false);
         rcv_B.setSelected(true);
-        //rcv_G.setVisible(true);
+
         // Comment out line above if using hardcoded image results below, and vice versa
-        fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);
-        rc_C1.setVisible(true); rc_C2.setVisible(false);
+        //fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);rc_C1.setVisible(true); rc_C2.setVisible(false);
 
         int[] cantotals = {0,0,0,0,0};
         int[] firstelim = {0,0,0,0,0};
@@ -559,7 +562,7 @@ public class Controller {
 
         dbAccess rc = new dbAccess();
 
-        for (int i=1; i<6; i++){ // pulls first round from db to array
+        for (int i=0; i<5; i++){ // pulls first round from db to array
             cantotals[i] = rc.getFirstVote(i);
         }
 
@@ -612,6 +615,7 @@ public class Controller {
         series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
 
         rcv_G.getData().addAll(series1);
+        rcv_G.setVisible(true);
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -779,8 +783,7 @@ public class Controller {
             votePane.setVisible(false);
             resultsPane.setVisible(true);
         }
-        fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);
-        rc_C1.setVisible(true); rc_C2.setVisible(false);
+        fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);rc_C1.setVisible(false); rc_C2.setVisible(false);
 
         if (endBallot_G.isVisible()){
             login_B.setText("Login to Vote");

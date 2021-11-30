@@ -96,7 +96,7 @@ public class dbAccess {
     }
 
     public int getSecondElimination(int elim, int elim2, int candidatenum) {
-        String SQL = "SELECT count(*) FROM votes " + "WHERE ((vote1 = ? AND vote2 = ?) " +"OR (vote1 = ? AND vote2 = ?))" + "AND ( vote2 OR vote3 = ?)";
+        String SQL = "SELECT count(*) FROM votes " + "WHERE ((vote1 = ? AND vote2 = ?) " +"OR (vote1 = ? AND vote2 = ?))" + "AND ( vote2 = ? OR vote3 = ?)";
         int count = 0;
 
         try (Connection conn = connect();
@@ -109,6 +109,7 @@ public class dbAccess {
             pstmt.setInt(3, elim2);
 
             pstmt.setInt(5, candidatenum);
+            pstmt.setInt(6, candidatenum);
 
             ResultSet rs = pstmt.executeQuery();
             rs.next();
@@ -130,7 +131,7 @@ public class dbAccess {
                                                      "OR (vote1 = ? AND vote2 = ? AND vote3 = ?)" +//2,3,1
                                                      "OR (vote1 = ? AND vote2 = ? AND vote3 = ?)" +//3,1,2
                                                      "OR (vote1 = ? AND vote2 = ? AND vote3 = ?))" + //3,2,1
-                                                     "AND ( vote2 OR vote3 OR vote4 = ?)";
+                                                     "AND ( vote2 = ? OR vote3 = ? OR vote4 = ?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(SQL)) {
@@ -163,6 +164,8 @@ public class dbAccess {
 
 
             pstmt.setInt(19, candidatenum);
+            pstmt.setInt(20, candidatenum);
+            pstmt.setInt(21, candidatenum);
 
             ResultSet rs = pstmt.executeQuery();
             rs.next();
