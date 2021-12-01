@@ -147,7 +147,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="422.0">
                <children>
@@ -166,7 +166,7 @@
                         <Font name="Trebuchet MS Bold Italic" size="42.0" />
                      </font>
                   </Label>
-                  <TextArea editable="false" layoutX="29.0" layoutY="431.0" mouseTransparent="true" pickOnBounds="false" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD )&#10;&#10;Antonio Hendricks&#10;Scott Lovett&#10;Noel Vazquez&#10;Juan Glinton">
+                  <TextArea editable="false" layoutX="29.0" layoutY="431.0" mouseTransparent="true" pickOnBounds="false" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD )&#10;&#10;Antonio Hendricks&#10;Scott Lovett&#10;Noel Vazquez&#10;&amp; Maybe Juan Glinton">
                      <font>
                         <Font name="Verdana" size="12.0" />
                      </font>
@@ -302,6 +302,16 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
+                        <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="221.0" text="Your ID #" textAlignment="RIGHT">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="loginID_T" promptText="Student Number" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </TextField>
                         <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="326.0" prefHeight="25.0" prefWidth="221.0" text="Username" textAlignment="RIGHT" GridPane.rowIndex="1">
                            <font>
                               <Font name="Verdana" size="12.0" />
@@ -342,16 +352,6 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Button>
-                        <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="221.0" text="Your ID #" textAlignment="RIGHT">
-                           <font>
-                              <Font name="Verdana" size="12.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="loginID_T" promptText="Student Number" GridPane.columnIndex="1">
-                           <font>
-                              <Font name="Verdana" size="12.0" />
-                           </font>
-                        </TextField>
                      </children>
                   </GridPane>
                   <GridPane fx:id="loginGrid2" layoutX="22.0" layoutY="189.0" prefHeight="406.0" prefWidth="380.0" visible="false">
@@ -661,7 +661,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane fx:id="resultsAnchor" prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -675,7 +675,7 @@
                         <Font name="Trebuchet MS Bold Italic" size="32.0" />
                      </font>
                   </Label>
-                  <Label layoutX="17.0" layoutY="187.0" prefHeight="18.0" prefWidth="354.0" text="To Maximize Voter Satisfaction, see Ranked Choice Voting">
+                  <Label layoutX="17.0" layoutY="187.0" prefHeight="18.0" prefWidth="394.0" text="To Maximize Voter Satisfaction, see Ranked Choice Voting">
                      <font>
                         <Font name="Verdana" size="12.0" />
                      </font>
@@ -695,7 +695,7 @@
                         <Font name="Verdana" size="12.0" />
                      </font>
                   </RadioButton>
-                  <TextArea fx:id="threeResultsPanes" editable="false" layoutX="17.0" layoutY="525.0" prefHeight="62.0" prefWidth="394.0" text="3 Panes Here&#10;One for each election system">
+                  <TextArea fx:id="threeResultsPanes" editable="false" layoutX="17.0" layoutY="525.0" prefHeight="62.0" prefWidth="394.0" promptText="3 Panes Here; One for each election system">
                      <font>
                         <Font name="Courier New" size="12.0" />
                      </font>
@@ -749,6 +749,9 @@
                         <NumberAxis side="LEFT" />
                      </yAxis>
                   </BarChart>
+                  <Label fx:id="fptp_P" focusTraversable="false" layoutX="44.0" layoutY="120.0" mouseTransparent="true" text="Label" visible="false" />
+                  <Label fx:id="rcv_P" focusTraversable="false" layoutX="139.0" layoutY="150.0" mouseTransparent="true" text="Label" visible="false" />
+                  <Label fx:id="stv_P" focusTraversable="false" layoutX="200.0" layoutY="120.0" mouseTransparent="true" text="Label" visible="false" />
                </children>
             </AnchorPane>
          </children>

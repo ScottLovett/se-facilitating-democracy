@@ -295,7 +295,11 @@ public class Controller {
     @FXML
     private Label testLabel;
     @FXML
-    private Label testLabel1;
+    private Label fptp_P;
+    @FXML
+    private Label stv_P;
+    @FXML
+    private Label rcv_P;
 
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -328,6 +332,7 @@ public class Controller {
         } else {
             login_B.setText("Login Complete!");
             login_T.setText("Now able to vote!");
+            loginPane_B.setText("Log Out");
             validateLogin_T.setVisible(false);
             loginID_T.setMouseTransparent(true);
             username_T.setMouseTransparent(true);
@@ -422,41 +427,46 @@ public class Controller {
         fptp_B.setSelected(true);
         stv_B.setSelected(false);
         rcv_B.setSelected(false);
-
+        fptp_G.setVisible(true); stv_G.setVisible(false); rcv_G.setVisible(false);
         // Comment out line above if using hardcoded image results below, and vice versa
         //fptp_C1.setVisible(true); fptp_C2.setVisible(false); stv_C1.setVisible(false); rc_C1.setVisible(false); rc_C2.setVisible(false);
 
-        int[] cantotals = {0,0,0,0,0};
+        if (fptp_P.getText() != "F Once Selected") {
+            int[] cantotals = {0, 0, 0, 0, 0};
 
-        dbAccess fptp = new dbAccess();
+            dbAccess fptp = new dbAccess();
 
-        for (int i=0; i<5; i++){ // pulls totals for fptp from db to array
-            cantotals[i] = fptp.getFirstPastThePost(i+1);
-        }
+            for (int i = 0; i < 5; i++) { // pulls totals for fptp from db to array
+                cantotals[i] = fptp.getFirstPastThePost(i + 1);
+            }
             // set up bar chart
 
-        CategoryAxis xAxis = new CategoryAxis();
-        xAxis.setLabel("Candidates");
-        xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
-                "Can1", "Can2", "Can3", "Can4", "Can5")));
+            CategoryAxis xAxis = new CategoryAxis();
+            xAxis.setLabel("Candidates");
+            xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
+                    "Can1", "Can2", "Can3", "Can4", "Can5")));
 
-        NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Votes");
+            NumberAxis yAxis = new NumberAxis();
+            yAxis.setLabel("Votes");
 
-        fptp_G = new BarChart<String,Number>(xAxis,yAxis);
-        fptp_G.setTitle("First Past The Post");
+            //fptp_G = new BarChart<String,Number>(xAxis,yAxis);
+            fptp_G.setTitle("First Past The Post");
 
-        XYChart.Series<String, Number> series1 = new XYChart.Series<>();
-        series1.setName("First Past The Post");
+            XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+            series1.setName("First Past The Post");
 
-        series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
-        series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
-        series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
-        series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
-        series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
 
-        fptp_G.getData().addAll(series1);
+            fptp_G.getData().addAll(series1);
 
+            fptp_G.setVisible(true);
+        }
+        fptp_P.setText("F Once Selected");
+        //threeResultsPanes.setText("Candidate Blank Has Won!");
         fptp_G.setVisible(true);
     }
 
@@ -465,159 +475,163 @@ public class Controller {
         fptp_B.setSelected(false);
         stv_B.setSelected(true);
         rcv_B.setSelected(false);
-
+        fptp_G.setVisible(false); stv_G.setVisible(true); rcv_G.setVisible(false);
         // Comment out line above if using hardcoded image results below, and vice versa
         //fptp_C1.setVisible(false); fptp_C2.setVisible(false);stv_C1.setVisible(true); rc_C1.setVisible(false); rc_C2.setVisible(false);
 
-        int[] cantotals = {0,0,0,0,0};
-        int[] firstelim = {0,0,0,0,0};
-        int[] secondelim = {0,0,0,0,0};
-        int[] thirdelim = {0,0,0,0,0};
-        int[] eliminate = {0,0,0,0}; // with 5 candidates, only 3 passes needed + min counter for one seat
+        if (stv_P.getText() != "S Once Selected") {
+            int[] cantotals = {0,0,0,0,0};
+            int[] firstelim = {0,0,0,0,0};
+            int[] secondelim = {0,0,0,0,0};
+            int[] thirdelim = {0,0,0,0,0};
+            int[] eliminate = {0,0,0,0}; // with 5 candidates, only 3 passes needed + min counter for one seat
 
-        dbAccess stv = new dbAccess();
+            dbAccess stv = new dbAccess();
 
-        for (int i=0; i<5; i++){ // pulls first round from db to array
-            cantotals[i] = stv.getFirstVote(i+1);
+            for (int i=0; i<5; i++){ // pulls first round from db to array
+                cantotals[i] = stv.getFirstVote(i+1);
+            }
+            eliminate[0] = minIgnoreZero(cantotals); // current minimum
+            eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate of current minimum
+
+            for (int i=0; i<5; i++){ // pulls second round from db to array
+                firstelim[i] = stv.getFirstElimination(eliminate[1],i+1);
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += firstelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+
+            eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
+            eliminate[2] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 2
+
+            for (int i=0; i<5; i++){ // pulls second round from db to array
+                secondelim[i] = stv.getSecondElimination(eliminate[1],eliminate[2],i+1);
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += secondelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+            cantotals[eliminate[2] - 1] = 0;
+
+            eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
+            eliminate[3] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 3
+
+            for (int i=0; i<5; i++){ // pulls third round from db to array
+                thirdelim[i] = stv.getSecondElimination(eliminate[1],eliminate[2],i+1);
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += thirdelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+            cantotals[eliminate[2] - 1] = 0;
+            cantotals[eliminate[3] - 1] = 0;
+
+            // set up bar chart
+
+            CategoryAxis xAxis = new CategoryAxis();
+            xAxis.setLabel("Candidates");
+            xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
+                    "Can1", "Can2", "Can3", "Can4", "Can5")));
+
+            NumberAxis yAxis = new NumberAxis();
+            yAxis.setLabel("Votes");
+
+            //stv_G = new BarChart<String,Number>(xAxis,yAxis);
+            stv_G.setTitle("Single Transferable Vote");
+
+            XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+            series1.setName("Single Transferable Vote");
+
+            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+
+            stv_G.getData().addAll(series1);
+
+            //add graph to ui
+            stv_G.setVisible(true);
         }
-        eliminate[0] = minIgnoreZero(cantotals); // current minimum
-        eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate of current minimum
-
-        for (int i=0; i<5; i++){ // pulls second round from db to array
-            firstelim[i] = stv.getFirstElimination(eliminate[1],i+1);
-        }
-
-        for (int i=0; i<5; i++) {
-            cantotals[i] += firstelim[i];   // adds transferred votes
-        }
-        cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
-
-        eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
-        eliminate[2] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 2
-
-        for (int i=0; i<5; i++){ // pulls second round from db to array
-            secondelim[i] = stv.getSecondElimination(eliminate[1],eliminate[2],i+1);
-        }
-
-        for (int i=0; i<5; i++) {
-            cantotals[i] += secondelim[i];   // adds transferred votes
-        }
-        cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
-        cantotals[eliminate[2] - 1] = 0;
-
-        eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
-        eliminate[3] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 3
-
-        for (int i=0; i<5; i++){ // pulls third round from db to array
-            thirdelim[i] = stv.getSecondElimination(eliminate[1],eliminate[2],i+1);
-        }
-
-        for (int i=0; i<5; i++) {
-            cantotals[i] += thirdelim[i];   // adds transferred votes
-        }
-        cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
-        cantotals[eliminate[2] - 1] = 0;
-        cantotals[eliminate[3] - 1] = 0;
-
-        // set up bar chart
-
-        CategoryAxis xAxis = new CategoryAxis();
-        xAxis.setLabel("Candidates");
-        xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
-                "Can1", "Can2", "Can3", "Can4", "Can5")));
-
-        NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Votes");
-
-        stv_G = new BarChart<String,Number>(xAxis,yAxis);
-        stv_G.setTitle("Single Transferable Vote");
-
-        XYChart.Series<String, Number> series1 = new XYChart.Series<>();
-        series1.setName("Single Transferable Vote");
-
-        series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
-        series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
-        series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
-        series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
-        series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
-
-        stv_G.getData().addAll(series1);
-
-
-        //add graph to ui
+        stv_P.setText("S Once Selected");
         stv_G.setVisible(true);
-
     }
 
     @FXML
     void RankedChoice(ActionEvent event) { // View Results using Accordian
-        fptp_B.setSelected(false);
-        stv_B.setSelected(false);
-        rcv_B.setSelected(true);
-
+        fptp_B.setSelected(false); stv_B.setSelected(false); rcv_B.setSelected(true);
+        fptp_G.setVisible(false); stv_G.setVisible(false); rcv_G.setVisible(true);
         // Comment out line above if using hardcoded image results below, and vice versa
         //fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);rc_C1.setVisible(true); rc_C2.setVisible(false);
 
-        int[] cantotals = {0,0,0,0,0};
-        int[] firstelim = {0,0,0,0,0};
-        int[] secondelim = {0,0,0,0,0};
-        int[] eliminate = {0,0,0,0,0}; // with 5 candidates, only 2 passes needed + min for 3 seats
+        if (rcv_P.getText() != "R Once Selected") {
+            int[] cantotals = {0,0,0,0,0};
+            int[] firstelim = {0,0,0,0,0};
+            int[] secondelim = {0,0,0,0,0};
+            int[] eliminate = {0,0,0,0,0}; // with 5 candidates, only 2 passes needed + min for 3 seats
 
-        dbAccess rc = new dbAccess();
+            dbAccess rc = new dbAccess();
 
-        for (int i=0; i<5; i++){ // pulls first round from db to array
-            cantotals[i] = rc.getFirstVote(i);
+            for (int i=0; i<5; i++){ // pulls first round from db to array
+                cantotals[i] = rc.getFirstVote(i);
+            }
+
+            eliminate[0] = minIgnoreZero(cantotals); // current minimum
+            eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 1
+
+            for (int i=0; i<5; i++){ // pulls first elim from db to array
+                firstelim[i] = rc.getFirstElimination(eliminate[1],i+1);
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += firstelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidate to 0
+
+
+            eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
+            eliminate[2] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 2
+
+            for (int i=0; i<5; i++){ // pulls second round from db to array
+                secondelim[i] = rc.getSecondElimination(eliminate[1],eliminate[2],i+1);
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += secondelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+            cantotals[eliminate[2] - 1] = 0;
+
+            //set up bar chart
+
+            CategoryAxis xAxis = new CategoryAxis();
+            xAxis.setLabel("Candidates");
+            xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
+                    "Can1", "Can2", "Can3", "Can4", "Can5")));
+
+            NumberAxis yAxis = new NumberAxis();
+            yAxis.setLabel("Votes");
+
+            //rcv_G = new BarChart<String,Number>(xAxis,yAxis);
+            rcv_G.setTitle("Results by a Ranked Choice System");
+
+            XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+            series1.setName("Rank Choice");
+
+            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+
+            rcv_G.getData().addAll(series1);
+            rcv_G.setVisible(true);
         }
-
-        eliminate[0] = minIgnoreZero(cantotals); // current minimum
-        eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 1
-
-        for (int i=0; i<5; i++){ // pulls first elim from db to array
-            firstelim[i] = rc.getFirstElimination(eliminate[1],i+1);
-        }
-
-        for (int i=0; i<5; i++) {
-            cantotals[i] += firstelim[i];   // adds transferred votes
-        }
-        cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidate to 0
-
-
-        eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
-        eliminate[2] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 2
-
-        for (int i=0; i<5; i++){ // pulls second round from db to array
-            secondelim[i] = rc.getSecondElimination(eliminate[1],eliminate[2],i+1);
-        }
-
-        for (int i=0; i<5; i++) {
-            cantotals[i] += secondelim[i];   // adds transferred votes
-        }
-        cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
-        cantotals[eliminate[2] - 1] = 0;
-
-        //set up bar chart
-
-        CategoryAxis xAxis = new CategoryAxis();
-        xAxis.setLabel("Candidates");
-        xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
-                "Can1", "Can2", "Can3", "Can4", "Can5")));
-
-        NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Votes");
-
-        rcv_G = new BarChart<String,Number>(xAxis,yAxis);
-        rcv_G.setTitle("Single Transferable Vote");
-
-        XYChart.Series<String, Number> series1 = new XYChart.Series<>();
-        series1.setName("Single Transferable Vote");
-
-        series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
-        series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
-        series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
-        series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
-        series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
-
-        rcv_G.getData().addAll(series1);
+        rcv_P.setText("R Once Selected");
         rcv_G.setVisible(true);
     }
 
@@ -688,7 +702,6 @@ public class Controller {
             resultsPane.setVisible(false);
             loginPane.setVisible(true);
 
-
         } else {
             clearInputs();
             descriptionPane.setVisible(false);
@@ -699,12 +712,23 @@ public class Controller {
             resultsPane.setVisible(false);
             loginPane.setVisible(true);
         }
+        if (loginPane_B.getText() == "Log Out"){
+            login_B.setText("Login to Vote");
+            login_T.setText("Login Here");
+            loginPane_B.setText("Voter Login");
+            loginID_T.setMouseTransparent(false);
+            username_T.setMouseTransparent(false);
+            loginPassword_T.setMouseTransparent(false);
+        }
         loginGrid1.setVisible(true);
         voterID_P.setVisible(true);
         loginGrid2.setVisible(false);
         validateLogin_T.setVisible(false);
         login_B.setText("Login to Vote");
         login_T.setText("Login Here");
+        fptp_P.setText("F Never Selected");
+        stv_P.setText("S Never Selected");
+        rcv_P.setText("R Never Selected");
     }
     
     // Menu Option 4
@@ -787,7 +811,7 @@ public class Controller {
             resultsPane.setVisible(true);
         }
         fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);rc_C1.setVisible(false); rc_C2.setVisible(false);
-
+        rcv_G.setTitle("Select One Above System to View Results");
         if (endBallot_G.isVisible()){
             login_B.setText("Login to Vote");
             login_T.setText("Login Here");
