@@ -1,6 +1,6 @@
 CanID,Name,description
 1,{Doom Guy},*Heavy Metal Playing*
-2,{Spider-Man},I wanna make the streets free of villany and crime for all of New York
+2,{Spider-Man},I wanna make the streets free of villainy and crime for all of New York
 3,{Thor}, I don't care about your silly politics, Bring me another beer!
 4,{Isabelle},Let's work together to make this a better place for everyone!
 5,{Crewmate}, *is sus* 
@@ -11,24 +11,26 @@ Doom Guy:	Description: This man always has heavy metal playing with him as he cl
 			Quote:*Heavy Metal Playing with loud chainsaw noises*
 			Politics: Right to bear arms; Anticorruption (No demons within politics meaning no money politics and no lobbying), 
 			
-Isabelle:	Description: This sweetheart has helped her mayor construct and run a village from nothing. Very kind to everyone she's meet.
+Isabelle:	Description: This sweetheart has helped her mayor construct and run a village from nothing. She is very kind to everyone she's meet.
 			Quote: Let's work together to make this a better place for everyone!
-			Politics: Everyone has the right to vote. Better housing infrastructure.
+			Politics: Better housing infrastructure. Clean water and air. Pro-small business.
 
-Spider-Man:	Description: Fulltime crime fighter in New York. No matter how much crime fighting he does he always finds time to help the people of new york with task you don't usually hear heroes doing such as helping a someone find their lost bike.
-			Quote: I wanna make the streets free of villany and crime for all of New York
-			Politics: A mission provide cleaner air and lakes, for the green deal. 
+Spider-Man:	Description: Full-time crime fighter in New York. Your friendly neighborhood Spider-Man still helps the people of new york with tasks less flashy than saving the world, like finding lost bikes.
+			Quote: I wanna make the streets free of villainy and crime for all of New York.
+			Politics: Environmental justice. Pro-union. Corporate-industry accountability. Universal Healthcare.
 
-Sam Wilson (The Falcon or Captain America): 
-
-		Description:  Did such a bad*** job at being a hero as the Falcon that he was vouched by Captin America to be the next Captain of America. 
+Sam Wilson (The Falcon or Captain America):
+		    Description: Steve Rogers ( aka the original Captain America and Super Soldier) personally selected his greatest ally, Sam Wilson (aka Falcon), to be the new America Captain.
 			Quote: "The only power I have is that I believe we can do better."
-			Politics: Keep the money out of politics, Overahul financial systems. 
+			Politics: Build Better (infrastructure, energy, STEM education/projects). Overhaul financial systems. End unjust/unnecessary/expensive foreign wars. Hold politicians/elites accountable.
 
-
-Crewmate:           Description: Is sus probably a human or an alien idk just vote to find out. Vote for this dastardly survivor.
+Crewmate:   Description: Human or Alien? Is it even important? Who knows, but this Crewmate is a survivor.
 			Quote: *Is sus*
-			Politics: Everyone has the right to vote, increase public survelliance (supports the patriot act), Supports Gerrymandering, and Publically funded elections. 
+			Politics: Everyone has the right to vote, Publicly funded elections. End Gerrymandering. Expand public surveillance (supports the patriot act).
+
+Vision:     Description: He is worthy, a machine with a soul.
+			Quote: Let us do what is just and effective.
+			Politics: Revamp and Modernize (judicial legal system, tax policy, general bureaucratic systems). Plan for natural catastrophes.
 
 
 			
