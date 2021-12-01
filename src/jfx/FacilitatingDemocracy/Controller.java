@@ -187,9 +187,9 @@ public class Controller {
     @FXML // fx:id="oneOfOne_D"
     private ChoiceBox<String> oneOfOne_D; // Value injected by FXMLLoader
 
-    ObservableList<String> oneOfOne_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
-    ObservableList<String> oneOfTwo_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
-    ObservableList<String> oneOfFour_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
+    ObservableList<String> oneOfOne_DList = FXCollections.observableArrayList("Isabelle", "Captain America", "Vision", "Crewmate", "Spider-Man", "Write-in");
+    ObservableList<String> oneOfTwo_DList = FXCollections.observableArrayList("Isabelle", "Captain America", "Vision", "Crewmate", "Spider-Man", "Write-in");
+    ObservableList<String> oneOfFour_DList = FXCollections.observableArrayList("Isabelle", "Captain America", "Vision", "Crewmate", "Spider-Man", "Write-in");
 
     @FXML // fx:id="oneOfTwo_D"
     private ChoiceBox<String> oneOfTwo_D; // Value injected by FXMLLoader

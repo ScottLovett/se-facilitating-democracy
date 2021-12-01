@@ -1,36 +1,55 @@
 CanID,Name,description
-1,{Doom Guy},*Heavy Metal Playing*
-2,{Spider-Man},I wanna make the streets free of villainy and crime for all of New York
-3,{Thor}, I don't care about your silly politics, Bring me another beer!
-4,{Isabelle},Let's work together to make this a better place for everyone!
-5,{Crewmate}, *is sus* 
-6,{Vision},Let us do what is just and effective.
-##############################################################################################################################
+1,{Isabelle},Let's work together to make this a better place for everyone!
+2,{Captain America},The only power I have is that I believe we can do better.
+3,{Vision},Let us do what is just and effective.
+4,{Crewmate}, *is sus*
+5,{Spider-Man},I wanna make the streets free of villainy and crime for all of New York.
+WI,{Doom Guy},*Heavy Metal Playing*
+NA,{Thor}, I don't care about your silly politics, Bring me another beer!
+########################################################################################################################
+"Isabelle", "Captain America", "Vision", "Crewmate", "Spider-Man", "Write-in"
+########################################################################################################################
 
-Doom Guy:	Description: This man always has heavy metal playing with him as he cleanses the world from a demon invasion. 
-			Quote:*Heavy Metal Playing with loud chainsaw noises*
-			Politics: Right to bear arms; Anticorruption (No demons within politics meaning no money politics and no lobbying), 
-			
-Isabelle:	Description: This sweetheart has helped her mayor construct and run a village from nothing. She is very kind to everyone she's meet.
+
+{1}Isabelle:	Description: This sweetheart has helped her mayor construct and run a village from nothing. She is very kind to everyone she's meet.
 			Quote: Let's work together to make this a better place for everyone!
-			Politics: Better housing infrastructure. Clean water and air. Pro-small business.
+			Politics: Better housing infrastructure. Mental Health Coverage. Clean water and air. Pro-small business.
 
-Spider-Man:	Description: Full-time crime fighter in New York. Your friendly neighborhood Spider-Man still helps the people of new york with tasks less flashy than saving the world, like finding lost bikes.
-			Quote: I wanna make the streets free of villainy and crime for all of New York.
-			Politics: Environmental justice. Pro-union. Corporate-industry accountability. Universal Healthcare.
-
-Sam Wilson (The Falcon or Captain America):
+{2}Sam Wilson (The Falcon or Captain America):
 		    Description: Steve Rogers ( aka the original Captain America and Super Soldier) personally selected his greatest ally, Sam Wilson (aka Falcon), to be the new America Captain.
 			Quote: "The only power I have is that I believe we can do better."
 			Politics: Build Better (infrastructure, energy, STEM education/projects). Overhaul financial systems. End unjust/unnecessary/expensive foreign wars. Hold politicians/elites accountable.
 
-Crewmate:   Description: Human or Alien? Is it even important? Who knows, but this Crewmate is a survivor.
-			Quote: *Is sus*
-			Politics: Everyone has the right to vote, Publicly funded elections. End Gerrymandering. Expand public surveillance (supports the patriot act).
-
-Vision:     Description: He is worthy, a machine with a soul.
+{3}Vision:  Description: He is worthy, a machine with a soul.
 			Quote: Let us do what is just and effective.
 			Politics: Revamp and Modernize (judicial legal system, tax policy, general bureaucratic systems). Plan for natural catastrophes.
 
+{4}Crewmate:    Description: Human or Alien? Is it even important? Who knows, but this Crewmate is a survivor.
+			Quote: *Is sus*
+			Politics: Everyone has the right to vote, Publicly funded elections. End Gerrymandering. Expand public surveillance (supports the patriot act).
 
-			
+{5}Spider-Man (Peter Parker):
+            Description: Full-time crime fighter in New York. Your friendly neighborhood Spider-Man still helps the people of New York with tasks less flashy than saving the world, like finding lost bikes.
+			Quote: I wanna make the streets free of villainy and crime for all of New York.
+			Politics: Environmental justice. Pro-union. Corporate-industry accountability. Universal Healthcare.
+
+Doom Guy:	Description: This man always has heavy metal playing with him as he cleanses the world from a demon invasion.
+			Quote:*Heavy Metal Playing with loud chainsaw noises*
+			Politics: Right to bear arms; Anticorruption (No demons within politics meaning no money politics and no lobbying),
+
+########################################################################################################################
+Editing votes such that :
+    FPTP: each candidate gets at least 1 vote, but candidate 1 and 5 gets a super majority of the rest.
+    STV: 2 candidates should be eliminated(1,4), leaving 3 (candidates 3,5,2)
+    RC: 3 candidates should be eliminated, leaving 2 (candidates 2 and 5)
+
+Therefore, out of 30 votes:
+    FPTP: Can1 (12), Can2 (1), Can3 (3), Can4 (1), Can5 (13)
+    STV: Can1 (5), Can2 (7), Can3 (6), Can4 (3), Can5 (9)
+        -> Can1 (6), Can2 (7), Can3 (8), Can4 (0), Can5 (9)
+          -> Can1 (0), Can2 (10), Can3 (9), Can4 (0), Can5 (10)
+            Notice one person's vote has been eliminated because their 1st and 2nd choice was eliminated.
+    RC: Can1 (5), Can2 (7), Can3 (6), Can4 (3), Can5 (9)
+       -> Can1 (6), Can2 (7), Can3 (8), Can4 (0), Can5 (9)
+         -> Can1 (0), Can2 (11), Can3 (9), Can4 (0), Can5 (10)
+           -> Can1 (0), Can2 (16), Can3 (0), Can4 (0), Can5 (14)

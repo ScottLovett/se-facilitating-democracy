@@ -434,7 +434,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -451,7 +451,7 @@
                   </ImageView>
                   <Accordion layoutX="14.0" layoutY="217.0" prefHeight="372.0" prefWidth="402.0">
                      <panes>
-                        <TitledPane fx:id="candidate1_A" animated="false" prefWidth="402.0" text="Candidate 1">
+                        <TitledPane fx:id="candidate1_A" animated="false" prefWidth="402.0" text="Isabelle">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -460,28 +460,28 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can1Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
-                                    <TextArea fx:id="can1Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can1Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" text="This sweetheart has helped her &#10;mayor construct and run a village &#10;from nothing. She is very kind to &#10;everyone she's meet.&#10;&#10;&quot;Let's work together to make &#10;this a better place for everyone!&quot;" />
+                                    <TextArea fx:id="can1Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Politics:&#10;Better housing infrastructure.            Mental Health Coverage.&#10;Clean water and air.                           Pro-small business." />
                                  </children>
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane fx:id="candidate2_A" animated="false" text="Candidate 2">
+                        <TitledPane fx:id="candidate2_A" animated="false" text="Captain America (Sam Wilson aka Falcon)">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
+                                    <TextArea fx:id="can2Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" text="Steve Rogers (the original Captain &#10;America and Super Soldier) &#10;personally selected his main ally, &#10;Sam Wilson (aka Falcon), to be the &#10;new America Captain.&#10;&quot;The only power I have is that &#10;I believe we can do better.&quot;" />
+                                    <TextArea fx:id="can2Policies_T" editable="false" layoutY="142.0" mouseTransparent="true" prefHeight="79.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Build Better (infrastructure, energy, &amp; industry). &#10;Overhaul financial systems.                          &#10;Hold politicians accountable.&#10;End unjust/unnecessary/expensive foreign wars. " />
                                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can2Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
-                                    <TextArea fx:id="can2Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane fx:id="candidate3_A" animated="false" text="Candidate 3">
+                        <TitledPane fx:id="candidate3_A" animated="false" text="Vision">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -490,13 +490,13 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can3Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
-                                    <TextArea fx:id="can3Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can3Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" text="He is worthy,&#10;         a machine with a soul.&#10;&#10;&quot;Let us do what is &#10;         just and effective.&quot;" />
+                                    <TextArea fx:id="can3Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Revamp and Modernize &#10;             (judicial legal system, tax policy, general bureaucratic systems).&#10;Plan for natural catastrophes." />
                                  </children>
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane fx:id="candidate4_A" animated="false" text="Candidate 4">
+                        <TitledPane fx:id="candidate4_A" animated="false" text="Crewmate">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
@@ -505,23 +505,23 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can4Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
-                                    <TextArea fx:id="can4Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can4Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" text="Human or Alien? Is it even&#10;important? Who knows.&#10;But, this Crewmate is a survivor.&#10;&#10;*Is sus*" />
+                                    <TextArea fx:id="can4Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Everyone has the right to vote in publicly funded elections. &#10;End gerrymandering. &#10;Expand public surveillance (supports the patriot act).&#10;" />
                                  </children>
                               </AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane fx:id="candidate5_A" animated="false" text="Candidate 5">
+                        <TitledPane fx:id="candidate5_A" animated="false" text="Peter Parker (Spider-Man)">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="150.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can5Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
-                                    <TextArea fx:id="can5Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can5Description_T" editable="false" layoutX="184.0" mouseTransparent="true" prefHeight="150.0" prefWidth="218.0" promptText="Candidate 1 Description" text="Full-time crime fighter in New York.&#10;Your friendly neighborhood &#10;Spider-Man still helps the people &#10;of New York with tasks less flashy &#10;than saving the world, like finding &#10;lost bikes.&#10;&quot;I wanna make the streets free of &#10;villainy and crime!&quot;" />
+                                    <TextArea fx:id="can5Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Environmental justice.          &#10;Corporate-industry accountability.    Pro-union.&#10;Universal Healthcare." />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -530,13 +530,13 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
+                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" promptText="Candidate Description" text="Doom Guy:&#9;&#10;This man always has heavy metal &#10;playing with him as he cleanses&#10;the world from a demon invasion.&#10;&#10;*Heavy Metal Playing with loud &#10;chainsaw noises*" />
+                                    <TextArea layoutX="-1.0" layoutY="142.0" prefHeight="79.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Right to bear arms.&#10;Anticorruption &#10;        (No demons within politics meaning...&#10;         No money politics and no lobbying)" />
                                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" promptText="Candidate Description" />
-                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -661,7 +661,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane fx:id="resultsAnchor" prefHeight="625.0" prefWidth="420.0">
                <children>
