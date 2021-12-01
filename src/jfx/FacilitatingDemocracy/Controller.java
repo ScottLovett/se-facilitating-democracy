@@ -530,6 +530,10 @@ public class Controller {
             cantotals[eliminate[2] - 1] = 0;
             cantotals[eliminate[3] - 1] = 0;
 
+            for (int i=0; i<5; i++) {
+                System.out.println(cantotals[i]);   //debug
+            }
+
             // set up bar chart
 
             CategoryAxis xAxis = new CategoryAxis();
@@ -966,7 +970,7 @@ public class Controller {
     }
 
     public int minIgnoreZero(int [] array) { // IGNORES ZERO,
-        int min = array[0];
+        int min = Integer.MAX_VALUE;
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] < min && array[i] > 0) { // standard min ignoring zero
