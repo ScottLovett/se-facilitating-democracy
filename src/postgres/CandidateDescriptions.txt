@@ -1,0 +1,34 @@
+CanID,Name,description
+1,{Doom Guy},*Heavy Metal Playing*
+2,{Spider-Man},I wanna make the streets free of villany and crime for all of New York
+3,{Thor}, I don't care about your silly politics, Bring me another beer!
+4,{Isabelle},Let's work together to make this a better place for everyone!
+5,{Crewmate}, *is sus* 
+6,{Vision},Let us do what is just and effective.
+##############################################################################################################################
+
+Doom Guy:	Description: This man always has heavy metal playing with him as he cleanses the world from a demon invasion. 
+			Quote:*Heavy Metal Playing with loud chainsaw noises*
+			Politics: Right to bear arms; Anticorruption (No demons within politics meaning no money politics and no lobbying), 
+			
+Isabelle:	Description: This sweetheart has helped her mayor construct and run a village from nothing. Very kind to everyone she's meet.
+			Quote: Let's work together to make this a better place for everyone!
+			Politics: Everyone has the right to vote. Better housing infrastructure.
+
+Spider-Man:	Description: Fulltime crime fighter in New York. No matter how much crime fighting he does he always finds time to help the people of new york with task you don't usually hear heroes doing such as helping a someone find their lost bike.
+			Quote: I wanna make the streets free of villany and crime for all of New York
+			Politics: A mission provide cleaner air and lakes, for the green deal. 
+
+Sam Wilson (The Falcon or Captain America): 
+
+		Description:  Did such a bad*** job at being a hero as the Falcon that he was vouched by Captin America to be the next Captain of America. 
+			Quote: "The only power I have is that I believe we can do better."
+			Politics: Keep the money out of politics, Overahul financial systems. 
+
+
+Crewmate:           Description: Is sus probably a human or an alien idk just vote to find out. Vote for this dastardly survivor.
+			Quote: *Is sus*
+			Politics: Everyone has the right to vote, increase public survelliance (supports the patriot act), Supports Gerrymandering, and Publically funded elections. 
+
+
+			
