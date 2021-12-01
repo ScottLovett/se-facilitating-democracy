@@ -147,7 +147,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="422.0">
                <children>
@@ -661,7 +661,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane fx:id="resultsAnchor" prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -725,7 +725,7 @@
                         <Image url="@../rc_C2.jpg" />
                      </image>
                   </ImageView>
-                  <BarChart fx:id="fptp_G" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Election Results by a Winner Takes All System" visible="false">
+                  <BarChart fx:id="fptp_G" animated="false" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Election Results by a Winner Takes All System" visible="false">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
@@ -733,7 +733,7 @@
                       <NumberAxis side="LEFT" />
                     </yAxis>
                   </BarChart>
-                  <BarChart fx:id="stv_G" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Results By The Alternative Vote System" visible="false">
+                  <BarChart fx:id="stv_G" animated="false" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Results By The Alternative Vote System" visible="false">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
@@ -741,7 +741,7 @@
                         <NumberAxis side="LEFT" />
                      </yAxis>
                   </BarChart>
-                  <BarChart fx:id="rcv_G" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Results by a Ranked Choice System">
+                  <BarChart fx:id="rcv_G" animated="false" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Results by a Ranked Choice System">
                      <xAxis>
                         <CategoryAxis side="BOTTOM" />
                      </xAxis>
