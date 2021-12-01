@@ -10,6 +10,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -77,7 +78,7 @@
                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-               <Button fx:id="expandMenu_B" mnemonicParsing="false" onAction="#gotoExpand" prefHeight="25.0" prefWidth="159.0" text="=">
+               <Button fx:id="expandMenu_B" mnemonicParsing="false" onAction="#gotoExpand" prefHeight="25.0" prefWidth="159.0" text="Help">
                   <font>
                      <Font name="Verdana" size="14.0" />
                   </font>
@@ -125,18 +126,18 @@
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints maxHeight="90.40000610351562" minHeight="10.0" prefHeight="79.19999389648437" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="105.60000610351564" minHeight="10.0" prefHeight="92.7999755859375" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="118.19998779296873" minHeight="10.0" prefHeight="86.40001220703124" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="122.4" minHeight="10.0" prefHeight="83.99998779296874" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="125.5999755859375" minHeight="10.0" prefHeight="78.99998779296874" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="117.60004272460935" minHeight="10.0" prefHeight="88.80001220703127" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="103.99997558593748" minHeight="10.0" prefHeight="75.19998779296873" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="105.60000610351564" minHeight="10.0" prefHeight="95.19998168945311" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="118.19998779296873" minHeight="10.0" prefHeight="92.80001831054688" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="122.4" minHeight="10.0" prefHeight="81.59998779296876" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="125.5999755859375" minHeight="10.0" prefHeight="77.60000000000002" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="117.60004272460935" minHeight="10.0" prefHeight="95.20000000000005" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="103.99997558593748" minHeight="10.0" prefHeight="62.399951171875045" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
                         <TextArea editable="false" prefHeight="57.0" prefWidth="381.0" text="This button expanses the buttons to the left to reveale their full&#10;name and description.&#10;Click it again to shrink and return to HomePane." />
                         <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Register to Vote!&#10;We will need to verify your information.&#10;Registration is easy and quick. We'll walk you through it if you &#10;ever need help." GridPane.rowIndex="1" />
-                        <TextArea editable="false" prefHeight="71.0" prefWidth="381.0" text="Before you can cast your vote, we must verify your identity. &#10;One person, one vote.&#10;If you are not yet registered to vote, please do so before &#10;attempting to login. " GridPane.rowIndex="2" />
-                        <TextArea editable="false" prefHeight="103.0" prefWidth="381.0" text="Displays the list of open positions and the candidates running &#10;for each office." GridPane.rowIndex="3" />
+                        <TextArea editable="false" prefHeight="74.0" prefWidth="381.0" text="Before you can cast your vote, we must verify your identity. &#10;One person, one vote.&#10;If you are not yet registered to vote, please do so before &#10;attempting to login. " GridPane.rowIndex="2" />
+                        <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Displays the list of open positions and the candidates running &#10;for each office." GridPane.rowIndex="3" />
                         <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="This is where you vote! You must login in order to vote." GridPane.rowIndex="4" />
                         <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" text="Displays the results of each election system.&#10;View the results that will maximize happiness or satisfaction with&#10;the electoral system of democracy." GridPane.rowIndex="5" />
                         <TextArea editable="false" prefHeight="58.0" prefWidth="425.0" text="Exits the program" GridPane.rowIndex="6" />
@@ -165,7 +166,7 @@
                         <Font name="Trebuchet MS Bold Italic" size="42.0" />
                      </font>
                   </Label>
-                  <TextArea editable="false" layoutX="29.0" layoutY="431.0" mouseTransparent="true" pickOnBounds="false" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD)&#10;&#10;Antonio Hendricks&#10;Scott Lovett&#10;Noel Vazquez&#10;Juan Glinton">
+                  <TextArea editable="false" layoutX="29.0" layoutY="431.0" mouseTransparent="true" pickOnBounds="false" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD )&#10;&#10;Antonio Hendricks&#10;Scott Lovett&#10;Noel Vazquez&#10;&amp; Maybe Juan Glinton">
                      <font>
                         <Font name="Verdana" size="12.0" />
                      </font>
@@ -258,7 +259,7 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="validate_T" alignment="CENTER" editable="false" mouseTransparent="true" promptText="Register Here -&gt;" GridPane.rowIndex="6">
+                        <TextField fx:id="validate_T" alignment="CENTER" editable="false" promptText="Register Here -&gt;" GridPane.rowIndex="6">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -298,44 +299,55 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="326.0" prefHeight="25.0" prefWidth="221.0" text="Username" textAlignment="RIGHT">
+                        <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="25.0" prefWidth="221.0" text="Your ID #" textAlignment="RIGHT">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="username_T" promptText="Independent / Bull Moose" GridPane.columnIndex="1">
+                        <TextField fx:id="loginID_T" promptText="Student Number" GridPane.columnIndex="1">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="253.0" prefHeight="25.0" prefWidth="221.0" text="Personal Password" textAlignment="RIGHT" GridPane.rowIndex="1">
+                        <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="326.0" prefHeight="25.0" prefWidth="221.0" text="Username" textAlignment="RIGHT" GridPane.rowIndex="1">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="loginPassword_T" promptText="Do Not Share Password" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextField fx:id="username_T" promptText="Independent / Bull Moose" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="login_T" alignment="CENTER" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Login Complete" text="Login Here" GridPane.rowIndex="2">
+                        <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="253.0" prefHeight="25.0" prefWidth="221.0" text="Personal Password" textAlignment="RIGHT" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="loginPassword_T" promptText="Do Not Share Password" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <Button fx:id="login_B" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="234.0" text="Login to Vote" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <TextField fx:id="login_T" alignment="CENTER" editable="false" promptText="Login Complete" text="Login Here" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="login_B" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="234.0" text="Login to Vote" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Button>
-                        <TextField fx:id="validateLogin_T" alignment="CENTER" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Invalid Login" text="Go View Candidates!" GridPane.rowIndex="3">
+                        <TextField fx:id="validateLogin_T" alignment="CENTER" editable="false" promptText="Registered!" text="Invalid Login" GridPane.rowIndex="4">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <Button fx:id="forgotPassword_B" mnemonicParsing="false" onAction="#ForgotPassword" prefHeight="25.0" prefWidth="234.0" text="Forgot Password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Button fx:id="forgotPassword_B" mnemonicParsing="false" onAction="#ForgotPassword" prefHeight="25.0" prefWidth="234.0" text="Forgot Password" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -376,7 +388,7 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="validateLogin_T1" alignment="CENTER" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Recovered!" text="Recover Login" GridPane.rowIndex="2">
+                        <TextField fx:id="validateLogin_T1" alignment="CENTER" editable="false" promptText="Recovered!" text="Recover Login" GridPane.rowIndex="2">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -391,7 +403,7 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="username_T1" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Your Username Will Appear Here" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <TextField fx:id="username_T1" editable="false" promptText="Independent / Bull Moose" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -401,12 +413,12 @@
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="loginPassword_T1" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Do Not Share Password" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <TextField fx:id="loginPassword_T1" editable="false" promptText="Do Not Share Password" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="login_T1" alignment="CENTER" editable="false" focusTraversable="false" mouseTransparent="true" promptText="Login Complete" text="Login Here" GridPane.rowIndex="5">
+                        <TextField fx:id="login_T1" alignment="CENTER" editable="false" promptText="Login Complete" text="Login Here" GridPane.rowIndex="5">
                            <font>
                               <Font name="Verdana" size="12.0" />
                            </font>
@@ -437,19 +449,19 @@
                         <Image url="@../podium.png" />
                      </image>
                   </ImageView>
-                  <Accordion layoutX="14.0" layoutY="217.0" prefHeight="372.0" prefWidth="402.0" visible="false">
+                  <Accordion layoutX="14.0" layoutY="217.0" prefHeight="372.0" prefWidth="402.0">
                      <panes>
-                        <TitledPane fx:id="candidate1_A" prefWidth="402.0" text="Candidate 1">
+                        <TitledPane fx:id="candidate1_A" animated="false" prefWidth="402.0" text="Candidate 1">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fitHeight="134.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can1Description_T" editable="false" layoutX="184.0" mouseTransparent="true" prefHeight="135.0" prefWidth="218.0" promptText="Candidate Description" />
-                                    <TextArea fx:id="can1Policies_T" editable="false" layoutY="134.0" mouseTransparent="true" prefHeight="87.0" prefWidth="402.0" promptText="Candidate Policies and Purpose" />
+                                    <TextArea fx:id="can1Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
+                                    <TextArea fx:id="can1Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -463,8 +475,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can2Description_T" editable="false" layoutX="199.0" layoutY="-2.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
-                                    <TextArea fx:id="can2Policies_T" editable="false" layoutX="-1.0" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can2Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
+                                    <TextArea fx:id="can2Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -478,8 +490,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can3Description_T" editable="false" layoutX="200.0" layoutY="-2.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
-                                    <TextArea fx:id="can3Policies_T" editable="false" layoutX="-1.0" layoutY="148.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can3Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
+                                    <TextArea fx:id="can3Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -493,8 +505,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can4Description_T" editable="false" layoutX="199.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
-                                    <TextArea fx:id="can4Policies_T" editable="false" layoutX="-2.0" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can4Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
+                                    <TextArea fx:id="can4Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -508,8 +520,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can5Description_T" editable="false" layoutX="200.0" layoutY="-2.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate Description" />
-                                    <TextArea fx:id="can5Policies_T" editable="false" layoutX="-1.0" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
+                                    <TextArea fx:id="can5Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" />
+                                    <TextArea fx:id="can5Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -523,8 +535,8 @@
                                           <Image url="@../Voter_ID.png" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can6Description_T" layoutX="199.0" layoutY="-2.0" prefHeight="150.0" prefWidth="202.0" promptText="Write-In Candidate Description  Include Name" />
-                                    <TextArea fx:id="can6Policies_T" layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" promptText="Write-In Candidate Policies and Relation" />
+                                    <TextArea layoutX="200.0" prefHeight="150.0" prefWidth="200.0" promptText="Candidate Description" />
+                                    <TextArea layoutX="-1.0" layoutY="147.0" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -588,14 +600,14 @@
                      </rowConstraints>
                      <children>
                         <Label prefHeight="18.0" prefWidth="186.0" text="Voting System 2" />
-                        <Label prefHeight="18.0" prefWidth="186.0" text="Single Transferable Vote" GridPane.columnIndex="1" />
+                        <Label prefHeight="18.0" prefWidth="186.0" text="Single Transferrable Vote" GridPane.columnIndex="1" />
                         <Label prefHeight="18.0" prefWidth="182.0" text="Choose your top 2 candidates!" GridPane.rowIndex="1" />
                         <Label text="Top Pick and Safety Vote!" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label prefHeight="18.0" prefWidth="164.0" text="Most represents me:" GridPane.rowIndex="2" />
                         <ChoiceBox fx:id="oneOfTwo_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label prefHeight="18.0" prefWidth="164.0" text="If not the above, I'll settle for:" GridPane.rowIndex="3" />
                         <ChoiceBox fx:id="twoOfTwo_D" prefHeight="26.0" prefWidth="165.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Button fx:id="stvBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Single Transferable Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Button fx:id="stvBallot_B" mnemonicParsing="false" onAction="#Vote" prefHeight="26.0" prefWidth="175.0" text="Cast Single Transferrable Vote" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <GridPane fx:id="rcBallot_G" layoutX="30.0" layoutY="240.0" prefHeight="340.0" prefWidth="374.0" visible="false">
@@ -644,14 +656,14 @@
                         </Button>
                      </children>
                   </GridPane>
-                  <Label fx:id="testLabel" layoutX="191.0" layoutY="219.0" text="testLabel" />
+                  <Label fx:id="testLabel" layoutX="74.0" layoutY="219.0" text="Do not choose the same candidate for multiple ranks" />
                </children>
             </AnchorPane>
          </children>
       </StackPane>
       <StackPane fx:id="resultsPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
-            <AnchorPane prefHeight="625.0" prefWidth="420.0">
+            <AnchorPane fx:id="resultsAnchor" prefHeight="625.0" prefWidth="420.0">
                <children>
                   <Label layoutX="90.0" layoutY="14.0" text="View Election" textFill="#3a2b70">
                      <font>
@@ -663,66 +675,83 @@
                         <Font name="Trebuchet MS Bold Italic" size="32.0" />
                      </font>
                   </Label>
-                  <Label layoutX="33.0" layoutY="90.0" prefHeight="18.0" prefWidth="354.0" text="To Maximize Voter Satisfaction, see Ranked Choice Voting">
+                  <Label layoutX="17.0" layoutY="187.0" prefHeight="18.0" prefWidth="394.0" text="To Maximize Voter Satisfaction, see Ranked Choice Voting">
                      <font>
                         <Font name="Verdana" size="12.0" />
                      </font>
                   </Label>
-                  <Accordion layoutX="9.0" layoutY="132.0" prefHeight="452.0" prefWidth="402.0">
-                     <panes>
-                        <TitledPane fx:id="fptp_A" animated="false" onContextMenuRequested="#FirstPastPost" prefHeight="346.0" prefWidth="402.0" text="First Past The Post">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <BarChart fx:id="fptp_G" prefHeight="255.0" prefWidth="402.0">
-                                       <xAxis>
-                                          <CategoryAxis side="BOTTOM" />
-                                       </xAxis>
-                                       <yAxis>
-                                          <NumberAxis side="LEFT" />
-                                       </yAxis>
-                                    </BarChart>
-                                    <TextArea fx:id="fptpDescription_T" editable="false" layoutX="-1.0" layoutY="263.0" mouseTransparent="true" prefHeight="110.0" prefWidth="402.0" promptText="Describe Data" />
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </TitledPane>
-                        <TitledPane fx:id="stv_A" animated="false" onContextMenuRequested="#SingleTransferable" text="Single Transferable Vote">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <BarChart fx:id="stv_G" prefHeight="256.0" prefWidth="402.0">
-                                       <xAxis>
-                                          <CategoryAxis side="BOTTOM" />
-                                       </xAxis>
-                                       <yAxis>
-                                          <NumberAxis side="LEFT" />
-                                       </yAxis>
-                                    </BarChart>
-                                    <TextArea fx:id="stvDescription_T" editable="false" layoutX="-1.0" layoutY="264.0" mouseTransparent="true" prefHeight="110.0" prefWidth="402.0" promptText="Describe Data" />
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </TitledPane>
-                        <TitledPane fx:id="rcv_A" animated="false" onContextMenuRequested="#RankedChoice" text="Ranked Choice Voting">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <BarChart fx:id="rcv_G" prefHeight="255.0" prefWidth="402.0">
-                                       <xAxis>
-                                          <CategoryAxis side="BOTTOM" />
-                                       </xAxis>
-                                       <yAxis>
-                                          <NumberAxis side="LEFT" />
-                                       </yAxis>
-                                    </BarChart>
-                                    <TextArea fx:id="rcDescription_T" editable="false" layoutY="264.0" mouseTransparent="true" prefHeight="110.0" prefWidth="402.0" promptText="Decribe Data" />
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </TitledPane>
-                     </panes>
-                  </Accordion>
+                  <RadioButton fx:id="fptp_B" layoutX="38.0" layoutY="131.0" mnemonicParsing="false" onAction="#FirstPastPost" prefHeight="28.0" prefWidth="155.0" text="First Past The Post">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="rcv_B" layoutX="130.0" layoutY="159.0" mnemonicParsing="false" onAction="#RankedChoice" prefHeight="28.0" prefWidth="159.0" text="Ranked Choice Voting">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="stv_B" layoutX="194.0" layoutY="131.0" mnemonicParsing="false" onAction="#SingleTransferrable" prefHeight="28.0" prefWidth="177.0" text="Single Transferrable Vote">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <TextArea fx:id="threeResultsPanes" editable="false" layoutX="17.0" layoutY="525.0" prefHeight="62.0" prefWidth="394.0" promptText="3 Panes Here; One for each election system">
+                     <font>
+                        <Font name="Courier New" size="12.0" />
+                     </font>
+                  </TextArea>
+                  <ImageView fx:id="fptp_C1" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../fptp_C1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="stv_C1" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../stv_C1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="rc_C1" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../rc_C1.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="fptp_C2" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../fptp_C2.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="rc_C2" fitHeight="386.0" fitWidth="354.0" layoutX="33.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../rc_C2.jpg" />
+                     </image>
+                  </ImageView>
+                  <BarChart fx:id="fptp_G" animated="false" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Election Results by a Winner Takes All System" visible="false">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="stv_G" animated="false" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Results By The Alternative Vote System" visible="false">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <BarChart fx:id="rcv_G" animated="false" layoutY="215.0" prefHeight="313.0" prefWidth="423.0" title="Results by a Ranked Choice System">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+                  <Label fx:id="fptp_P" focusTraversable="false" layoutX="44.0" layoutY="120.0" mouseTransparent="true" text="Label" visible="false" />
+                  <Label fx:id="rcv_P" focusTraversable="false" layoutX="139.0" layoutY="150.0" mouseTransparent="true" text="Label" visible="false" />
+                  <Label fx:id="stv_P" focusTraversable="false" layoutX="200.0" layoutY="120.0" mouseTransparent="true" text="Label" visible="false" />
                </children>
             </AnchorPane>
          </children>

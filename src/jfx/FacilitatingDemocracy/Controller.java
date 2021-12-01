@@ -9,14 +9,19 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
-
 import java.net.URL;
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.stream.IntStream;
 
 public class Controller {
 
@@ -118,11 +123,12 @@ public class Controller {
     @FXML // fx:id="fptpBallot_G"
     private GridPane fptpBallot_G; // Value injected by FXMLLoader
 
-    @FXML // fx:id="fptp_A"
-    private TitledPane fptp_A; // Value injected by FXMLLoader
+    @FXML // fx:id="fptp_B"
+    private RadioButton fptp_B; // Value injected by FXMLLoader
 
-    @FXML // fx:id="fptp_G"
-    private BarChart<?, ?> fptp_G; // Value injected by FXMLLoader
+
+    @FXML
+    private BarChart<String, Number> fptp_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="homePane"
     private StackPane homePane; // Value injected by FXMLLoader
@@ -175,18 +181,15 @@ public class Controller {
     @FXML // fx:id="newUsername_T"
     private TextField newUsername_T; // Value injected by FXMLLoader
 
-    ObservableList<String> oneOfOne_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
-    ObservableList<String> oneOfTwo_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
-    ObservableList<String> oneOfFour_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
-
-    @FXML
-    private Label testLabel;
-
     @FXML // fx:id="oneOfFour_D"
     private ChoiceBox<String> oneOfFour_D; // Value injected by FXMLLoader
 
     @FXML // fx:id="oneOfOne_D"
     private ChoiceBox<String> oneOfOne_D; // Value injected by FXMLLoader
+
+    ObservableList<String> oneOfOne_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
+    ObservableList<String> oneOfTwo_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
+    ObservableList<String> oneOfFour_DList = FXCollections.observableArrayList("Can1", "Can2", "Can3", "Can4", "Can5", "Write-in");
 
     @FXML // fx:id="oneOfTwo_D"
     private ChoiceBox<String> oneOfTwo_D; // Value injected by FXMLLoader
@@ -200,11 +203,11 @@ public class Controller {
     @FXML // fx:id="rcBallot_G"
     private GridPane rcBallot_G; // Value injected by FXMLLoader
 
-    @FXML // fx:id="rcv_A"
-    private TitledPane rcv_A; // Value injected by FXMLLoader
+    @FXML // fx:id="rcv_B"
+    private RadioButton rcv_B; // Value injected by FXMLLoader
 
-    @FXML // fx:id="rcv_G"
-    private BarChart<?, ?> rcv_G; // Value injected by FXMLLoader
+    @FXML
+    private BarChart<String, Number> rcv_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="recoverPassword_B"
     private Button recoverPassword_B; // Value injected by FXMLLoader
@@ -233,14 +236,17 @@ public class Controller {
     @FXML // fx:id="stvBallot_G"
     private GridPane stvBallot_G; // Value injected by FXMLLoader
 
-    @FXML // fx:id="stv_A"
-    private TitledPane stv_A; // Value injected by FXMLLoader
+    @FXML // fx:id="stv_B"
+    private RadioButton stv_B; // Value injected by FXMLLoader
 
-    @FXML // fx:id="stv_G"
-    private BarChart<?, ?> stv_G; // Value injected by FXMLLoader
+    @FXML
+    private BarChart<String, Number> stv_G; // Value injected by FXMLLoader
 
     @FXML // fx:id="threeOfFour_D"
     private ChoiceBox<String> threeOfFour_D; // Value injected by FXMLLoader
+
+    @FXML // fx:id="threeResultsPanes"
+    private TextArea threeResultsPanes; // Value injected by FXMLLoader
 
     @FXML // fx:id="twoOfFour_D"
     private ChoiceBox<String> twoOfFour_D; // Value injected by FXMLLoader
@@ -253,6 +259,9 @@ public class Controller {
 
     @FXML // fx:id="username_T1"
     private TextField username_T1; // Value injected by FXMLLoader
+
+    @FXML // fx:id="loginID_T"
+    private TextField loginID_T; // Value injected by FXMLLoader
 
     @FXML // fx:id="validateLogin_T"
     private TextField validateLogin_T; // Value injected by FXMLLoader
@@ -272,7 +281,31 @@ public class Controller {
     @FXML // fx:id="votingPage_B"
     private Button votingPage_B; // Value injected by FXMLLoader
 
+    @FXML // fx:id="fptp_C1"
+    private ImageView fptp_C1; // Value injected by FXMLLoader
+    @FXML // fx:id="fptp_C2"
+    private ImageView fptp_C2; // Value injected by FXMLLoader
+    @FXML // fx:id="stv_C1"
+    private ImageView stv_C1; // Value injected by FXMLLoader
+    @FXML // fx:id="rc_C1"
+    private ImageView rc_C1; // Value injected by FXMLLoader
+    @FXML // fx:id="rc_C1"
+    private ImageView rc_C2; // Value injected by FXMLLoader
+
+    @FXML
+    private Label testLabel;
+    @FXML
+    private Label fptp_P;
+    @FXML
+    private Label stv_P;
+    @FXML
+    private Label rcv_P;
+
 //////////////////////////////////////////////////////////////////////////////////////
+
+    private String username;
+    private String password;
+    private int currentLoginID;
 
     @FXML
     void Register(ActionEvent event) { // sends user info to BackEnd
@@ -284,20 +317,27 @@ public class Controller {
         address_T.setMouseTransparent(true);
         newUsername_T.setMouseTransparent(true);
         personalPassword_T.setMouseTransparent(true);
+
+        dbAccess reg = new dbAccess();
+        reg.insertUser(name_T.getText(),Integer.parseInt(id_T.getText()));
+        currentLoginID = Integer.parseInt(id_T.getText());
     }
 
     @FXML
-    void Login(ActionEvent event) { // allows access to voting pane
-        // if correct login info provided {
-        login_B.setText("Login Complete!");
-        login_T.setText("Ready to Vote!");
-        username_T.setMouseTransparent(true);
-        loginPassword_T.setMouseTransparent(true);
-        // }
-
-        // if incorrect login info provided {
-        validateLogin_T.setVisible(true);
-        // }
+    void Login(ActionEvent event) { // allows access to vote pane
+        if (!Objects.equals(username_T.getText(), "TalkingDog") || !Objects.equals(loginPassword_T.getText(), "TwinSisters")){
+            validateLogin_T.setVisible(true);
+            login_B.setText("Login to Vote");
+            login_T.setText("Login Incomplete");
+        } else {
+            login_B.setText("Login Complete!");
+            login_T.setText("Now able to vote!");
+            loginPane_B.setText("Log Out");
+            validateLogin_T.setVisible(false);
+            loginID_T.setMouseTransparent(true);
+            username_T.setMouseTransparent(true);
+            loginPassword_T.setMouseTransparent(true);
+        }
     }
 
     @FXML
@@ -311,21 +351,38 @@ public class Controller {
 
     @FXML
     void RecoverPassword(ActionEvent event) { // presents voter their login info
-        bDayRecovery_T.setMouseTransparent(true);
-        idRecovery_T.setMouseTransparent(true);
-        validateLogin_T1.setText("Recovered!");
-        username_T1.setText("You Are");
-        loginPassword_T1.setText("Unique!");
+        if (Objects.equals(bDayRecovery_T.getText(), "09/17/2005") && Objects.equals(idRecovery_T.getText(), "2005")){
+            username_T1.setText("TalkingDog");
+            loginPassword_T1.setText("TwinSisters");
+            validateLogin_T1.setText("Recovered!");
+            bDayRecovery_T.setMouseTransparent(true);
+            idRecovery_T.setMouseTransparent(true);
+        } else if (true){   // if valid id in database
+            validateLogin_T1.setText("Recovered!");
+            username_T1.setText("You Are");
+            loginPassword_T1.setText("Unique!");
+            bDayRecovery_T.setMouseTransparent(true);
+            idRecovery_T.setMouseTransparent(true);
+        } else {
+            username_T1.setText("Go To");
+            loginPassword_T1.setText("Registration!");
+        }
     }
 
     @FXML
     void Vote(ActionEvent event) { // Sends Voting ballots to BackEnd
+        int vote1=0;
+        int vote2=0;
+        int vote3=0;
+        int vote4=0;
+        int vote5=0;
+        int votefptp =0;
+
         if (fptpBallot_G.isVisible()) {
             String fptpChoice = (String) oneOfOne_D.getValue();
             // send fptpChoice to backend
-            if (fptpChoice == "Can1"){
-                testLabel.setText("Worked");
-            }
+            votefptp = nameToId(fptpChoice);
+
             clearInputs();
             fptpBallot_G.setVisible(false);
             stvBallot_G.setVisible(true);
@@ -333,10 +390,12 @@ public class Controller {
         else if (stvBallot_G.isVisible()) {
             String stvChoice1 = (String) oneOfTwo_D.getValue();
             String stvChoice2 = (String) twoOfTwo_D.getValue();
+
             // send stvChoices to backend
-            if (stvChoice1 == "Can1" && stvChoice2 == "Can2"){
-                testLabel.setText("Worked Twice");
-            }
+            vote1=nameToId(stvChoice1);
+            vote5=nameToId(stvChoice2);
+
+
             clearInputs();
             stvBallot_G.setVisible(false);
             rcBallot_G.setVisible(true);
@@ -346,34 +405,238 @@ public class Controller {
             String rcChoice2 = (String) twoOfFour_D.getValue();
             String rcChoice3 = (String) threeOfFour_D.getValue();
             String rcChoice4 = (String) fourOfFour_D.getValue();
-            // send stvChoices to backend
-            if (rcChoice1 == "Can1" && rcChoice2 == "Can2" && rcChoice3 == "Can3" && rcChoice4 == "Can4"){
-                testLabel.setText("All Worked");
-            }
+
+            // send rcChoices to backend
+            vote1=nameToId(rcChoice1);
+            vote2=nameToId(rcChoice2);
+            vote3=nameToId(rcChoice3);
+            vote4=nameToId(rcChoice4);
+
             clearInputs();
             rcBallot_G.setVisible(false);
             endBallot_G.setVisible(true);
+
+            dbAccess vote = new dbAccess();
+            vote.insertVote(vote1,vote2,vote3,vote4,vote5,votefptp,currentLoginID);
+
         }
     }
 
     @FXML
     void FirstPastPost(ActionEvent event) { // View Results using Accordian
+        fptp_B.setSelected(true);
+        stv_B.setSelected(false);
+        rcv_B.setSelected(false);
+        fptp_G.setVisible(true); stv_G.setVisible(false); rcv_G.setVisible(false);
+        // Comment out line above if using hardcoded image results below, and vice versa
+        //fptp_C1.setVisible(true); fptp_C2.setVisible(false); stv_C1.setVisible(false); rc_C1.setVisible(false); rc_C2.setVisible(false);
 
+        if (fptp_P.getText() != "F Once Selected") {
+            int[] cantotals = {0, 0, 0, 0, 0};
+
+            dbAccess fptp = new dbAccess();
+
+            for (int i = 0; i < 5; i++) { // pulls totals for fptp from db to array
+                cantotals[i] = fptp.getFirstPastThePost(i + 1);
+            }
+            // set up bar chart
+
+            CategoryAxis xAxis = new CategoryAxis();
+            xAxis.setLabel("Candidates");
+            xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
+                    "Can1", "Can2", "Can3", "Can4", "Can5")));
+
+            NumberAxis yAxis = new NumberAxis();
+            yAxis.setLabel("Votes");
+
+            //fptp_G = new BarChart<String,Number>(xAxis,yAxis);
+            fptp_G.setTitle("First Past The Post");
+
+            XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+            series1.setName("First Past The Post");
+
+            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+
+            fptp_G.getData().addAll(series1);
+
+            fptp_G.setVisible(true);
+        }
+        fptp_P.setText("F Once Selected");
+        //threeResultsPanes.setText("Candidate Blank Has Won!");
+        fptp_G.setVisible(true);
     }
 
     @FXML
-    void SingleTransferable(ActionEvent event) { // View Results using Accordian
+    void SingleTransferrable(ActionEvent event) { // View Results using Accordian
+        fptp_B.setSelected(false);
+        stv_B.setSelected(true);
+        rcv_B.setSelected(false);
+        fptp_G.setVisible(false); stv_G.setVisible(true); rcv_G.setVisible(false);
+        // Comment out line above if using hardcoded image results below, and vice versa
+        //fptp_C1.setVisible(false); fptp_C2.setVisible(false);stv_C1.setVisible(true); rc_C1.setVisible(false); rc_C2.setVisible(false);
 
+        if (stv_P.getText() != "S Once Selected") {
+            int[] cantotals = {0,0,0,0,0};
+            int[] firstelim = {0,0,0,0,0};
+            int[] secondelim = {0,0,0,0,0};
+            int[] thirdelim = {0,0,0,0,0};
+            int[] eliminate = {0,0,0,0}; // with 5 candidates, only 3 passes needed + min counter for one seat
+
+            dbAccess stv = new dbAccess();
+
+            for (int i=0; i<5; i++){ // pulls first round from db to array
+                cantotals[i] = stv.getFirstVote(i+1);
+            }
+            eliminate[0] = minIgnoreZero(cantotals); // current minimum
+            eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate of current minimum
+
+            for (int i=0; i<5; i++){ // pulls second round from db to array
+                firstelim[i] = stv.getFirstElimination(eliminate[1],i+1);
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += firstelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+
+            eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
+            eliminate[2] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 2
+
+            for (int i=0; i<5; i++){ // pulls second round from db to array
+                secondelim[i] = stv.getSecondElimination(eliminate[1],eliminate[2],i+1);
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += secondelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+            cantotals[eliminate[2] - 1] = 0;
+
+            eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
+            eliminate[3] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 3
+
+            for (int i=0; i<5; i++){ // pulls third round from db to array
+                thirdelim[i] = stv.getSecondElimination(eliminate[1],eliminate[2],i+1);
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += thirdelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+            cantotals[eliminate[2] - 1] = 0;
+            cantotals[eliminate[3] - 1] = 0;
+
+            for (int i=0; i<5; i++) {
+                System.out.println(cantotals[i]);   //debug
+            }
+
+            // set up bar chart
+
+            CategoryAxis xAxis = new CategoryAxis();
+            xAxis.setLabel("Candidates");
+            xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
+                    "Can1", "Can2", "Can3", "Can4", "Can5")));
+
+            NumberAxis yAxis = new NumberAxis();
+            yAxis.setLabel("Votes");
+
+            //stv_G = new BarChart<String,Number>(xAxis,yAxis);
+            stv_G.setTitle("Single Transferable Vote");
+
+            XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+            series1.setName("Single Transferable Vote");
+
+            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+
+            stv_G.getData().addAll(series1);
+
+            //add graph to ui
+            stv_G.setVisible(true);
+        }
+        stv_P.setText("S Once Selected");
+        stv_G.setVisible(true);
     }
 
     @FXML
     void RankedChoice(ActionEvent event) { // View Results using Accordian
+        fptp_B.setSelected(false); stv_B.setSelected(false); rcv_B.setSelected(true);
+        fptp_G.setVisible(false); stv_G.setVisible(false); rcv_G.setVisible(true);
+        // Comment out line above if using hardcoded image results below, and vice versa
+        //fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);rc_C1.setVisible(true); rc_C2.setVisible(false);
 
-    }
+        if (rcv_P.getText() != "R Once Selected") {
+            int[] cantotals = {0,0,0,0,0};
+            int[] firstelim = {0,0,0,0,0};
+            int[] secondelim = {0,0,0,0,0};
+            int[] eliminate = {0,0,0,0,0}; // with 5 candidates, only 2 passes needed + min for 3 seats
 
-    @FXML
-    void ViewResults(ActionEvent event) { // View Results using 3 StackPanes
+            dbAccess rc = new dbAccess();
 
+            for (int i=0; i<5; i++){ // pulls first round from db to array
+                cantotals[i] = rc.getFirstVote(i);
+            }
+
+            eliminate[0] = minIgnoreZero(cantotals); // current minimum
+            eliminate[1] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 1
+
+            for (int i=0; i<5; i++){ // pulls first elim from db to array
+                firstelim[i] = rc.getFirstElimination(eliminate[1],i+1);
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += firstelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidate to 0
+
+
+            eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
+            eliminate[2] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 2
+
+            for (int i=0; i<5; i++){ // pulls second round from db to array
+                secondelim[i] = rc.getSecondElimination(eliminate[1],eliminate[2],i+1);
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += secondelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+            cantotals[eliminate[2] - 1] = 0;
+
+            //set up bar chart
+
+            CategoryAxis xAxis = new CategoryAxis();
+            xAxis.setLabel("Candidates");
+            xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(
+                    "Can1", "Can2", "Can3", "Can4", "Can5")));
+
+            NumberAxis yAxis = new NumberAxis();
+            yAxis.setLabel("Votes");
+
+            //rcv_G = new BarChart<String,Number>(xAxis,yAxis);
+            rcv_G.setTitle("Results by a Ranked Choice System");
+
+            XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+            series1.setName("Rank Choice");
+
+            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+
+            rcv_G.getData().addAll(series1);
+            rcv_G.setVisible(true);
+        }
+        rcv_P.setText("R Once Selected");
+        rcv_G.setVisible(true);
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -433,7 +696,7 @@ public class Controller {
     // Menu Option 3
     @FXML
     void gotoLogin(ActionEvent event) {
-        if (registrationPane.isVisible()) {
+        if (loginPane.isVisible()) {
             clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
@@ -443,12 +706,6 @@ public class Controller {
             resultsPane.setVisible(false);
             loginPane.setVisible(true);
 
-            voterID_P.setVisible(true);
-            loginGrid1.setVisible(true);
-            loginGrid2.setVisible(false);
-            validateLogin_T.setVisible(false);
-            login_B.setText("Login to Vote");
-            login_T.setText("Login Here");
         } else {
             clearInputs();
             descriptionPane.setVisible(false);
@@ -458,20 +715,30 @@ public class Controller {
             votePane.setVisible(false);
             resultsPane.setVisible(false);
             loginPane.setVisible(true);
-
-            voterID_P.setVisible(true);
-            loginGrid1.setVisible(true);
-            loginGrid2.setVisible(false);
-            validateLogin_T.setVisible(false);
+        }
+        if (loginPane_B.getText() == "Log Out"){
             login_B.setText("Login to Vote");
             login_T.setText("Login Here");
+            loginPane_B.setText("Voter Login");
+            loginID_T.setMouseTransparent(false);
+            username_T.setMouseTransparent(false);
+            loginPassword_T.setMouseTransparent(false);
         }
+        loginGrid1.setVisible(true);
+        voterID_P.setVisible(true);
+        loginGrid2.setVisible(false);
+        validateLogin_T.setVisible(false);
+        login_B.setText("Login to Vote");
+        login_T.setText("Login Here");
+        fptp_P.setText("F Never Selected");
+        stv_P.setText("S Never Selected");
+        rcv_P.setText("R Never Selected");
     }
     
     // Menu Option 4
     @FXML
     void gotoCandidates(ActionEvent event) {
-        if (registrationPane.isVisible()) {
+        if (candidatesPane.isVisible()) {
             clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
@@ -496,13 +763,11 @@ public class Controller {
     // Menu Option 5
     @FXML
     void gotoVoting(ActionEvent event) { // Only allow access if voter has logged in
-//        if (loggedin == true) {
-//            break;
-//        } else {
-//            gotoLogin();
-//            return;
-//        }
-        if (registrationPane.isVisible()) {
+        if (login_B.getText() != "Login Complete!" && login_T.getText() != "Now able to vote!" ) {
+            //gotoLogin();
+            return;
+        }
+        if (votePane.isVisible()) {
             clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
@@ -530,7 +795,7 @@ public class Controller {
     // Menu Option 6
     @FXML
     void gotoResults(ActionEvent event) {
-        if (registrationPane.isVisible()) {
+        if (resultsPane.isVisible()) {
             clearInputs();
             descriptionPane.setVisible(false);
             homePane.setVisible(false);
@@ -539,7 +804,6 @@ public class Controller {
             candidatesPane.setVisible(false);
             votePane.setVisible(false);
             resultsPane.setVisible(true);
-            rcv_A.setExpanded(true);
         } else {
             clearInputs();
             descriptionPane.setVisible(false);
@@ -549,7 +813,12 @@ public class Controller {
             candidatesPane.setVisible(false);
             votePane.setVisible(false);
             resultsPane.setVisible(true);
-            rcv_A.setExpanded(true);
+        }
+        fptp_C1.setVisible(false); fptp_C2.setVisible(false); stv_C1.setVisible(false);rc_C1.setVisible(false); rc_C2.setVisible(false);
+        rcv_G.setTitle("Select One Above System to View Results");
+        if (endBallot_G.isVisible()){
+            login_B.setText("Login to Vote");
+            login_T.setText("Login Here");
         }
     }
     
@@ -582,12 +851,12 @@ public class Controller {
         bDayRecovery_T.setMouseTransparent(false);
         idRecovery_T.clear();
         idRecovery_T.setMouseTransparent(false);
+        loginID_T.clear();
         username_T1.clear();
         loginPassword_T1.clear();
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
-    // Note: This list is in alphabetical order
     void initialize() {
         assert address_T != null : "fx:id=\"address_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert bDayRecovery_L != null : "fx:id=\"bDayRecovery_L\" was not injected: check your FXML file 'FDProject.fxml'.";
@@ -623,7 +892,7 @@ public class Controller {
         assert fourOfFour_D != null : "fx:id=\"fourOfFour_D\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert fptpBallot_B != null : "fx:id=\"fptpBallot_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert fptpBallot_G != null : "fx:id=\"fptpBallot_G\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert fptp_A != null : "fx:id=\"fptp_A\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert fptp_B != null : "fx:id=\"fptp_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert fptp_G != null : "fx:id=\"fptp_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert homePane != null : "fx:id=\"homePane\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert idRecovery_L != null : "fx:id=\"idRecovery_L\" was not injected: check your FXML file 'FDProject.fxml'.";
@@ -662,7 +931,7 @@ public class Controller {
         assert personalPassword_T != null : "fx:id=\"personalPassword_T\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcBallot_B != null : "fx:id=\"rcBallot_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcBallot_G != null : "fx:id=\"rcBallot_G\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert rcv_A != null : "fx:id=\"rcv_A\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert rcv_B != null : "fx:id=\"rcv_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert rcv_G != null : "fx:id=\"rcv_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert recoverPassword_B != null : "fx:id=\"recoverPassword_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert register_B != null : "fx:id=\"register_B\" was not injected: check your FXML file 'FDProject.fxml'.";
@@ -673,9 +942,10 @@ public class Controller {
         assert resultsPane_B1 != null : "fx:id=\"resultsPane_B1\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert stvBallot_B != null : "fx:id=\"stvBallot_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert stvBallot_G != null : "fx:id=\"stvBallot_G\" was not injected: check your FXML file 'FDProject.fxml'.";
-        assert stv_A != null : "fx:id=\"stv_A\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert stv_B != null : "fx:id=\"stv_B\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert stv_G != null : "fx:id=\"stv_G\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert threeOfFour_D != null : "fx:id=\"threeOfFour_D\" was not injected: check your FXML file 'FDProject.fxml'.";
+        assert threeResultsPanes != null : "fx:id=\"threeResultsPanes\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert twoOfFour_D != null : "fx:id=\"twoOfFour_D\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert twoOfTwo_D != null : "fx:id=\"twoOfTwo_D\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert username_T != null : "fx:id=\"username_T\" was not injected: check your FXML file 'FDProject.fxml'.";
@@ -686,6 +956,51 @@ public class Controller {
         assert votePane != null : "fx:id=\"votePane\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert voterID_P != null : "fx:id=\"voterID_P\" was not injected: check your FXML file 'FDProject.fxml'.";
         assert votingPage_B != null : "fx:id=\"votingPage_B\" was not injected: check your FXML file 'FDProject.fxml'.";
+
+    }
+
+    // utility functions
+    public static int findIndex(int arr[], int t)
+    {
+        int len = arr.length;
+        return IntStream.range(0, len)
+                .filter(i -> t == arr[i])
+                .findFirst() // first occurrence
+                .orElse(-1); // No element found
+    }
+
+    public int minIgnoreZero(int [] array) { // IGNORES ZERO,
+        int min = Integer.MAX_VALUE;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < min && array[i] > 0) { // standard min ignoring zero
+                min = array[i];
+            }
+        }
+        return min;
+    }
+
+    public int nameToId(String str){
+        int cannum = 0;
+        switch (str){
+            case "Can1":
+                cannum = 1;
+            case "Can2":
+                cannum = 2;
+            case "Can3":
+                cannum = 3;
+            case "Can4":
+                cannum = 4;
+            case "Can5":
+                cannum = 5;
+        }
+        return cannum;
+    }
+
+    // test driver
+    public static void main(String[] args)
+    {
+       
 
     }
 
