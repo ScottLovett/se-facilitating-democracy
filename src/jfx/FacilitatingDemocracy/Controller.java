@@ -455,11 +455,11 @@ public class Controller {
             XYChart.Series<String, Number> series1 = new XYChart.Series<>();
             series1.setName("First Past The Post");
 
-            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
-            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
-            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
-            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
-            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+            series1.getData().add(new XYChart.Data<>("Isabella", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Captain America", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Vision", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Crewmate", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Spider-Man", cantotals[4]));
 
             fptp_G.getData().addAll(series1);
 
@@ -550,11 +550,11 @@ public class Controller {
             XYChart.Series<String, Number> series1 = new XYChart.Series<>();
             series1.setName("Single Transferable Vote");
 
-            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
-            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
-            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
-            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
-            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+            series1.getData().add(new XYChart.Data<>("Isabella", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Captain America", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Vision", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Crewmate", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Spider-Man", cantotals[4]));
 
             stv_G.getData().addAll(series1);
 
@@ -626,11 +626,11 @@ public class Controller {
             XYChart.Series<String, Number> series1 = new XYChart.Series<>();
             series1.setName("Rank Choice");
 
-            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
-            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
-            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
-            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
-            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+            series1.getData().add(new XYChart.Data<>("Isabella", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Captain America", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Vision", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Crewmate", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Spider-Man", cantotals[4]));
 
             rcv_G.getData().addAll(series1);
             rcv_G.setVisible(true);
