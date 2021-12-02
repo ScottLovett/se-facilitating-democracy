@@ -13,7 +13,7 @@ NA,{Thor}, I don't care about your silly politics, Bring me another beer!
 
 {1}Isabelle:	Description: This sweetheart has helped her mayor construct and run a village from nothing. She is very kind to everyone she's meet.
 			Quote: Let's work together to make this a better place for everyone!
-			Politics: Better housing infrastructure. Mental Health Coverage. Clean water and air. Pro-small business.
+			Politics: Better housing infrastructure. Mental Health Coverage. Clean water and air. Pro small business.
 
 {2}Sam Wilson (The Falcon or Captain America):
 		    Description: Steve Rogers ( aka the original Captain America and Super Soldier) personally selected his greatest ally, Sam Wilson (aka Falcon), to be the new America Captain.
@@ -26,7 +26,7 @@ NA,{Thor}, I don't care about your silly politics, Bring me another beer!
 
 {4}Crewmate:    Description: Human or Alien? Is it even important? Who knows, but this Crewmate is a survivor.
 			Quote: *Is sus*
-			Politics: Everyone has the right to vote, Publicly funded elections. End Gerrymandering. Expand public surveillance (supports the patriot act).
+			Politics: Everyone has the right to vote, Publicly funded elections. Big Constitutionalist. Expand public surveillance (supports the patriot act).
 
 {5}Spider-Man (Peter Parker):
             Description: Full-time crime fighter in New York. Your friendly neighborhood Spider-Man still helps the people of New York with tasks less flashy than saving the world, like finding lost bikes.
@@ -39,12 +39,12 @@ Doom Guy:	Description: This man always has heavy metal playing with him as he cl
 
 ########################################################################################################################
 Editing votes such that :
-    FPTP: each candidate gets at least 1 vote, but candidate 1 and 5 gets a super majority of the rest.
+    FPTP: each candidate gets at least 1 vote, but candidate 4 and 5 gets a super majority of the rest.
     STV: 2 candidates should be eliminated(1,4), leaving 3 (candidates 3,5,2)
     RC: 3 candidates should be eliminated, leaving 2 (candidates 2 and 5)
 
 Therefore, out of 30 votes:
-    FPTP: Can1 (12), Can2 (1), Can3 (3), Can4 (1), Can5 (13)
+    FPTP: Can1 (1), Can2 (2), Can3 (2), Can4 (12), Can5 (13)
     STV: Can1 (5), Can2 (7), Can3 (6), Can4 (3), Can5 (9)
         -> Can1 (6), Can2 (7), Can3 (8), Can4 (0), Can5 (9)
           -> Can1 (0), Can2 (10), Can3 (9), Can4 (0), Can5 (10)
