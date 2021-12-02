@@ -508,7 +508,7 @@ public class Controller {
             eliminate[2] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 2
 
             for (int i=0; i<5; i++){ // pulls second round from db to array
-                secondelim[i] = stv.getSecondElimination(eliminate[1],eliminate[2],i+1);
+                secondelim[i] = stv.getSecondEliminationstv(eliminate[1],eliminate[2],i+1);
             }
 
             for (int i=0; i<5; i++) {
@@ -521,7 +521,7 @@ public class Controller {
             eliminate[3] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 3
 
             for (int i=0; i<5; i++){ // pulls third round from db to array
-                thirdelim[i] = stv.getSecondElimination(eliminate[1],eliminate[2],i+1);
+                thirdelim[i] = stv.getThirdEliminationstv(eliminate[1],eliminate[2],eliminate[3],i+1 );
             }
 
             for (int i=0; i<5; i++) {
