@@ -337,6 +337,7 @@ public class Controller {
             loginID_T.setMouseTransparent(true);
             username_T.setMouseTransparent(true);
             loginPassword_T.setMouseTransparent(true);
+            currentLoginID = Integer.parseInt(loginID_T.getText());
         }
     }
 
@@ -983,15 +984,15 @@ public class Controller {
     public int nameToId(String str){
         int cannum = 0;
         switch (str){
-            case "Can1":
+            case "Isabelle":
                 cannum = 1;
-            case "Can2":
+            case "Captain America":
                 cannum = 2;
-            case "Can3":
+            case "Vision":
                 cannum = 3;
-            case "Can4":
+            case "Crewmate":
                 cannum = 4;
-            case "Can5":
+            case "Spider-Man":
                 cannum = 5;
         }
         return cannum;
