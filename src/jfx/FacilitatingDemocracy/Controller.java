@@ -795,6 +795,9 @@ public class Controller {
             resultsPane.setVisible(false);
             votePane.setVisible(true);
         }
+        if (endBallot_G.isVisible()){
+            return;
+        }
         fptpBallot_G.setVisible(true);
         stvBallot_G.setVisible(false);
         rcBallot_G.setVisible(false);

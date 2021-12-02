@@ -21,6 +21,29 @@ The only items in the postgres folder are the csv files per table and the most r
 # Written vs Library
 The only libraries used were JavaFX, JDBC with the postgres extension, and the postgresql database.
 
-The GUI was made using Scenebuilder as a graphical designer for the JavaFX XFML functionality.
+The GUI was made using SceneBuilder as a graphical designer for the JavaFX XFML functionality.
 
 As a rule of thumb, if it's a function that is the same as an import line, then it's a library, otherwise it was written by someone on the team.
+
+# Vote Guide
+Editing votes such that :
+- FPTP: each candidate gets at least 1 vote, but candidate 4 and 5 gets a super majority of the rest.
+- STV: 2 candidates should be eliminated(1,4), leaving 3 (candidates 3,5,2)
+- RC: 3 candidates should be eliminated, leaving 2 (candidates 2 and 5)
+
+Therefore, out of 30 votes:
+- FPTP: Can1 (1), Can2 (2), Can3 (2), Can4 (12), Can5 (13)
+- STV: Can1 (5), Can2 (7), Can3 (6), Can4 (3), Can5 (9)
+  - -> Can1 (6), Can2 (7), Can3 (8), Can4 (0), Can5 (9)
+  - -> Can1 (0), Can2 (10), Can3 (9), Can4 (0), Can5 (10)
+  - Notice one person's vote has been eliminated because their 1st and 2nd choice was eliminated.
+- RC: Can1 (5), Can2 (7), Can3 (6), Can4 (3), Can5 (9)
+  - -> Can1 (6), Can2 (7), Can3 (8), Can4 (0), Can5 (9)
+  - -> Can1 (0), Can2 (11), Can3 (9), Can4 (0), Can5 (10)
+  - -> Can1 (0), Can2 (16), Can3 (0), Can4 (0), Can5 (14)
+
+Vote1: "STV 1/RC 1"
+vote2: "RC 2"
+vote3: "RC 3"
+vote4: "RC 4"
+vote5: "STV Safety Pick"

@@ -53,3 +53,9 @@ Therefore, out of 30 votes:
        -> Can1 (6), Can2 (7), Can3 (8), Can4 (0), Can5 (9)
          -> Can1 (0), Can2 (11), Can3 (9), Can4 (0), Can5 (10)
            -> Can1 (0), Can2 (16), Can3 (0), Can4 (0), Can5 (14)
+
+Vote1: "STV 1/RC 1"
+vote2: "RC 2"
+vote3: "RC 3"
+vote4: "RC 4"
+vote5: "STV Safety Pick"
