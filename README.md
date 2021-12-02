@@ -14,8 +14,13 @@ All code and images are in the src folder
 
 in the JFX folder are the images used in the gui system and the FacilitatingDemocracy folder
 
-All java classes and the fxml for the gui in the FacilitatingDemocracy folder
+All java classes and the fxml for the gui and integration are in the FacilitatingDemocracy folder
 
 The only items in the postgres folder are the csv files per table and the most recent database dump file
 
 # Written vs Library
+The only libraries used were JavaFX, JDBC with the postgres extension, and the postgresql database.
+
+The GUI was made using Scenebuilder as a graphical designer for the JavaFX XFML functionality.
+
+As a rule of thumb, if it's a function that is the same as an import line, then it's a library, otherwise it was written by someone on the team.
