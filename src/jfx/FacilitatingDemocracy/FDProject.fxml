@@ -147,7 +147,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="422.0">
                <children>
@@ -166,7 +166,7 @@
                         <Font name="Trebuchet MS Bold Italic" size="42.0" />
                      </font>
                   </Label>
-                  <TextArea editable="false" layoutX="29.0" layoutY="431.0" mouseTransparent="true" pickOnBounds="false" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD )&#10;&#10;Antonio Hendricks&#10;Scott Lovett&#10;Noel Vazquez&#10;&amp; Maybe Juan Glinton">
+                  <TextArea editable="false" layoutX="29.0" layoutY="431.0" mouseTransparent="true" pickOnBounds="false" prefHeight="149.0" prefWidth="373.0" text="&#10;Facilitating Democracy: Voting System Simulator&#10;&#10;CEN 4010 Software Engineering (Ercan Elibol, PhD )&#10;&#10;Antonio Hendricks&#10;Scott Lovett&#10;Noel Vazquez&#10;&amp; Juan Glinton">
                      <font>
                         <Font name="Verdana" size="12.0" />
                      </font>
@@ -434,7 +434,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
