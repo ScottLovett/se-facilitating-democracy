@@ -147,7 +147,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
+      <StackPane fx:id="homePane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="422.0">
                <children>
@@ -434,7 +434,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0" visible="false">
+      <StackPane fx:id="candidatesPane" layoutX="210.0" prefHeight="625.0" prefWidth="430.0">
          <children>
             <AnchorPane prefHeight="625.0" prefWidth="420.0">
                <children>
@@ -472,7 +472,7 @@
                                  <children>
                                     <TextArea fx:id="can2Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" text="Steve Rogers (the original Captain &#10;America and Super Soldier) &#10;personally selected his main ally, &#10;Sam Wilson (aka Falcon), to be the &#10;new America Captain.&#10;&quot;The only power I have is that &#10;I believe we can do better.&quot;" />
                                     <TextArea fx:id="can2Policies_T" editable="false" layoutY="142.0" mouseTransparent="true" prefHeight="79.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Build Better (infrastructure, energy, &amp; industry). &#10;Overhaul financial systems.                          &#10;Hold politicians accountable.&#10;End unjust/unnecessary/expensive foreign wars. " />
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="143.0" fitWidth="201.0" pickOnBounds="true">
                                        <image>
                                           <Image url="@../SamWilson.jpg" />
                                        </image>
@@ -506,7 +506,7 @@
                                        </image>
                                     </ImageView>
                                     <TextArea fx:id="can4Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" text="Human or Alien? Is it even&#10;important? Who knows.&#10;But, this Crewmate is a survivor.&#10;&#10;*Is sus*" />
-                                    <TextArea fx:id="can4Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Everyone has the right to vote in publicly funded elections. &#10;End gerrymandering. &#10;Expand public surveillance (supports the patriot act)." />
+                                    <TextArea fx:id="can4Policies_T" editable="false" layoutY="139.0" mouseTransparent="true" prefHeight="82.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Everyone has the right to vote in publicly funded elections. &#10;Expand public surveillance (supports the patriot act).&#10;Big Constitutionalist.&#10;Top Priority: Self-preservation (Crewmen First)" />
                                  </children>
                               </AnchorPane>
                            </content>
