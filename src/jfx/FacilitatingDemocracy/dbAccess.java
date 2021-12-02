@@ -107,7 +107,7 @@ public class dbAccess {
     }
 
     public int getSecondEliminationstv(int elim, int elim2, int candidatenum) {
-        String SQL = "SELECT count(*) FROM votes " + "WHERE ((vote1 = ? AND vote2 = ?) " +"OR (vote1 = ? AND vote2 = ?))" + "AND ( vote2 = ?)";
+        String SQL = "SELECT count(*) FROM votes " + "WHERE ((vote1 = ? AND vote5 = ?) " +"OR (vote1 = ? AND vote5 = ?))" + "AND ( vote5 = ?)";
         int count = 0;
 
         try (Connection conn = connect();
@@ -191,13 +191,13 @@ public class dbAccess {
     public int getThirdEliminationstv(int elim, int elim2, int elim3, int candidatenum) {
         int count =0;
 
-        String SQL = "SELECT count(*) FROM votes " + "WHERE ((vote1 = ? AND vote2 = ? ) " + //1,2
-                "OR (vote1 = ? AND vote2 = ? )" + //1,3
-                "OR (vote1 = ? AND vote2 = ? )" +//2,1
-                "OR (vote1 = ? AND vote2 = ? )" +//2,3
-                "OR (vote1 = ? AND vote2 = ? )" +//3,1
-                "OR (vote1 = ? AND vote2 = ? ))" + //3,2
-                "AND ( vote2 = ?)";
+        String SQL = "SELECT count(*) FROM votes " + "WHERE ((vote1 = ? AND vote5 = ? ) " + //1,2
+                "OR (vote1 = ? AND vote5 = ? )" + //1,3
+                "OR (vote1 = ? AND vote5 = ? )" +//2,1
+                "OR (vote1 = ? AND vote5 = ? )" +//2,3
+                "OR (vote1 = ? AND vote5 = ? )" +//3,1
+                "OR (vote1 = ? AND vote5 = ? ))" + //3,2
+                "AND ( vote5 = ?)";
 
         try (Connection conn = connect();
              PreparedStatement pstmt = conn.prepareStatement(SQL)) {

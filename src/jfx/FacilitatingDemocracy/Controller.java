@@ -377,49 +377,43 @@ public class Controller {
         int vote3=0;
         int vote4=0;
         int vote5=0;
-        int votefptp =0;
+        int votefptp=0;
+
+        boolean lastscreen = false;
 
         if (fptpBallot_G.isVisible()) {
-            String fptpChoice = (String) oneOfOne_D.getValue();
             // send fptpChoice to backend
-            votefptp = nameToId(fptpChoice);
+            votefptp = nameToId(oneOfOne_D.getValue());
 
-            clearInputs();
             fptpBallot_G.setVisible(false);
             stvBallot_G.setVisible(true);
         }
         else if (stvBallot_G.isVisible()) {
-            String stvChoice1 = (String) oneOfTwo_D.getValue();
-            String stvChoice2 = (String) twoOfTwo_D.getValue();
 
             // send stvChoices to backend
-            vote1=nameToId(stvChoice1);
-            vote5=nameToId(stvChoice2);
+            vote1 = nameToId(oneOfTwo_D.getValue());
+            vote5 = nameToId(twoOfTwo_D.getValue());
 
-
-            clearInputs();
             stvBallot_G.setVisible(false);
             rcBallot_G.setVisible(true);
         }
         else if (rcBallot_G.isVisible()) {
-            String rcChoice1 = (String) oneOfFour_D.getValue();
-            String rcChoice2 = (String) twoOfFour_D.getValue();
-            String rcChoice3 = (String) threeOfFour_D.getValue();
-            String rcChoice4 = (String) fourOfFour_D.getValue();
 
             // send rcChoices to backend
-            vote1=nameToId(rcChoice1);
-            vote2=nameToId(rcChoice2);
-            vote3=nameToId(rcChoice3);
-            vote4=nameToId(rcChoice4);
+            vote1=nameToId(oneOfFour_D.getValue());
+            vote2=nameToId(twoOfFour_D.getValue());
+            vote3=nameToId(threeOfFour_D.getValue());
+            vote4=nameToId(fourOfFour_D.getValue());
 
-            clearInputs();
+            lastscreen = true;
+
             rcBallot_G.setVisible(false);
             endBallot_G.setVisible(true);
+        }
 
+        if (lastscreen){
             dbAccess vote = new dbAccess();
-            vote.insertVote(vote1,vote2,vote3,vote4,vote5,votefptp,currentLoginID);
-
+            vote.insertVote(vote1, vote2, vote3, vote4, vote5, votefptp, currentLoginID);
         }
     }
 
@@ -456,7 +450,7 @@ public class Controller {
             XYChart.Series<String, Number> series1 = new XYChart.Series<>();
             series1.setName("First Past The Post");
 
-            series1.getData().add(new XYChart.Data<>("Isabella", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Isabelle", cantotals[0]));
             series1.getData().add(new XYChart.Data<>("Captain America", cantotals[1]));
             series1.getData().add(new XYChart.Data<>("Vision", cantotals[2]));
             series1.getData().add(new XYChart.Data<>("Crewmate", cantotals[3]));
@@ -551,7 +545,7 @@ public class Controller {
             XYChart.Series<String, Number> series1 = new XYChart.Series<>();
             series1.setName("Single Transferable Vote");
 
-            series1.getData().add(new XYChart.Data<>("Isabella", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Isabelle", cantotals[0]));
             series1.getData().add(new XYChart.Data<>("Captain America", cantotals[1]));
             series1.getData().add(new XYChart.Data<>("Vision", cantotals[2]));
             series1.getData().add(new XYChart.Data<>("Crewmate", cantotals[3]));
@@ -577,6 +571,7 @@ public class Controller {
             int[] cantotals = {0,0,0,0,0};
             int[] firstelim = {0,0,0,0,0};
             int[] secondelim = {0,0,0,0,0};
+            int[] thirdelim = {0,0,0,0,0};
             int[] eliminate = {0,0,0,0,0}; // with 5 candidates, only 2 passes needed + min for 3 seats
 
             dbAccess rc = new dbAccess();
@@ -611,6 +606,19 @@ public class Controller {
             cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
             cantotals[eliminate[2] - 1] = 0;
 
+            eliminate[0] = minIgnoreZero(cantotals); // recalculate minimum
+            eliminate[3] = findIndex(cantotals,eliminate[0]) + 1; // candidate for elimination round 3
+
+            for (int i=0; i<5; i++){ // pulls third round from db to array
+                thirdelim[i] = rc.getThirdElimination(eliminate[1],eliminate[2],eliminate[3],i+1 );
+            }
+
+            for (int i=0; i<5; i++) {
+                cantotals[i] += thirdelim[i];   // adds transferred votes
+            }
+            cantotals[eliminate[1] - 1] = 0;  // sets eliminated candidates to 0
+            cantotals[eliminate[2] - 1] = 0;
+            cantotals[eliminate[3] - 1] = 0;
             //set up bar chart
 
             CategoryAxis xAxis = new CategoryAxis();
@@ -627,7 +635,7 @@ public class Controller {
             XYChart.Series<String, Number> series1 = new XYChart.Series<>();
             series1.setName("Rank Choice");
 
-            series1.getData().add(new XYChart.Data<>("Isabella", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Isabelle", cantotals[0]));
             series1.getData().add(new XYChart.Data<>("Captain America", cantotals[1]));
             series1.getData().add(new XYChart.Data<>("Vision", cantotals[2]));
             series1.getData().add(new XYChart.Data<>("Crewmate", cantotals[3]));
@@ -997,12 +1005,4 @@ public class Controller {
         }
         return cannum;
     }
-
-    // test driver
-    public static void main(String[] args)
-    {
-       
-
-    }
-
 }
