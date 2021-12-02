@@ -337,6 +337,7 @@ public class Controller {
             loginID_T.setMouseTransparent(true);
             username_T.setMouseTransparent(true);
             loginPassword_T.setMouseTransparent(true);
+            currentLoginID = Integer.parseInt(loginID_T.getText());
         }
     }
 
@@ -455,11 +456,11 @@ public class Controller {
             XYChart.Series<String, Number> series1 = new XYChart.Series<>();
             series1.setName("First Past The Post");
 
-            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
-            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
-            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
-            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
-            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+            series1.getData().add(new XYChart.Data<>("Isabella", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Captain America", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Vision", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Crewmate", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Spider-Man", cantotals[4]));
 
             fptp_G.getData().addAll(series1);
 
@@ -550,11 +551,11 @@ public class Controller {
             XYChart.Series<String, Number> series1 = new XYChart.Series<>();
             series1.setName("Single Transferable Vote");
 
-            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
-            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
-            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
-            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
-            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+            series1.getData().add(new XYChart.Data<>("Isabella", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Captain America", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Vision", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Crewmate", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Spider-Man", cantotals[4]));
 
             stv_G.getData().addAll(series1);
 
@@ -626,11 +627,11 @@ public class Controller {
             XYChart.Series<String, Number> series1 = new XYChart.Series<>();
             series1.setName("Rank Choice");
 
-            series1.getData().add(new XYChart.Data<>("Can1", cantotals[0]));
-            series1.getData().add(new XYChart.Data<>("Can2", cantotals[1]));
-            series1.getData().add(new XYChart.Data<>("Can3", cantotals[2]));
-            series1.getData().add(new XYChart.Data<>("Can4", cantotals[3]));
-            series1.getData().add(new XYChart.Data<>("Can5", cantotals[4]));
+            series1.getData().add(new XYChart.Data<>("Isabella", cantotals[0]));
+            series1.getData().add(new XYChart.Data<>("Captain America", cantotals[1]));
+            series1.getData().add(new XYChart.Data<>("Vision", cantotals[2]));
+            series1.getData().add(new XYChart.Data<>("Crewmate", cantotals[3]));
+            series1.getData().add(new XYChart.Data<>("Spider-Man", cantotals[4]));
 
             rcv_G.getData().addAll(series1);
             rcv_G.setVisible(true);
@@ -983,15 +984,15 @@ public class Controller {
     public int nameToId(String str){
         int cannum = 0;
         switch (str){
-            case "Can1":
+            case "Isabelle":
                 cannum = 1;
-            case "Can2":
+            case "Captain America":
                 cannum = 2;
-            case "Can3":
+            case "Vision":
                 cannum = 3;
-            case "Can4":
+            case "Crewmate":
                 cannum = 4;
-            case "Can5":
+            case "Spider-Man":
                 cannum = 5;
         }
         return cannum;
