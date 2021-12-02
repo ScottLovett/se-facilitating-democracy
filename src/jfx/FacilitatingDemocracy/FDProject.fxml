@@ -457,7 +457,7 @@
                                  <children>
                                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../Voter_ID.png" />
+                                          <Image url="@../isabelle.jpg" />
                                        </image>
                                     </ImageView>
                                     <TextArea fx:id="can1Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" text="This sweetheart has helped her &#10;mayor construct and run a village &#10;from nothing. She is very kind to &#10;everyone she's meet.&#10;&#10;&quot;Let's work together to make &#10;this a better place for everyone!&quot;" />
@@ -474,7 +474,7 @@
                                     <TextArea fx:id="can2Policies_T" editable="false" layoutY="142.0" mouseTransparent="true" prefHeight="79.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Build Better (infrastructure, energy, &amp; industry). &#10;Overhaul financial systems.                          &#10;Hold politicians accountable.&#10;End unjust/unnecessary/expensive foreign wars. " />
                                     <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../Voter_ID.png" />
+                                          <Image url="@../SamWilson.jpg" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -485,9 +485,9 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="134.0" fitWidth="200.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../Voter_ID.png" />
+                                          <Image url="@../Paul_Bettany_as_Vision.jpg" />
                                        </image>
                                     </ImageView>
                                     <TextArea fx:id="can3Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" text="He is worthy,&#10;         a machine with a soul.&#10;&#10;&quot;Let us do what is &#10;         just and effective.&quot;" />
@@ -500,13 +500,13 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="21.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../Voter_ID.png" />
+                                          <Image url="@../crewmate.png" />
                                        </image>
                                     </ImageView>
                                     <TextArea fx:id="can4Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="150.0" prefWidth="202.0" promptText="Candidate 1 Description" text="Human or Alien? Is it even&#10;important? Who knows.&#10;But, this Crewmate is a survivor.&#10;&#10;*Is sus*" />
-                                    <TextArea fx:id="can4Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Everyone has the right to vote in publicly funded elections. &#10;End gerrymandering. &#10;Expand public surveillance (supports the patriot act).&#10;" />
+                                    <TextArea fx:id="can4Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Everyone has the right to vote in publicly funded elections. &#10;End gerrymandering. &#10;Expand public surveillance (supports the patriot act)." />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -515,13 +515,13 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                  <children>
-                                    <ImageView fitHeight="150.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../Voter_ID.png" />
+                                          <Image url="@../spidySelfie.jpg" />
                                        </image>
                                     </ImageView>
-                                    <TextArea fx:id="can5Description_T" editable="false" layoutX="184.0" mouseTransparent="true" prefHeight="150.0" prefWidth="218.0" promptText="Candidate 1 Description" text="Full-time crime fighter in New York.&#10;Your friendly neighborhood &#10;Spider-Man still helps the people &#10;of New York with tasks less flashy &#10;than saving the world, like finding &#10;lost bikes.&#10;&quot;I wanna make the streets free of &#10;villainy and crime!&quot;" />
-                                    <TextArea fx:id="can5Policies_T" editable="false" layoutY="147.0" mouseTransparent="true" prefHeight="74.0" prefWidth="402.0" promptText="Candidate Policies and Relation" text="Environmental justice.          &#10;Corporate-industry accountability.    Pro-union.&#10;Universal Healthcare." />
+                                    <TextArea fx:id="can5Description_T" editable="false" layoutX="200.0" mouseTransparent="true" prefHeight="222.0" prefWidth="202.0" promptText="Candidate 1 Description" text="Full-time crime fighter in New York.&#10;Your friendly neighborhood &#10;Spider-Man still helps the people &#10;of New York with tasks less flashy &#10;than saving the world, like finding &#10;lost bikes.&#10;&quot;I wanna make the streets free of &#10;villainy and crime!&quot;" />
+                                    <TextArea fx:id="can5Policies_T" editable="false" layoutY="125.0" mouseTransparent="true" prefHeight="96.0" prefWidth="200.0" promptText="Candidate Policies and Relation" text="Environmental justice.          &#10;Corporate-industry accountability.&#10;Pro-union.&#10;Universal Healthcare." />
                                  </children>
                               </AnchorPane>
                            </content>
