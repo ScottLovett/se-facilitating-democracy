@@ -38,24 +38,29 @@ Doom Guy:	Description: This man always has heavy metal playing with him as he cl
 			Politics: Right to bear arms; Anticorruption (No demons within politics meaning no money politics and no lobbying),
 
 ########################################################################################################################
-Editing votes such that :
+Editing votes such that they'd "work":
     FPTP: each candidate gets at least 1 vote, but candidate 4 and 5 gets a super majority of the rest.
     STV: 2 candidates should be eliminated(1,4), leaving 3 (candidates 3,5,2)
     RC: 3 candidates should be eliminated, leaving 2 (candidates 2 and 5)
 
 Therefore, out of 30 votes:
-    FPTP: Can1 (1), Can2 (2), Can3 (2), Can4 (12), Can5 (13)
-    STV: Can1 (5), Can2 (7), Can3 (6), Can4 (3), Can5 (9)
-        -> Can1 (6), Can2 (7), Can3 (8), Can4 (0), Can5 (9)
-          -> Can1 (0), Can2 (10), Can3 (9), Can4 (0), Can5 (10)
-            Notice one person's vote has been eliminated because their 1st and 2nd choice was eliminated.
-    RC: Can1 (5), Can2 (7), Can3 (6), Can4 (3), Can5 (9)
-       -> Can1 (6), Can2 (7), Can3 (8), Can4 (0), Can5 (9)
-         -> Can1 (0), Can2 (11), Can3 (9), Can4 (0), Can5 (10)
-           -> Can1 (0), Can2 (16), Can3 (0), Can4 (0), Can5 (14)
+    FPTP: Can1 (1), Can2 (2), Can3 (13/14), Can4 (12), Can5 (2)
+    STV: Can1 (7), Can2 (8), Can3 (3/4), Can4 (4), Can5 (8)
+        -> Can1 (7), Can2 (10/11), Can3 (0), Can4 (4), Can5 (9)
+          -> Can1 (9), Can2 (11/12), Can3 (0), Can4 (0), Can5 (10)
+            Note some person's vote may have been eliminated because their 1st and 2nd choice was eliminated.
+    RC: Can1 (7), Can2 (8), Can3 (3/4), Can4 (4), Can5 (8)
+       -> Can1 (7), Can2 (10), Can3 (0), Can4 (4/5), Can5 (9)
+         -> Can1 (9/10), Can2 (11), Can3 (0), Can4 (0), Can5 (10)
+           -> Can1 (0), Can2 (15), Can3 (0), Can4 (0), Can5 (15/16)
+   The Newest vote (#/#) comes from Demo
 
-Vote1: "STV 1/RC 1"
+Vote1: "RC 1"
 vote2: "RC 2"
 vote3: "RC 3"
 vote4: "RC 4"
-vote5: "STV Safety Pick"
+vote5: "STV 1"
+vote6: "STV 2"
+fptp: "fptp / STV Safety Pick"
+
+Candidate spectrum: W - 4 - 1 - 3 - 2 - 5
