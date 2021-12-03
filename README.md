@@ -9,6 +9,14 @@ The system itself shows three different systems:
 - Rank Choice Voting
   - Ranking all candidates from best to worst, lowest votes eliminated, votes for eliminated go to next choice
   
+# Build Instructions
+-To start you will need a PostgresSQL install on your machine and the JavaFX and JDBC libraries downloaded to compile the program
+
+- Create a database in your postgres install named 'democracy' and import the database dump file in src/postgres to it
+- Then set the password field in dbaccess,connection() to the password for the postgres acc on your install
+- download the JavaFX and JDBC postgres libraries and add them to the project in your preferred IDE
+- use the jvm arguments --module-path PATHTOJFX/lib  --add-modules=javafx.controls,javafx.fxml,javafx.base,javafx.graphics
+
 # Organization
 All code and images are in the src folder
 
